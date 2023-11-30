@@ -1,6 +1,7 @@
 interface HeaderPropsInterface extends ComponentPropsInterface {
     isTop: boolean
     children: React.ReactNode[]
+    checked: boolean
 }
 
 interface AboutMeInterface extends ComponentPropsInterface {
@@ -16,4 +17,9 @@ interface StackPropsInterface extends ComponentPropsInterface {
 }
 interface AboutMeIdCardListInterface {
     idCardContentList:  {title: string , content: string , $imageUrl: string}[]
+}
+
+interface MobileMenuInterface {
+    checked: boolean,
+    checkHandler: () => void
 }

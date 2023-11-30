@@ -9,9 +9,9 @@ const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   text-decoration: none;
   display: ${(props) => props.$checked ? 'block' : 'none'};
   position: absolute;
-  top: 55px;
-  width: 100px;
-  opacity: 0.8;
+  top: 53px;
+  width: 140px;
+  opacity: 0.9;
 
     //box-shadow: ${(props) => props.theme.palette.boxShadow};
 
@@ -24,7 +24,7 @@ const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   }
 
   @media screen and (max-width: 600px) {
-    margin-right: 7vw;
+    margin-right: 18vw;
   }
 `
 

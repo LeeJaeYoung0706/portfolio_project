@@ -1,18 +1,12 @@
-'use client'
 import React from 'react';
-import {useCallback, useState} from "react";
 import HeaderHamburgerButton from "@/atom/atoms/header/HeaderHamburgerButton";
 import HeaderDropdown from "@/atom/atoms/header/HeaderDropdown";
 import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/MobileMenuView";
 
 
-export default function MobileMenu(): React.JSX.Element {
 
-    const [checked, setChecked] = useState<boolean>(false);
+export default function MobileMenu({checked , checkHandler} : MobileMenuInterface ): React.JSX.Element {
 
-    const checkHandler = useCallback(() => {
-        setChecked((pre) => !pre)
-    }, [checked])
 
     return (
         <>

@@ -4,21 +4,27 @@ import HeaderView from "@/atom/organisms/header/HeaderView";
 import Logo from "@/atom/atoms/header/Logo";
 import PcMenu from "@/atom/molecules/header/menu/PcMenu";
 import MobileMenu from "@/atom/molecules/header/menu/MobileMenu";
-import React from "react";
+import React, {useCallback, useState} from "react";
 
 
 export default function Header(): React.JSX.Element {
 
     const [isTop] = useScrollPosition();
+    const [checked, setChecked] = useState<boolean>(false);
+
+    const checkHandler = useCallback(() => {
+        setChecked((pre) => !pre)
+    }, [checked])
+
 
     return (
-        <HeaderView isTop={isTop}>
+        <HeaderView isTop={isTop} checked={checked}>
             <Logo
                 logoText={'Portfolio'}
                 $logoFontSize={'57px'}
             />
             <PcMenu/>
-            <MobileMenu/>
+            <MobileMenu checked={checked} checkHandler={checkHandler}/>
         </HeaderView>
     )
 }

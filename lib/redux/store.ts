@@ -1,10 +1,12 @@
 "use client";
 import { configureStore } from "@reduxjs/toolkit";
 import targetSlice from "@/lib/redux/slice/targetSlice";
+import menuOpenCheckSlice from "@/lib/redux/slice/menuOpenCheckSlice";
 
 export const store = configureStore({
     reducer: {
-        targetSlice: targetSlice
+        targetSlice: targetSlice,
+        menuOpenCheckSlice: menuOpenCheckSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false
