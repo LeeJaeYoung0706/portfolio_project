@@ -1,22 +1,21 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-const HeaderLayoutStyle = styled.header<{$isTop: boolean}>`
+const HeaderLayoutStyle = styled.header<{ $isTop: boolean }>`
   position: fixed;
   width: 100%;
-  min-height: 105px;
-  background-color: ${(props) => props.theme.palette.main};
+  min-height: 130px;
+  transition: 0.5s;
   z-index: 100;
-  ${displayFlex('row' , 'space-between' , 'center')}
+  ${displayFlex('row', 'space-between', 'center')}
   flex-wrap: wrap;
-  border-bottom: ${(props) => {
-    return  !props.$isTop ? 'none' : `1px solid ${props.theme.palette.main70}`
-  }};
-  box-shadow: ${(props) => !props.$isTop ? 'none' : props.theme.palette.boxShadow};
+
+  ${(props) => !props.$isTop ? css`background-color: transparent;` : `background-color: ${props.theme.palette.reverse};`}
+  box-shadow: ${(props) => !props.$isTop ? 'none' : ` 0 0 4px 1px ${props.theme.palette.reverseSecond}`};
 `
 
-function HeaderView ({ children , isTop}: HeaderPropsInterface) {
+function HeaderView({children, isTop}: HeaderPropsInterface): React.JSX.Element {
     return (
         <HeaderLayoutStyle $isTop={isTop}>
             {children}

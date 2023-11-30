@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components";
+import {color} from "@/style/theme/color";
 
 
 interface ButtonInterface {
@@ -9,46 +10,35 @@ interface ButtonInterface {
 }
 
 const headerTypeCss = css`
- background-color: ${(props) => props.theme.palette.main};
-  color: ${(props) => props.theme.palette.fontColor};
-  border-radius: 8px;
+  background-color: transparent;
   text-align: center;
   font-size: 19px;
-  letter-spacing: 1.8px; // 글자 사이 간격
-  line-height: 23px;
+  letter-spacing: 1.2px; // 글자 사이 간격
+  font-weight: bold;
+  line-height: 1;
   width: 90px;
-  height: 83px;
-  
+  height: 30px;
+  border: none;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      box-shadow: ${(props) => props.theme.palette.hoverBoxShadow};
-      color: ${(props) => props.theme.palette.fontColorHover};
-      opacity: 0.9;
+      color: ${(props) => props.theme.palette.reverseSecond};
+      //opacity: 0.9;
     }
   }
 
   ${(props) => props.theme.media.tablet} {
     max-width: 110px;
-    //width: 20vw;
-    //height: 5vh;
-    //font-size: 1.0rem;
-
     &:active {
-      box-shadow: ${(props) => props.theme.palette.hoverBoxShadow};
-      color: ${(props) => props.theme.palette.fontColorHover};
+      color: ${(props) => props.theme.palette.reverseSecond};
       opacity: 0.9;
     }
   }
 
   ${(props) => props.theme.media.mobile} {
     max-width: 100px;
-    //width: 15vw;
-    //height: 5vh;
-    //font-size: 0.7rem;
 
     &:active {
-      box-shadow: ${(props) => props.theme.palette.hoverBoxShadow};
-      color: ${(props) => props.theme.palette.fontColorHover};
+      color: ${(props) => props.theme.palette.reverseSecond};
       opacity: 0.9;
     }
   }

@@ -18,16 +18,17 @@ const HeaderMobileMenuStyle = styled.div`
   position: relative;
   padding-right: 6vw;
   z-index: 400;
+
   ${(props) => props.theme.media.tablet} {
-    ${displayFlex('column' , 'center' , 'center')}
+    ${displayFlex('column', 'center', 'center')}
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${displayFlex('column' , 'center' , 'center')}
+    ${displayFlex('column', 'center', 'center')}
   }
 `
 
-const MobileMenuView = ({children}: MobileMenuPropsInterface) => {
+const MobileMenuView = ({children}: MobileMenuPropsInterface): React.JSX.Element => {
     return (
         <HeaderMobileMenuStyle>
             {children}

@@ -1,0 +1,35 @@
+import React, {ForwardedRef, RefObject, useImperativeHandle, useRef} from "react";
+import styled from "styled-components";
+import {displayFlex} from "@/style/theme/common";
+import {OrbitFont} from "@/style/font";
+import SectionTitle from "@/atom/atoms/title/SectionTitle";
+
+const SectionTitleStyle = styled.div`
+  ${displayFlex('row' , 'center' , 'center')}
+`
+
+const SectionTitleText = styled.h1`
+  font-size: 5.2em;
+  color: ${(props) => props.theme.palette.reverse};
+  text-shadow: 0 2px 3px ${(props) => props.theme.palette.reverseSecond};
+  line-height: 1;
+  margin-bottom: 60px;
+  padding-top: 10px;
+  ${(props) => props.theme.media.tablet} {
+    font-size: 4.2em;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    font-size: 3.2em;
+  }
+`;
+const SectionTitleView = React.forwardRef(({title , id } : SectionTitlePropsInterface , ref: React.ForwardedRef<HTMLDivElement>):React.JSX.Element => {
+
+    return (
+        <SectionTitleStyle id={id} ref={ref}>
+            <SectionTitleText className={OrbitFont.className}>{title}</SectionTitleText>
+        </SectionTitleStyle>
+    )
+})
+
+export default React.memo(SectionTitleView)

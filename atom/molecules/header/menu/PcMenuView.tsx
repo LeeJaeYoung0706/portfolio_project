@@ -2,11 +2,14 @@ import React from 'react';
 import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-const HeaderPcMenuStyle = styled.div`
+const HeaderPcMenuStyle = styled.div<{$isTop: boolean}>`
   display: flex;
   padding-right: 1.7vw;
-  ${displayFlex('row' , 'space-between' , 'center')}
-
+  ${displayFlex('row' , 'space-between' , 'center')};
+  
+  color: ${ (props) => props.$isTop ? props.theme.palette.middle : props.theme.palette.second};
+  
+  
   ${(props) => props.theme.media.tablet} {
     display: none;
   }
@@ -16,9 +19,10 @@ const HeaderPcMenuStyle = styled.div`
   }
 `
 
-function PcMenuView({children} : HeaderPcMenuInterface) {
+function PcMenuView({children , $isTop} : HeaderPcMenuInterface): React.JSX.Element {
+
     return (
-        <HeaderPcMenuStyle>
+        <HeaderPcMenuStyle $isTop={$isTop}>
             {children}
         </HeaderPcMenuStyle>
     )

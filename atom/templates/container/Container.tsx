@@ -2,6 +2,7 @@ import React from 'react';
 import {ThemeHandlerProvider} from "@/lib/ThemeHandlerContext";
 import ContainerView from "@/atom/templates/container/ContainerView";
 
+import {targetStore} from "@/lib/jotai";
 
 export default function Container({children}: ContainerPropsInterface) {
 

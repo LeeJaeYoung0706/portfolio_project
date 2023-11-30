@@ -1,4 +1,4 @@
-import { DefaultTheme, keyframes } from 'styled-components';
+import {css, DefaultTheme, keyframes} from 'styled-components';
 import {color} from "@/style/theme/color";
 
 
@@ -17,32 +17,32 @@ export const CircleAnimation = ( start?: number , end?: number) => keyframes`
  * 애니메이션 Theme 색 변경이 1회만 적용되는 문제 발생
  *
  * Intro Section SVG 애니메이션
- * @param props
  * @constructor
+ * @param theme
  */
 
-export const introSvgKeyframes = keyframes`
+export const introSvgKeyframes = (theme: DefaultTheme) => keyframes`
   0% {
     stroke-dashoffset: 25%;
     stroke-dasharray: 0 50%;
-    fill:  ${color.primary};
-    stroke: ${color.primary};
+    fill:  ${theme.palette.reverse};
+    stroke:  ${theme.palette.reverse};
     stroke-width: 1.2;
   }
   70% {
     fill: rgba(72, 138, 204, 0);
-    stroke:  ${color.primary};
+    stroke:  ${theme.palette.reverse};
     stroke-width: 1.2;
   }
   80% {
     fill: rgba(169, 180, 185, 0);
-    stroke:  ${color.primary};
+    stroke:  ${theme.palette.reverse};
   }
   100% {
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0;
-    fill:  ${color.primary};
-    stroke:  ${color.primary};
+    fill:   ${theme.palette.reverse};
+    stroke:  ${theme.palette.reverse};
     stroke-width: 0.7;
   }
 `
@@ -77,17 +77,45 @@ export const aboutMeTitleAnimation = keyframes`
  *
  * AboutMe Section Title 애니메이션
  */
-export const glitchLinkHeader = keyframes`
-   0% , 100% {
-    text-shadow: 0 0 3px ${color.primary},
-    0 2px 4px ${color.primary},
-    0 2px 5px ${color.primary},
-    0 2px 5px ${color.primary},
-    0 0 5px ${color.primary},
-    0 0 4px ${color.primary},
-    0 0 3px ${color.primary};
+// export const glitchLinkHeader= (theme: DefaultTheme) => keyframes`
+//    0% , 100% {
+//     text-shadow: 0 0 3px ${color.primary},
+//     0 2px 4px ${color.primary},
+//     0 2px 5px ${color.primary},
+//     0 2px 5px ${color.primary},
+//     0 0 5px ${color.primary},
+//     0 0 4px ${color.primary},
+//     0 0 3px ${color.primary};
+//   }
+//   50%  {
+//     text-shadow: 0 0 3px ${color.primary} , 0 2px 4px ${color.primary}, 0 0 3px ${color.primary}; ;
+//   }
+// `
+export const lineReverseBefore = css`
+  position: absolute;
+  bottom: 0;
+  content: "";
+  background-color: ${(props => props.theme.palette.fontColorHover)};
+  height: 2px;
+  width: 0;
+  box-shadow: 0 1px 5px 1px ${(props => props.theme.palette.fontColor)};
+  animation: ${aboutMeTitleAnimation} 2s infinite;
+  animation-direction: alternate;
+`;
+
+export const leftGridAnimation = keyframes`
+  0% {
+    transform: translateX(-500px);
   }
-  50%  {
-    text-shadow: 0 0 3px ${color.primary} , 0 2px 4px ${color.primary}, 0 0 3px ${color.primary}; ;
+  100% {
+    transform: translateX(0);
+  }
+`
+export const rightGridAnimation = keyframes`
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0);
   }
 `

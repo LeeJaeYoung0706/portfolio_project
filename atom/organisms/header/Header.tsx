@@ -1,28 +1,24 @@
 'use client'
-
-import {useThemeContext} from "@/lib/ThemeHandlerContext";
-import {useScrollPosition} from "@/lib/useScrollPosion";
-
-
+import {useScrollPosition} from "@/lib/useScrollPosition";
 import HeaderView from "@/atom/organisms/header/HeaderView";
-import Button from "@/atom/atoms/Button";
 import Logo from "@/atom/atoms/header/Logo";
 import PcMenu from "@/atom/molecules/header/menu/PcMenu";
 import MobileMenu from "@/atom/molecules/header/menu/MobileMenu";
+import React from "react";
 
 
-export default function Header() {
+export default function Header(): React.JSX.Element {
 
     const [isTop] = useScrollPosition();
 
     return (
         <HeaderView isTop={isTop}>
             <Logo
-                logoText={'Lee Jae Young'}
-                $logoFontSize={'60px'}
+                logoText={'Portfolio'}
+                $logoFontSize={'57px'}
             />
-            <PcMenu />
-            <MobileMenu />
+            <PcMenu/>
+            <MobileMenu/>
         </HeaderView>
     )
 }

@@ -6,8 +6,7 @@ import HeaderDropdown from "@/atom/atoms/header/HeaderDropdown";
 import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/MobileMenuView";
 
 
-
-export default function MobileMenu () {
+export default function MobileMenu(): React.JSX.Element {
 
     const [checked, setChecked] = useState<boolean>(false);
 

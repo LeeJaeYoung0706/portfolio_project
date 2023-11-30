@@ -1,61 +1,89 @@
-
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
-import {KoGugi} from "@/style/font";
+import {OrbitFont} from "@/style/font";
 import styled from "styled-components";
 import Link from "next/link";
+import {color} from "@/style/theme/color";
+import DropdownLink from "@/atom/atoms/header/DropdownLink";
 
 const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   text-decoration: none;
   display: ${(props) => props.$checked ? 'block' : 'none'};
   position: absolute;
   top: 55px;
-
   width: 100px;
-  height: 162px;
-  opacity: 0.9;
-  box-shadow: ${(props) => props.theme.palette.boxShadow};
+  opacity: 0.8;
+
+    //box-shadow: ${(props) => props.theme.palette.boxShadow};
 
   ${(props) => props.theme.media.tablet} {
-    top: 70px;
+    top: 80px;
   }
-  
+
   ${(props) => props.theme.media.mobile} {
-    top: 70px;
+    top: 80px;
   }
+
   @media screen and (max-width: 600px) {
     margin-right: 7vw;
   }
 `
 
-const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
-  color: ${(props) => props.theme.palette.mainReverse70};
-  background-color: ${(props) => props.theme.palette.main};
-  display: block;
-  border: 1px solid ${(props) => props.theme.palette.main70};
-  height: 54px;
-  text-align: center;
-  padding: 11px;
-  font-weight: bold;
-
-
-
-  &:active {
-    color: ${(props) => props.theme.palette.mainReverse};
-  }
-`
 
 export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterface) {
 
     const {themeHandler} = useThemeContext();
+    const dropDownLinkArray: DropDownLinkInterface[] = [
+        {
+            route: '#intro',
+            checked: checked,
+            font: OrbitFont.className,
+            text: 'Intro'
+        },
+        {
+            route: '#about_me',
+            checked: checked,
+            font: OrbitFont.className,
+            text: 'About'
+        },
+        {
+            route: '#stack',
+            checked: checked,
+            font: OrbitFont.className,
+            text: 'Stack'
+        },
+        {
+            route: '',
+            checked: checked,
+            font: OrbitFont.className,
+            text: 'Theme',
+            themeHandler: themeHandler
+        }
+    ]
 
     return (
         <HeaderDropdownStyle $checked={checked} onClick={onClick}>
-            <HeaderDropdownLinkStyle href={"#intro"} $checked={checked}
-                                     className={KoGugi.className}>Intro</HeaderDropdownLinkStyle>
-            <HeaderDropdownLinkStyle href={"#about_me"} $checked={checked} className={KoGugi.className}>About
-                Me</HeaderDropdownLinkStyle>
-            <HeaderDropdownLinkStyle href={""} $checked={checked} onClick={themeHandler}
-                                     className={KoGugi.className}>Theme</HeaderDropdownLinkStyle>
+            {
+                dropDownLinkArray?.length > 0 &&
+                dropDownLinkArray?.map((value, index) => {
+                    return value?.themeHandler !== undefined ?
+                            <DropdownLink
+                                route={value.route}
+                                checked={value.checked}
+                                font={value.font}
+                                text={value.text}
+                                themeHandler={value.themeHandler}
+                                key={`${index}${value.route}`}
+                            /> :
+                            <DropdownLink
+                                route={value.route}
+                                checked={value.checked}
+                                font={value.font}
+                                text={value.text}
+                                key={`${index}${value.route}`}
+                            />
+
+                })
+            }
         </HeaderDropdownStyle>
     )
 }

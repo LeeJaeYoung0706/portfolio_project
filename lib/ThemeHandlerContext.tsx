@@ -1,7 +1,7 @@
 'use client'
 import {createContext, useCallback, useContext, useMemo, useState} from "react";
-import {light} from "@/style/theme/light";
-import {dark} from "@/style/theme/dark";
+import {green} from "@/style/theme/green";
+import {purple} from "@/style/theme/purple";
 import {DefaultTheme, ThemeProvider} from "styled-components";
 
 /**
@@ -13,7 +13,7 @@ interface ThemeHandlerInterface {
 }
 
 const ThemeHandlerContext : ThemeHandlerInterface = {
-    theme: dark,
+    theme: purple,
     themeHandler: () => {}
 }
 
@@ -24,7 +24,7 @@ export function ThemeHandlerProvider({children} : {children: React.ReactNode}) {
     const [theme, setTheme] = useState<DefaultTheme>(ThemeHandlerContext.theme);
 
     const themeHandler = useCallback( () => {
-        setTheme( (pre) => { return pre === dark ? light : dark });
+        setTheme( (pre) => { return pre === purple ? green : purple });
     } , [theme])
 
     const value = useMemo( () => ({ theme:theme , themeHandler:themeHandler}) , [theme , themeHandler])

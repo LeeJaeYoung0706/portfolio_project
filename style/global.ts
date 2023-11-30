@@ -5,19 +5,32 @@ import { reset } from '@/style/mixin';
 export const GlobalStyle = createGlobalStyle`
 
   :root {
-    --base-white: 0, 100%;
-    --base-black: 0, 100%;
+
+    //Purple
+
+    //--purple-primary: hsl(268, 46%, 16%);
+    //--purple-second: hsl(304, 42%, 27%);
+    //--purple-middle: hsl(187, 39%, 37%);
+    //--purple-reverse-second: hsl(40, 74%, 72%);
+    //--purple-reverse: hsl(31, 50%, 58%);
+
+    --purple-primary: hsl(231, 32%, 28%);
+    --purple-second: hsl(248, 49%, 35%);
+    --purple-middle: hsl(29, 71%, 83%);
+    --purple-reverse-second: hsl(197, 83%, 71%);
+    --purple-reverse: hsl(208, 37%, 60%);
+
+    //Greean
+    --green-primary: hsl(28, 21%, 56%);
+    --green-second: hsl(202, 59%, 13%);
+    --green-middle: hsl(57, 29%, 65%);
+    --green-reverse-second: hsl(145, 25%, 80%);
+    --green-reverse: hsl(186, 20%, 29%);
+
+
     --white: hsl(0, 100%, 100%);
     --black: hsl(0, 100%, 0%);
-    --black-70: hsl(var(--base-black), 0% , 70%);
-    --white-70: hsl(var(--base-white), 100%, 70%);
-    --black-90: hsl(var(--black), 0% , 90%);
-    --white-90: hsl(var(--white), 100%, 90%);
-    
-    --main-70: hsl(28, 87%, 67% , 70%);
-    --main-100: hsl(28, 87%, 67% , 100%);
-    
-    --base-gray: hsl(var(--base-black), 25%);
+
   }
 
   *,

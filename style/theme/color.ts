@@ -5,5 +5,6 @@
  */
 
 export const color = {
-    primary: 'hsl(28, 87%, 67%)'
+    black: 'var(--black)',
+    white: 'var(--white)'
 }
