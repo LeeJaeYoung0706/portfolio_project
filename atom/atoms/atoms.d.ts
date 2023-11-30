@@ -38,3 +38,15 @@ interface DropDownLinkInterface {
     text: string
     themeHandler?: () => void
 }
+
+interface YAreaInterface extends ComponentPropsInterface{
+    $stackVisible: boolean
+    children: React.ReactNode[]
+}
+
+interface XAreaInterface extends ComponentPropsInterface{
+    $ani_sec: string
+    $stackVisible: boolean
+    $area: RuleSet<object>
+    children: React.ReactNode[]
+}

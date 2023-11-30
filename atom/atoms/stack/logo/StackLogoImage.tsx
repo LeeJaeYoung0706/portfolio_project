@@ -5,6 +5,7 @@ import Image from "next/image";
 const StackLogoImageStyle = styled.div`
   width: 50px;
   height: 50px;
+  min-width: 50px;
   position: relative;
   background-color: transparent;
   margin-right: 30px;
