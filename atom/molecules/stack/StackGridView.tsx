@@ -3,7 +3,6 @@ import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
 const StackGridViewStyle = styled.div`
-  
   display: grid;
   //grid-template-columns: repeat(3, 1fr); // 3열
   //grid-template-rows: repeat(2, 1fr); // 2행

@@ -5,6 +5,7 @@ import Header from "@/atom/organisms/header/Header";
 import AboutMe from "@/atom/organisms/about_me/AboutMe";
 import Intro from "@/atom/organisms/intro/Intro";
 import Stack from "@/atom/organisms/stack/Stack";
+import Project from "@/atom/organisms/project/Project";
 
 export default function Home(): React.JSX.Element {
     return (
@@ -14,6 +15,7 @@ export default function Home(): React.JSX.Element {
                 <Intro/>
                 <AboutMe/>
                 <Stack/>
+                <Project />
             </Main>
         </Container>
     )

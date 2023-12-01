@@ -23,3 +23,7 @@ interface MobileMenuInterface {
     checked: boolean,
     checkHandler: () => void
 }
+
+interface ProjectPropsInterface extends ComponentPropsInterface {
+    children: React.ReactNode[]
+}

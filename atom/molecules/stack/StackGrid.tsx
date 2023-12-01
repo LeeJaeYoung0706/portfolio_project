@@ -11,8 +11,6 @@ import XArea from "@/atom/atoms/stack/grid/XArea";
 
 
 
-
-
 export default function StackGrid(): React.JSX.Element {
 
     const {targetId, visible} = useAppSelector((state) => state.targetSlice);
@@ -45,7 +43,7 @@ export default function StackGrid(): React.JSX.Element {
                     })
                 }
             </YArea>
-            <XArea $stackVisible={stackVisible} $area={AreaBack} $ani_sec={'1.6s'}>
+            <XArea $stackVisible={stackVisible} $area={AreaBack} $ani_sec={'0.8s'}>
                 <StackGridTitle title={'Back'}/>
                 {
                     BackStackLogoArray?.length !== 0 &&
@@ -62,7 +60,7 @@ export default function StackGrid(): React.JSX.Element {
                     })
                 }
             </XArea>
-            <XArea $stackVisible={stackVisible} $area={AreaEtc} $ani_sec={'2.3s'}>
+            <XArea $stackVisible={stackVisible} $area={AreaEtc} $ani_sec={'1.2s'}>
                 <StackGridTitle title={'ETC'}/>
                 {
                     EtcStackLogoArray?.length !== 0 &&

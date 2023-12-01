@@ -17,6 +17,9 @@ interface MenuButtonArrayInterface {
     font: string,
     $type: string
 }
+interface ProjectTitleViewInterface extends ComponentPropsInterface{
+    children: React.ReactNode
+}
 
 interface StackLogoImageInterface {
     src: string,

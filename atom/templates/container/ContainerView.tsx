@@ -9,14 +9,6 @@ const ContainerLayoutStyle = styled.div`
   height: 100vh;
   min-height: 100%;
   position: relative;
-  
-  ${(props) => props.theme.media.tablet} {
-    
-  }
-
-  ${(props) => props.theme.media.mobile} {
-   
-  }
 `
 
 const ContainerView = ({children}: ContainerPropsInterface) => {
