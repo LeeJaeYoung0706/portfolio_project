@@ -16,15 +16,14 @@ import XArea from "@/atom/atoms/stack/grid/XArea";
  */
 export default function StackGrid(): React.JSX.Element {
     // Target 요소 관찰
-    const {targetId, visible} = useAppSelector((state) => state.targetSlice);
+    const {stack} = useAppSelector((state) => state.targetSlice);
     const [stackVisible, setStackVisible] = useState(false);
 
     useEffect(() => {
-        if (targetId === 'stack') {
-            if (!stackVisible)
-                setStackVisible(() => visible)
+        if (!stackVisible && stack !== undefined) {
+            setStackVisible(() => stack.visible)
         }
-    }, [targetId, visible]);
+    }, [stack]);
 
 
     return (

@@ -1,25 +1,45 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
+interface VisibleInterface {
+    visible: boolean
+}
+
+interface StateInterface {
+    [key: string]: VisibleInterface
+}
 /**
  * Scroll Visible Check
  */
 
-const initialState: TargetInterface = {
-    targetId: "",
-    visible: true,
+const initialState: StateInterface = {
+    about_me: {
+        visible: false,
+    },
+    stack: {
+        visible: false,
+    },
+    project: {
+        visible: false,
+    },
 };
 
 const targetVisibleSlice = createSlice({
     name: "targetVisible",
     initialState,
     reducers: {
-        setTargetVisible: (state, action) => {
-            state.targetId = action.payload.targetId;
-            state.visible = action.payload.visible;
+        setAboutVisible: (state, action) => {
+            state.about_me = action.payload;
+        },
+        setStackVisible: (state, action) => {
+            state.stack = action.payload;
+        },
+        setProjectVisible: (state, action) => {
+            state.project = action.payload;
         },
     },
 });
 
-export const { setTargetVisible } = targetVisibleSlice.actions;
+export const { setAboutVisible , setStackVisible , setProjectVisible } = targetVisibleSlice.actions;
 
 export default targetVisibleSlice.reducer;

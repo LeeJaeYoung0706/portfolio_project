@@ -17,7 +17,7 @@ const ProjectTitleViewStyle = styled.ul`
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${displayFlex('row' , 'flex-start' , 'center' , 'flex' , true)}
+    ${displayFlex('row' , 'space-between' , 'center' , 'flex' , true)}
   }
 `
 

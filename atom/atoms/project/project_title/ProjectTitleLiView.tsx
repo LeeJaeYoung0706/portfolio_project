@@ -4,27 +4,27 @@ import styled, {css} from "styled-components";
 import {kdamThmorPro} from "@/style/font";
 import {displayFlex} from "@/style/theme/common";
 
-const commonCSS = css`
-  flex: none;
-  width: 30%;
-  padding-bottom: 30px;
-`
+
 
 const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   ${ props => props.$checked ? 
-          css` flex: 2; color: ${props.theme.palette.reverseSecond};` 
-          : css` flex: 1; color: ${props.theme.palette.primary};`}
+          css` flex: 3; color: ${props.theme.palette.reverseSecond}; font-size: 2.5rem;` 
+          : css` flex: 1; color: ${props.theme.palette.primary}; font-size: 1.8em;`}
   text-align: center;
-  font-size: 2em;
+  
   cursor: pointer;
   padding-top: 30px;
   
   ${(props) => props.theme.media.tablet} {
-    ${commonCSS}
+    flex: none;
+    width: 30%;
+    padding-bottom: 30px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${commonCSS}
+    flex: none;
+    width: 40%;
+    padding-bottom: 30px;
   }
   
   @media (hover: hover) and (pointer: fine) {

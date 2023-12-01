@@ -1,9 +1,15 @@
 import React from "react";
+import styled from "styled-components";
 
+const ProjectBorderContentStyle = styled.div`
+  
+`
 
-function ProjectBorderContentView():React.JSX.Element {
+function ProjectBorderContentView({children} : ComponentPropsInterface):React.JSX.Element {
     return (
-        <></>
+        <ProjectBorderContentStyle>
+            {children}
+        </ProjectBorderContentStyle>
     )
 }
 
