@@ -37,7 +37,11 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
     color: ${(props) => props.theme.palette.reverseSecond};
   }
 `
-
+/**
+ * Project Title View
+ * @param children
+ * @constructor
+ */
 function ProjectTitleLiView ({title  , checked , liOnClick }: ProjectTitleLiViewInterface) : React.JSX.Element {
     return (
         <ProjectTitleLiStyle id={`${title}_project`} $checked={checked} onClick={liOnClick}>

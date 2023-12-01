@@ -1,5 +1,9 @@
 import {css} from "styled-components";
 
+/**
+ * 반응형 쿼리
+ * @param maxWidth
+ */
 export const customMediaQuery = (maxWidth: number): string =>
     `@media screen and (max-width: ${maxWidth}px)`
 
@@ -9,7 +13,7 @@ type flexDirectionType = 'column' | 'column-reverse' | 'row-reverse' | 'row'
 type justifyContentType = 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'
 type alignItemsType = 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'stretch'
 /**
- * Flex Make Function
+ * Flex 만들기 편하게 만든 function
  * @param display
  * @param flexDirection
  * @param justifyContent

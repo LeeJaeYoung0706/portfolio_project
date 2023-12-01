@@ -10,9 +10,12 @@ import {AreaBack, AreaEtc} from "@/atom/atoms/stack/grid/commonStyle";
 import XArea from "@/atom/atoms/stack/grid/XArea";
 
 
-
+/**
+ * Stack 부분 그리드 영역 Container
+ * @constructor
+ */
 export default function StackGrid(): React.JSX.Element {
-
+    // Target 요소 관찰
     const {targetId, visible} = useAppSelector((state) => state.targetSlice);
     const [stackVisible, setStackVisible] = useState(false);
 

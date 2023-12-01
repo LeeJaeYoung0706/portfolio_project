@@ -1,6 +1,9 @@
 import {DefaultTheme} from "styled-components";
 import {customMediaQuery} from "@/style/theme/common";
 
+/**
+ * 녹색 계열 테마
+ */
 export const green: DefaultTheme = {
     palette: {
         primary: 'var(--green-primary)',

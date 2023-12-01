@@ -7,8 +7,12 @@ const StackViewStyle = styled.div`
   background-color: ${(props) => color.white};
 `
 
+/**
+ * 스택 부분 뷰
+ * @param children
+ * @constructor
+ */
 function StackView({children}: StackPropsInterface) : React.JSX.Element {
-
     return (
         <StackViewStyle>
             {children}

@@ -17,6 +17,13 @@ const AboutMeIdCardTitleFontStyle = styled.h3`
   }
 }
 `
+
+/**
+ * About Me Id Card Title
+ * @param font
+ * @param title
+ * @constructor
+ */
 function AboutMeIdCardTitle ( {font , title} : {font: string , title: string}) :React.JSX.Element {
     return (
         <AboutMeIdCardTitleFontStyle className={font}>

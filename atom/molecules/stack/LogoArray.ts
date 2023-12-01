@@ -1,7 +1,11 @@
-export     /**
- * PNG 이름을 왜 typescript.png 로 하면 style이 안먹지
+
+/**
+ * PNG 이름을 왜 typescript.png 로 하면 style이 안먹는지..
+ *
+ * Stack Logo 부분 Array 로
  */
-const FrontStackLogoArray = [
+
+export const FrontStackLogoArray = [
     {
         text: 'JavaScript',
         src: '/logo/js.png',

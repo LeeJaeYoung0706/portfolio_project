@@ -32,10 +32,14 @@ const ProjectTitleList = [
     },
 ]
 
+/**
+ * Project Container
+ * @constructor
+ */
 export default function ProjectBorder() :React.JSX.Element {
-
+    // Project Title 선택시 Flex 효과로 범위 주기 위해서 생성
     const [project , setProject] = useState<ProjectTitleListInterface[]>(ProjectTitleList);
-
+    // project state 넘기는 핸들러
     const projectCheckHandler = useCallback( (check: ProjectTitleListInterface) => {
         setProject( (pre) => {
             const copy = [...pre];

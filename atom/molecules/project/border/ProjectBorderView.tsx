@@ -17,6 +17,11 @@ const ProjectBorderViewStyle = styled.div`
   }
 `
 
+/**
+ * Project Border View
+ * @param children
+ * @constructor
+ */
 function ProjectBorderView ({children} : ComponentPropsInterface) : React.JSX.Element {
     return (
         <ProjectBorderViewStyle>

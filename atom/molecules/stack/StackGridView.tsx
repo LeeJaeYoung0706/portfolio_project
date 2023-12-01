@@ -20,6 +20,12 @@ const StackGridViewStyle = styled.div`
     ${displayFlex('column', 'center', 'center')}
   }
 `
+
+/**
+ * Stack Grid View
+ * @param children
+ * @constructor
+ */
 function StackGridView({children} : {children: React.ReactNode[]}):React.JSX.Element {
     return (
         <StackGridViewStyle>

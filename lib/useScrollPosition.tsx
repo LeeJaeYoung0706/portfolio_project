@@ -1,7 +1,9 @@
 import {useMotionValueEvent, useScroll} from "framer-motion";
 import {useRef, useState} from "react";
 
-
+/**
+ * 스크롤 가장 상단 체크 하는 훅
+ */
 export const useScrollPosition = (): [boolean] => {
     const {scrollY} = useScroll()
 

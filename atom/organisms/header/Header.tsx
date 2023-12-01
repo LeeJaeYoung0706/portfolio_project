@@ -6,10 +6,14 @@ import PcMenu from "@/atom/molecules/header/menu/PcMenu";
 import MobileMenu from "@/atom/molecules/header/menu/MobileMenu";
 import React, {useCallback, useState} from "react";
 
-
+/**
+ * Header Container
+ * @constructor
+ */
 export default function Header(): React.JSX.Element {
-
+    // 최 상단인지 체크
     const [isTop] = useScrollPosition();
+    // 모바일 일 때 메뉴 오픈 상태인지 체크
     const [checked, setChecked] = useState<boolean>(false);
 
     const checkHandler = useCallback(() => {

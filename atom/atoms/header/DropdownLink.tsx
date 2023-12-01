@@ -15,6 +15,15 @@ const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
     color: ${(props) => props.theme.palette.main};
   }
 `
+/**
+ * Mobile Header Dropdown Link route
+ * @param route
+ * @param checked
+ * @param font
+ * @param text
+ * @param themeHandler
+ * @constructor
+ */
 export default function DropdownLink( {route , checked , font , text , themeHandler} : DropDownLinkInterface): React.JSX.Element {
     return (
         <HeaderDropdownLinkStyle

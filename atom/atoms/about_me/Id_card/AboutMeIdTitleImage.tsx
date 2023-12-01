@@ -23,6 +23,12 @@ const ImageDiv = styled.div`
   }
 `
 
+/**
+ *  About Title Image
+ * @param imageUrl
+ * @param title
+ * @constructor
+ */
 function AboutMeIdTitleImage({imageUrl, title}: { title: string, imageUrl: string }): React.JSX.Element {
     return (
         <ImageDiv>

@@ -23,6 +23,10 @@ const SectionTitleText = styled.h1`
     font-size: 3.2em;
   }
 `;
+
+/**
+ * Section 마다 존재하는 Title View
+ */
 const SectionTitleView = React.forwardRef(({title , id } : SectionTitlePropsInterface , ref: React.ForwardedRef<HTMLDivElement>):React.JSX.Element => {
 
     return (

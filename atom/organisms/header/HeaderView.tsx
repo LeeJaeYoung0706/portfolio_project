@@ -15,6 +15,13 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean  , $checked:  boolean}
   box-shadow: ${(props) =>  (props.$checked || props.$isTop ) ? css`0 0 4px 1px ${props.theme.palette.reverseSecond}` : 'none' };
 `
 
+/**
+ * header View
+ * @param children
+ * @param isTop
+ * @param checked
+ * @constructor
+ */
 function HeaderView({children, isTop , checked}: HeaderPropsInterface): React.JSX.Element {
     return (
         <HeaderLayoutStyle $isTop={isTop} $checked={checked}>

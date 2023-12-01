@@ -27,7 +27,12 @@ const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
     margin-right: 18vw;
   }
 `
-
+/**
+ * Mobile Header Menu Open Dropdown
+ * @param checked
+ * @param onClick
+ * @constructor
+ */
 
 export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterface) {
 

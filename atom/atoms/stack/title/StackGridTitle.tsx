@@ -7,7 +7,11 @@ const StackGridTitleStyle = styled.div`
   width: 100%;
   text-align: center;
 `
-
+/**
+ * Stack Grid Title View
+ * @param title
+ * @constructor
+ */
 export default function StackGridTitle({title} : {title: string}) {
     return (
         <StackGridTitleStyle>

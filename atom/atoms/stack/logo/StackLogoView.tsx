@@ -8,6 +8,11 @@ const StackLogoStyle = styled.div`
   width: 100%;
 `
 
+/**
+ * Stack Logo View
+ * @param children
+ * @constructor
+ */
 function StackLogoView({children}: ComponentPropsInterface): React.JSX.Element {
     return (
         <StackLogoStyle>

@@ -1,7 +1,9 @@
 import {css, DefaultTheme} from "styled-components";
 import {customMediaQuery} from "@/style/theme/common";
 
-
+/**
+ * 보라 계열 테마
+ */
 export const purple: DefaultTheme = {
     palette: {
         primary: 'var(--purple-primary)',

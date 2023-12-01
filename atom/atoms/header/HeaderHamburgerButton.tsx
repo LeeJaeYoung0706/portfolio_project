@@ -21,6 +21,12 @@ const HamburgerButtonStyle = styled.label<{}>`
   
 `
 
+/**
+ * Mobile Header Menu
+ * @param children
+ * @constructor
+ */
+
 const HamburgerButtonSpanStyle =
     styled.span<{ $top: string, $checked: boolean, $opacity?: number, $rotate?: string, $trans_top?: string , $isTop: boolean}>`
       

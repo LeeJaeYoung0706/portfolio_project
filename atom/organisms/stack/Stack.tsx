@@ -6,10 +6,11 @@ import {useScrollPosition} from "@/lib/useScrollPosition";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import StackGrid from "@/atom/molecules/stack/StackGrid";
 
-
+/**
+ * 스택 부분 Container
+ * @constructor
+ */
 export default function Stack(): React.JSX.Element {
-
-
 
     return (
         <StackView >

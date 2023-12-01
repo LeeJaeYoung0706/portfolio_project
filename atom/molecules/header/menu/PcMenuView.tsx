@@ -19,6 +19,12 @@ const HeaderPcMenuStyle = styled.div<{$isTop: boolean}>`
   }
 `
 
+/**
+ * PC menu View
+ * @param children
+ * @param $isTop
+ * @constructor
+ */
 function PcMenuView({children , $isTop} : HeaderPcMenuInterface): React.JSX.Element {
 
     return (

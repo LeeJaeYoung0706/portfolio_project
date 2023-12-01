@@ -8,8 +8,11 @@ const AboutMeIdCardTitleStyle = styled.div`
     padding-bottom: 20px;
 `
 
-
-
+/**
+ * AboutMe Id Title
+ * @param children
+ * @constructor
+ */
 
 function AboutMeIdTitleView({children} : {children: React.ReactNode}): React.JSX.Element{
     return (

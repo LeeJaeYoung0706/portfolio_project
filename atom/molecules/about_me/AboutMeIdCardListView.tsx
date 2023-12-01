@@ -17,6 +17,11 @@ const AboutMeIdCardListViewStyle = styled.div`
   }
 `
 
+/**
+ * AboutMe Id Card View
+ * @param children
+ * @constructor
+ */
 function AboutMeIdCardListView ({children} : AboutMeIdCardListViewInterface): React.JSX.Element {
     return (
         <AboutMeIdCardListViewStyle>

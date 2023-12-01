@@ -4,7 +4,14 @@ interface Args extends IntersectionObserverInit {
     freezeOnceVisible?: boolean
 }
 
-
+/**
+ * 타이틀 요소 체크 하는 훅
+ * @param elementRef
+ * @param threshold
+ * @param root
+ * @param rootMargin
+ * @param freezeOnceVisible
+ */
 export const useIntersectionObserver = (elementRef: RefObject<Element>,
                                           {
                                               threshold = 0.2,

@@ -7,6 +7,11 @@ const ProjectViewStyle = styled.div`
   background-color: ${color.white};
 `
 
+/**
+ * Project 부분 View
+ * @param children
+ * @constructor
+ */
 function ProjectView({children}: ProjectPropsInterface):React.JSX.Element {
     return (
         <ProjectViewStyle>

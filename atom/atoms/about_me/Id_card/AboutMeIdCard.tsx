@@ -33,6 +33,14 @@ export const AboutMeIdCardContent = styled.p`
     opacity: 0.9; 
   }
 `
+
+/**
+ * About Me Id Card 전체
+ * @param title
+ * @param content
+ * @param imageUrl
+ * @constructor
+ */
 export default function AboutMeIdCard ( {title , content , imageUrl} : AboutMeIdCardPropsInterface): React.JSX.Element {
     return (
         <AboutMeIdCardView>

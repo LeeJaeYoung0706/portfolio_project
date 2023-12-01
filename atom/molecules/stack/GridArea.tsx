@@ -2,7 +2,9 @@ import styled, {css} from "styled-components";
 import React from "react";
 import {displayFlex} from "@/style/theme/common";
 
-
+/**
+ * Y 축 , X 축 그리드
+ */
 const yStyle = css`
   flex: 1;
   width: 100%;

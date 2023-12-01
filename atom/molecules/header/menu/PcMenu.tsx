@@ -7,6 +7,10 @@ import {OrbitFont} from "@/style/font";
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
+/**
+ * Header Pc Menu container
+ * @constructor
+ */
 
 export default function HeaderPcMenu(): React.JSX.Element {
 

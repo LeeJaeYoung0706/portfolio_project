@@ -1,5 +1,8 @@
 import { css } from 'styled-components';
 
+/**
+ * CSS 초기화
+ */
 export const reset = css`
   box-sizing: border-box;
   margin: 0;

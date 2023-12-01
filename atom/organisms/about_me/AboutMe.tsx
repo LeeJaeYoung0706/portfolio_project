@@ -4,7 +4,10 @@ import React from "react";
 import SectionTitle from "@/atom/atoms/title/SectionTitle";
 import AboutMeIdCardList from "@/atom/molecules/about_me/AboutMeIdCardList";
 
-
+/**
+ * About Me Container
+ * @constructor
+ */
 export default function AboutMe(): React.JSX.Element {
 
     const IdCardContentList = [

@@ -10,7 +10,11 @@ const StackLogoImageStyle = styled.div`
   background-color: transparent;
   margin-right: 30px;
 `
-
+/**
+ * Stack Logo Image
+ * @param children
+ * @constructor
+ */
 function StackLogoImage({src , alt , size}: StackLogoImageInterface):React.JSX.Element {
     return (
         <StackLogoImageStyle>

@@ -21,6 +21,11 @@ const ProjectTitleViewStyle = styled.ul`
   }
 `
 
+/**
+ * Project Title Ul View
+ * @param children
+ * @constructor
+ */
 function ProjectTitleUlView({children} : ProjectTitleViewInterface):React.JSX.Element {
     return (
         <ProjectTitleViewStyle>

@@ -22,7 +22,11 @@ export const LogoStyle = styled.div<{ $logoFontSize: string , $isTop: boolean }>
     font-size: 30px;
   }
 `
-
+/**
+ * Logo
+ * @param children
+ * @constructor
+ */
 export default function Logo({logoText, logoFont, $logoFontSize}: LogoPropsInterface) {
     const [isTop] = useScrollPosition();
     return (

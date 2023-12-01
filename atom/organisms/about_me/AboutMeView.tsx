@@ -6,6 +6,11 @@ const AboutMeLayoutStyle = styled.section`
     background-color: ${color.white};
 `
 
+/**
+ * AboutMe View
+ * @param children
+ * @constructor
+ */
 function AboutMeView({children}: AboutMeInterface): React.JSX.Element {
     return (
         <AboutMeLayoutStyle>

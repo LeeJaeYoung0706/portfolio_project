@@ -4,6 +4,11 @@ import { useServerInsertedHTML } from 'next/navigation';
 import { ServerStyleSheet, StyleSheetManager, ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '@/style/global';
 
+/**
+ * Styled Component Registry
+ * @param children
+ * @constructor
+ */
 export default function StyledComponentsRegistry({
                                                      children,
                                                  }: {

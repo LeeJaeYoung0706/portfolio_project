@@ -2,6 +2,9 @@ import React from 'react';
 import {displayFlex} from "@/style/theme/common";
 import styled from "styled-components";
 
+/**
+ * Menu 외 선택 시 Close 를 위한 Div
+ */
 export const CloseBackGround = styled.div`
   opacity: 0;
   top: 0;
@@ -27,7 +30,11 @@ const HeaderMobileMenuStyle = styled.div`
     ${displayFlex('column', 'center', 'center')}
   }
 `
-
+/**
+ * Mobile Menu View
+ * @param children
+ * @constructor
+ */
 const MobileMenuView = ({children}: MobileMenuPropsInterface): React.JSX.Element => {
     return (
         <HeaderMobileMenuStyle>

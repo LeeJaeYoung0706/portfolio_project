@@ -27,7 +27,11 @@ export const IntroSvgStyle = styled.div`
 
   }
 `;
-
+/**
+ * Intro Svg View
+ * @param children
+ * @constructor
+ */
 function IntroSvg(): React.JSX.Element {
     return (
         <IntroSvgStyle>

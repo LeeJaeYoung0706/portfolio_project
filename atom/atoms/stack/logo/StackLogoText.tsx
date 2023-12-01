@@ -8,7 +8,11 @@ const StackLogoTextStyle = styled.h5`
   text-align: right;
   font-size: 2em;
 `
-
+/**
+ * Stack Logo Title
+ * @param children
+ * @constructor
+ */
 function StackLogoText({text}: { text: string }): React.JSX.Element {
     return (
         <StackLogoTextStyle className={OrbitFont.className}>{text}</StackLogoTextStyle>
