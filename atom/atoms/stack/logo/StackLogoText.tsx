@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {OrbitFont} from "@/style/font";
+import {OrbitFont, TitllFont} from "@/style/font";
 
 const StackLogoTextStyle = styled.h5`
   color: ${props => props.theme.palette.second};
@@ -15,7 +15,7 @@ const StackLogoTextStyle = styled.h5`
  */
 function StackLogoText({text}: { text: string }): React.JSX.Element {
     return (
-        <StackLogoTextStyle className={OrbitFont.className}>{text}</StackLogoTextStyle>
+        <StackLogoTextStyle className={TitllFont.className}>{text}</StackLogoTextStyle>
     )
 }
 

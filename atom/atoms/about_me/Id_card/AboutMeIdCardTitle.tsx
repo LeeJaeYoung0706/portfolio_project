@@ -2,18 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutMeIdCardTitleFontStyle = styled.h3`
-  font-size: 1.9em;
+  font-size: 2.3em;
   padding-bottom: 3px;
   line-height: 1;
   color: ${(props => props.theme.palette.primary)};
   font-weight: bold;
 
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.6em;
+    font-size: 2.2em;
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 1.4em;
+    font-size: 2.04em;
   }
 }
 `

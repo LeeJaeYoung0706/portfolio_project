@@ -28,6 +28,7 @@ const headerTypeCss = css`
 
   ${(props) => props.theme.media.tablet} {
     max-width: 110px;
+
     &:active {
       color: ${(props) => props.theme.palette.reverseSecond};
       opacity: 0.9;
@@ -44,10 +45,47 @@ const headerTypeCss = css`
   }
 `
 
-const ButtonStyle = styled.button<{ $type : string}>`
-    ${ (props) => props.$type === 'header' ? headerTypeCss : ''}
+
+const DefaultButtonStyle = css`
+  border: none;
+  padding: 30px;
+  border-radius: 4px;
+  background-color:  ${props => props.theme.palette.second};
+  color: ${(props) => props.theme.palette.middle};
+  font-weight: bold;
+   @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: ${(props) => props.theme.palette.reverseSecond};
+      background-color:  ${props => props.theme.palette.primary};
+      //opacity: 0.9;
+    }
+  }
+
+  ${(props) => props.theme.media.tablet} {
+    max-width: 200px;
+
+    &:active {
+      color: ${(props) => props.theme.palette.reverseSecond};
+      background-color:  ${props => props.theme.palette.primary};
+      opacity: 0.9;
+    }
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    max-width: 200px;
+
+    &:active {
+      color: ${(props) => props.theme.palette.reverseSecond};
+      background-color:  ${props => props.theme.palette.primary};
+      opacity: 0.9;
+    }
+  }
 `
-export default function Button({content, onClick , font , $type}: ButtonInterface) {
+
+const ButtonStyle = styled.button<{ $type: string }>`
+  ${(props) => props.$type === 'header' ? headerTypeCss : DefaultButtonStyle}
+`
+export default function Button({content, onClick, font, $type}: ButtonInterface) {
     return (
         <ButtonStyle
             onClick={onClick}

@@ -4,15 +4,16 @@ import Link from "next/link";
 
 const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   color: ${(props) => props.theme.palette.second};
-  background-color: transparent;
+  background-color: ${(props) => props.theme.palette.middle};
+  border: 1px solid ${(props) => props.theme.palette.middle};
   display: block;
-  border: none;
+
   text-align: center;
   padding: 11px;
   font-weight: bold;
   font-size: 30px;
   &:active {
-    color: ${(props) => props.theme.palette.main};
+    color: ${(props) => props.theme.palette.primary};
   }
 `
 /**

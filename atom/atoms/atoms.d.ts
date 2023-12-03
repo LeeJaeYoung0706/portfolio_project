@@ -2,6 +2,7 @@ interface LogoPropsInterface {
     logoText: string
     logoFont?: string
     $logoFontSize?: string
+    checked: boolean
 }
 
 interface HeaderHamburgerButtonInterface {
@@ -63,6 +64,7 @@ interface ProjectTitleLiInterface {
 }
 
 interface ProjectTitleListInterface {
+    index: number,
     title: string,
     checked: boolean
     description: string

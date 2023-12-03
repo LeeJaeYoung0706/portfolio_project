@@ -26,6 +26,7 @@ export default function Header(): React.JSX.Element {
             <Logo
                 logoText={'Portfolio'}
                 $logoFontSize={'57px'}
+                checked={checked}
             />
             <PcMenu/>
             <MobileMenu checked={checked} checkHandler={checkHandler}/>

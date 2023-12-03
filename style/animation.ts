@@ -105,7 +105,7 @@ export const lineReverseBefore = css`
 
 export const leftGridAnimation = keyframes`
   0% {
-    transform: translateX(-500px);
+    transform: translateX(-200px);
   }
   100% {
     transform: translateX(0);
@@ -113,7 +113,24 @@ export const leftGridAnimation = keyframes`
 `
 export const rightGridAnimation = keyframes`
   0% {
-    transform: translateX(500px);
+    transform: translateX(250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
+
+export const mobileRightGridAnimation = keyframes`
+  0% {
+    transform: translateX(180px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
+export const mobileLeftGridAnimation = keyframes`
+  0% {
+    transform: translateX(-180px);
   }
   100% {
     transform: translateX(0);

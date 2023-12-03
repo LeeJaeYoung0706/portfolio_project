@@ -17,8 +17,8 @@ const ImageDiv = styled.div`
   }
 
   ${(props) => props.theme.media.mobile} {
-    width: 18px;
-    height: 17.5px;
+    width: 20px;
+    height: 19.5px;
     margin-right: 2.3vw;
   }
 `

@@ -1,8 +1,8 @@
-import React, {ForwardedRef, RefObject, useImperativeHandle, useRef} from "react";
+import React from "react";
 import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
-import {OrbitFont} from "@/style/font";
-import SectionTitle from "@/atom/atoms/title/SectionTitle";
+import {TitllFont} from "@/style/font";
+
 
 const SectionTitleStyle = styled.div`
   ${displayFlex('row' , 'center' , 'center')}
@@ -15,6 +15,7 @@ const SectionTitleText = styled.h1`
   line-height: 1;
   margin-bottom: 60px;
   padding-top: 10px;
+  text-transform: uppercase;
   ${(props) => props.theme.media.tablet} {
     font-size: 4.2em;
   }
@@ -31,7 +32,7 @@ const SectionTitleView = React.forwardRef(({title , id } : SectionTitlePropsInte
 
     return (
         <SectionTitleStyle id={id} ref={ref}>
-            <SectionTitleText className={OrbitFont.className}>{title}</SectionTitleText>
+            <SectionTitleText className={TitllFont.className}>{title}</SectionTitleText>
         </SectionTitleStyle>
     )
 })

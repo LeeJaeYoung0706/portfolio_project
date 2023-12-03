@@ -3,9 +3,10 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const AboutMeIdCardTitleStyle = styled.div`
-    display: flex;
-    align-items: center;
-    padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  min-width: 120px;
 `
 
 /**

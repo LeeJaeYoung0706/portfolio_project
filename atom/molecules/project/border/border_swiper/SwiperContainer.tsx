@@ -5,7 +5,11 @@ import React, {useCallback, useRef, useState} from "react";
 import ContentChangeButton from "@/atom/atoms/project/border/ContentChangeButton";
 import {css} from "styled-components";
 
-export default function ProjectContentSwiper () {
+interface ProjectContentSwiper {
+    project: ProjectTitleListInterface | undefined
+}
+
+export default function ProjectContentSwiper ({project} : ProjectContentSwiper) {
 
     const ref = useRef<HTMLDivElement>(null)
     const testArray = [

@@ -12,20 +12,19 @@ const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   top: 53px;
   width: 140px;
   opacity: 0.9;
-
+  right: 0;
     //box-shadow: ${(props) => props.theme.palette.boxShadow};
 
   ${(props) => props.theme.media.tablet} {
-    top: 80px;
+    top: 77px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    top: 80px;
+    top: 78px;
+
   }
 
-  @media screen and (max-width: 600px) {
-    margin-right: 18vw;
-  }
+
 `
 /**
  * Mobile Header Menu Open Dropdown

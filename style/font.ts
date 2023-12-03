@@ -1,8 +1,8 @@
 import {NextFont} from "next/dist/compiled/@next/font";
-import {Kdam_Thmor_Pro, Orbit} from "next/font/google";
+import { Kdam_Thmor_Pro, Orbit, Titillium_Web} from "next/font/google";
 
 
-export const kdamThmorPro = Kdam_Thmor_Pro({
+export const kdamThmorPro:NextFont = Kdam_Thmor_Pro({
     weight: '400',
     subsets: ['latin'],
     display: 'swap',
@@ -13,3 +13,11 @@ export const OrbitFont: NextFont = Orbit({
     subsets: ['latin'],
     display: 'swap',
 })
+
+export const TitllFont: NextFont = Titillium_Web(
+    {
+        weight: '400',
+        subsets: ['latin'],
+        display: 'swap',
+    }
+)

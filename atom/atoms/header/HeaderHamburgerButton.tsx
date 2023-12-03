@@ -17,6 +17,7 @@ const HamburgerButtonStyle = styled.label<{}>`
 
   ${(props) => props.theme.media.mobile} {
     display: block;
+    right: 15px;
   }
   
 `

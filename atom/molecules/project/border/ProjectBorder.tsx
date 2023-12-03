@@ -5,10 +5,8 @@ import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTi
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
 import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
 import {initProjectTitleList} from "@/atom/molecules/project/border/ProjectTitleDescription";
-import SwiperLayout from "@/atom/molecules/project/border/border_swiper/SwiperLayout";
-import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/Content";
-import ContentLayout from "@/atom/molecules/project/border/border_swiper/ContentLayout";
 import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
+import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/InitSwiperContent";
 
 
 /**
@@ -45,6 +43,11 @@ export default function ProjectBorder() :React.JSX.Element {
         setChecked( () => result?.length > 0)
     }, [project]);
 
+    const projectPop = () => {
+        const copy = [...project];
+        return copy?.filter((value) => value.checked)?.pop()
+    }
+
     return (
         <ProjectBorderView>
             <ProjectTitleUlView>
@@ -56,10 +59,28 @@ export default function ProjectBorder() :React.JSX.Element {
                 }
             </ProjectTitleUlView>
             {
-                checked &&
-                <ProjectHighLightTitle project={project?.filter((value) => value.checked)?.pop()}/>
+                checked ?
+                <>
+                    <ProjectHighLightTitle project={projectPop()}/>
+                    <ProjectContentSwiper project={projectPop()}/>
+                </> :
+                <>
+                    <ProjectHighLightTitle project={{
+                        index: 7,
+                        title: 'ERSolution',
+                        checked: false,
+                        description: '2022.05.25 ~ 2023.08.31'
+                    }}/>
+                    <InitSwiperContent onCheckHandler={ () => projectCheckHandler(
+                        {
+                            index: 0,
+                            title: 'IDTHUB',
+                            checked: true,
+                            description: '2023.07.13 ~ 2023.08.31'
+                        })}/>
+                </>
             }
-            <ProjectContentSwiper />
+
         </ProjectBorderView>
     )
 }

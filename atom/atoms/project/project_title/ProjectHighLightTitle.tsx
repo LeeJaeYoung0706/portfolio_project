@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import {OrbitFont} from "@/style/font";
+import {OrbitFont, TitllFont} from "@/style/font";
 
 
 const ProjectHighLightStyle = styled.div`
@@ -30,11 +30,11 @@ const DescriptionStyle = styled.p`
 function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React.JSX.Element {
 
     if (project === undefined) {
-        return <ProjectHighLightStyle className={OrbitFont.className}>Project</ProjectHighLightStyle>;
+        return <ProjectHighLightStyle className={TitllFont.className}>Project</ProjectHighLightStyle>;
     }
 
     return (
-        <ProjectHighLightStyle className={OrbitFont.className}>
+        <ProjectHighLightStyle className={TitllFont.className}>
             <TitleStyle>{project?.title || ''}</TitleStyle>
             <DescriptionStyle>
                 {project?.description || ''}
