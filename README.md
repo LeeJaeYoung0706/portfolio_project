@@ -165,3 +165,7 @@ export default function ProjectBorderContent(): React.JSX.Element {
     )
 }
 ```
+
+버튼 클릭으로 넘기게 하고 모바일 화면에서만 터치를 인식하여 넘기도록 변경해서 커밋을 진행했다.
+
+
