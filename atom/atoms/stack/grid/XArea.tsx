@@ -4,7 +4,9 @@ import {displayFlex} from "@/style/theme/common";
 import {areaCommonCSS} from "@/atom/atoms/stack/grid/commonStyle";
 import {rightGridAnimation} from "@/style/animation";
 
-const XAreaStyle = styled.div<{ $stackVisible: boolean, $area: RuleSet<Object>, $ani_sec: string }>`
+const XAreaStyle = styled.div<{
+    $stackVisible: boolean, $area: RuleSet<Object>, $ani_sec: string,
+}>`
   ${props => props.$area};
   gap: 50px;
   ${displayFlex('row', 'center', 'center', 'flex', true)}
@@ -17,6 +19,7 @@ const XAreaStyle = styled.div<{ $stackVisible: boolean, $area: RuleSet<Object>, 
     width: 100%;
     min-width: 600px;
     ${displayFlex('column', 'center', 'center')}
+  
   }
 
   ${(props) => props.theme.media.mobile} {
@@ -25,9 +28,18 @@ const XAreaStyle = styled.div<{ $stackVisible: boolean, $area: RuleSet<Object>, 
     ${displayFlex('column', 'center', 'center')}
   }
 `
+
+/**
+ * X 축 그리드
+ * @param $stackVisible
+ * @param $area
+ * @param $ani_sec
+ * @param children
+ * @constructor
+ */
 function XArea({$stackVisible ,$area , $ani_sec , children}: XAreaInterface):React.JSX.Element {
     return (
-        <XAreaStyle $stackVisible={$stackVisible} $area={$area} $ani_sec={$ani_sec} >
+        <XAreaStyle $stackVisible={$stackVisible} $area={$area} $ani_sec={$ani_sec}>
             {children}
         </XAreaStyle>
     )

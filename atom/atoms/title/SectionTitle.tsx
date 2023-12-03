@@ -1,4 +1,4 @@
-import React, {ForwardedRef, useEffect, useRef, useState} from 'react'
+import React, {useEffect, useRef} from 'react'
 import SectionTitleView from "@/atom/atoms/title/SectionTitleView";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {useAppDispatch, useAppSelector} from "@/lib/redux/hooks";

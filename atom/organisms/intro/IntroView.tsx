@@ -5,7 +5,7 @@ import {color} from "@/style/theme/color";
 
 
 
-const IntroLayoutStyle = styled.div`
+const IntroLayoutStyle = styled.section`
   background-color: ${(props) => color.white};
 `
 

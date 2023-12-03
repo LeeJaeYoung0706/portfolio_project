@@ -1,36 +1,15 @@
 'use client'
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import ProjectBorderView from "@/atom/molecules/project/border/ProjectBorderView";
 import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTitleUlView";
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
+import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
+import {initProjectTitleList} from "@/atom/molecules/project/border/ProjectTitleDescription";
+import SwiperLayout from "@/atom/molecules/project/border/border_swiper/SwiperLayout";
+import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/Content";
+import ContentLayout from "@/atom/molecules/project/border/border_swiper/ContentLayout";
+import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
 
-
-const ProjectTitleList = [
-    {
-        title: 'IDTHUB',
-        checked: false
-    },
-    {
-        title: 'Chacarda',
-        checked: false
-    },
-    {
-        title: 'LucyMax',
-        checked: false
-    },
-    {
-        title: 'Bigaza',
-        checked: false
-    },
-    {
-        title: 'ERSolution',
-        checked: false
-    },
-    {
-        title: 'ToyProject',
-        checked: false
-    },
-]
 
 /**
  * Project Container
@@ -38,7 +17,7 @@ const ProjectTitleList = [
  */
 export default function ProjectBorder() :React.JSX.Element {
     // Project Title 선택시 Flex 효과로 범위 주기 위해서 생성
-    const [project , setProject] = useState<ProjectTitleListInterface[]>(ProjectTitleList);
+    const [project , setProject] = useState<ProjectTitleListInterface[]>(initProjectTitleList);
     // project state 넘기는 핸들러
     const projectCheckHandler = useCallback( (check: ProjectTitleListInterface) => {
         setProject( (pre) => {
@@ -46,18 +25,25 @@ export default function ProjectBorder() :React.JSX.Element {
             return copy.map( (value) => {
                 if (value.title === check.title)
                     return {
-                        title: value.title,
-                        checked: check.checked
+                        ...value,
+                        checked: check.checked,
                     }
                 else
                     return {
-                        title: value.title,
+                        ...value,
                         checked: false
                     }
             })
         })
 
     } , [project])
+
+    // Title Select
+    const [checked , setChecked] = useState(false);
+    useEffect(() => {
+        const result = project?.filter( (value) => value.checked);
+        setChecked( () => result?.length > 0)
+    }, [project]);
 
     return (
         <ProjectBorderView>
@@ -69,6 +55,11 @@ export default function ProjectBorder() :React.JSX.Element {
                     })
                 }
             </ProjectTitleUlView>
+            {
+                checked &&
+                <ProjectHighLightTitle project={project?.filter((value) => value.checked)?.pop()}/>
+            }
+            <ProjectContentSwiper />
         </ProjectBorderView>
     )
 }

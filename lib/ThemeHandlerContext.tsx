@@ -13,7 +13,7 @@ interface ThemeHandlerInterface {
 }
 
 const ThemeHandlerContext : ThemeHandlerInterface = {
-    theme: purple,
+    theme: green,
     themeHandler: () => {}
 }
 

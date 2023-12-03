@@ -1,29 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-interface VisibleInterface {
-    visible: boolean
+interface VisibilityConfig {
+    visible: boolean;
 }
 
 interface StateInterface {
-    [key: string]: VisibleInterface
+    about_me: VisibilityConfig;
+    stack: VisibilityConfig;
+    project: VisibilityConfig;
 }
 /**
  * Scroll Visible Check
  */
-
 const initialState: StateInterface = {
     about_me: {
         visible: false,
     },
     stack: {
-        visible: false,
+        visible: false
     },
     project: {
         visible: false,
     },
 };
 
+/**
+ * 타이틀 인식 시 공통으로 사용하려고 생성
+ */
 const targetVisibleSlice = createSlice({
     name: "targetVisible",
     initialState,

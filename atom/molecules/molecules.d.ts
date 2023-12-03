@@ -1,3 +1,4 @@
+
 interface HeaderPcMenuInterface extends ComponentPropsInterface {
     children: React.ReactNode
     $isTop: boolean
@@ -31,4 +32,9 @@ interface StackLogoInterface {
     src: string,
     alt: string,
     text: string
+}
+
+interface ProjectBorderContentViewPropsInterface extends ComponentPropsInterface{
+    children: React.ReactNode,
+    projectIndex: number
 }

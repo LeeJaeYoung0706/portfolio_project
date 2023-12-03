@@ -1,7 +1,8 @@
 'use client'
-import React from "react";
-import styled, {keyframes} from "styled-components";
+import React, {useEffect, useState} from "react";
+import styled, {css, keyframes} from "styled-components";
 import {OrbitFont} from "@/style/font";
+import {useAppSelector} from "@/lib/redux/hooks";
 
 /**
  * 전체 에니메이션
@@ -35,12 +36,12 @@ const lineAnimation = keyframes`
   }
 `
 
-const IntroContentStyle = styled.div`
+const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   width: 100%;
   text-align: center;
   margin-bottom: 70px;
   padding: 20px;
-  animation: ${contentAnimation} 2s linear normal;
+  ${props => props.$contentVisible ? css`animation: ${contentAnimation} 2s linear normal; opacity: 1` : css`opacity: 0`}
 `
 const IntroDefaultPStyle = styled.p`
   font-size: 2rem;
@@ -92,8 +93,20 @@ const StrongPStyle = styled.span`
   }
 `
 function IntroContentView():React.JSX.Element {
+
+    // Target 요소 관찰
+    const {about_me} = useAppSelector((state) => state.targetSlice);
+    const [contentVisible, setContentVisible] = useState(false);
+
+    useEffect(() => {
+        if (!contentVisible && about_me !== undefined) {
+            setContentVisible(() => about_me.visible)
+        }
+    }, [about_me]);
+
+
     return (
-        <IntroContentStyle>
+        <IntroContentStyle $contentVisible={contentVisible}>
             <IntroDefaultPStyle className={OrbitFont.className}><StrongPStyle>개발자로서</StrongPStyle>,</IntroDefaultPStyle>
             <IntroDefaultPStyle className={OrbitFont.className}>사용자에게 편안한 경험을 제공하는 것도 중요하지만,</IntroDefaultPStyle>
             <IntroDefaultPStyle className={OrbitFont.className}><StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>하고 싶습니다.</IntroDefaultPStyle>

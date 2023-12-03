@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {color} from "@/style/theme/color";
 
 
-const ProjectViewStyle = styled.div`
+const ProjectViewStyle = styled.section`
   background-color: ${color.white};
 `
 

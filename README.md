@@ -86,4 +86,82 @@ isTop => 라이브러리 사용
 Redux , jotai 중에 고민하다가 좀 무거워도 대중적으로 사용되는 Redux 를 사용했습니다. persist 를 이용한 새로고침 방지는 필요 없을 것 같아서 제공하지 않았습니다.
 
 
+### 5. 슬라이드 이슈
 
+음.. Styled component 에서 클래스를 너무 많이 만든다고 경고창이 나타난다. 슬라이드 방식으로 마우스 클릭으로 넘기도록 하고싶었는데 
+
+```javascript
+
+'use client'
+import React, {useMemo, useRef, useState} from "react";
+import ProjectBorderContentView from "@/atom/molecules/project/border/ProjectBorderContentView";
+import styled, {css, RuleSet} from "styled-components";
+
+const Test = styled.div<{$style: any}>`
+  ${props => {
+      return `
+        transform: translateX(${props.$style}px);
+      `
+  }};
+  flex: 0 0 100%;
+  height: 100%;
+  background-color: #ccc;
+`
+
+export default function ProjectBorderContent(): React.JSX.Element {
+
+    const [isDragging, setIsDragging] = useState(false);
+    const [startPosition, setStartPosition] = useState(0);
+    const [currentTranslate, setCurrentTranslate] = useState(0);
+    const [endPosition , setEndPosition] = useState(0);
+    const testRef = useRef<HTMLDivElement>(null);
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        setIsDragging(true);
+        setStartPosition(e.clientX - currentTranslate);
+    };
+
+    const handleMouseUp = (e: React.MouseEvent) => {
+        setEndPosition(e.clientX - currentTranslate)
+
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = (e: React.MouseEvent) => {
+        setEndPosition(e.clientX - currentTranslate)
+        setIsDragging(false);
+    };
+    // const cal = useMemo( () => Math.abs(startPosition) - Math.abs(endPosition) , []);
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (isDragging) {
+            const currentPosition = e.clientX;
+            const translate = currentPosition - startPosition;
+            const cal = Math.abs(startPosition) - Math.abs(endPosition);
+            console.log(Math.abs(startPosition) - Math.abs(endPosition));
+            const width = testRef.current?.offsetWidth || 0;
+            if (translate > width) {
+                setCurrentTranslate(width);
+            } else if ((width * -1) > translate) {
+                setCurrentTranslate(width  * -1);
+            } else {
+                setCurrentTranslate(translate);
+            }
+        }
+    };
+
+
+    return (
+        <ProjectBorderContentView
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseMove}
+            ref={testRef}
+        >
+            <Test $style={currentTranslate}>ㅅㄷㄴㅅㅁㄴㅇㄻㅇㄻㄴㅇㄻㄴ</Test>
+            <Test $style={currentTranslate}>asdfasdfasdfs</Test>
+            <Test $style={currentTranslate}>asdfasdfasdfs</Test>
+        </ProjectBorderContentView>
+    )
+}
+```

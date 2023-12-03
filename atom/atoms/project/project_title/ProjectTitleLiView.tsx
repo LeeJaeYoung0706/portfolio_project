@@ -8,10 +8,10 @@ import {displayFlex} from "@/style/theme/common";
 
 const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   ${ props => props.$checked ? 
-          css` flex: 3; color: ${props.theme.palette.reverseSecond}; font-size: 2.5rem;` 
-          : css` flex: 1; color: ${props.theme.palette.primary}; font-size: 1.8em;`}
+          css`flex: 1; color: ${props.theme.palette.reverseSecond};` 
+          : css` flex: 1; color: ${props.theme.palette.primary};`}
   text-align: center;
-  
+  font-size: 1.8em;
   cursor: pointer;
   padding-top: 30px;
   
@@ -37,6 +37,8 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
     color: ${(props) => props.theme.palette.reverseSecond};
   }
 `
+
+
 /**
  * Project Title View
  * @param children

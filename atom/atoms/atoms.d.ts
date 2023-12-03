@@ -65,4 +65,9 @@ interface ProjectTitleLiInterface {
 interface ProjectTitleListInterface {
     title: string,
     checked: boolean
+    description: string
+}
+
+interface ProjectHighLightTitleInterface {
+    project: ProjectTitleListInterface | undefined
 }

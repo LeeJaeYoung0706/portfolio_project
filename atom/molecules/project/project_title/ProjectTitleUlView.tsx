@@ -1,22 +1,26 @@
-import React from "react";
-import styled from "styled-components";
+import React, {useEffect, useState} from "react";
+import styled, {css} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
+//${props => props.$checked ? displayFlex('row' , 'center' , 'center' , 'flex' , true) : displayFlex('row' , 'center' , 'center')};
 
 const ProjectTitleViewStyle = styled.ul`
   list-style: none;
   padding: 0;
-  margin: 0;
-  ${displayFlex('row' , 'center' , 'center')}
+  min-height: 120px;
+  margin-bottom: 1em;
   
+  ${displayFlex('row' , 'center' , 'center')};
   & li:last-child {
     border-right: none;
   }
   ${(props) => props.theme.media.tablet} {
-    ${displayFlex('row' , 'flex-start' , 'center' , 'flex' , true)}
+    min-height: 230px;
+    ${displayFlex('row' , 'space-between' , 'center' , 'flex' , true)}
   }
 
   ${(props) => props.theme.media.mobile} {
+    min-height: 230px;
     ${displayFlex('row' , 'space-between' , 'center' , 'flex' , true)}
   }
 `
@@ -27,6 +31,7 @@ const ProjectTitleViewStyle = styled.ul`
  * @constructor
  */
 function ProjectTitleUlView({children} : ProjectTitleViewInterface):React.JSX.Element {
+
     return (
         <ProjectTitleViewStyle>
             {children}

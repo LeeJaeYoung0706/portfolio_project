@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     //--purple-reverse: hsl(31, 50%, 58%);
 
     --purple-primary: hsl(231, 54%, 30%);
-    --purple-second: hsl(249, 45%, 22%);
+    --purple-second: hsl(342, 49%, 9%);
     --purple-middle: hsl(29, 71%, 83%);
     --purple-reverse-second: hsl(197, 83%, 71%);
     --purple-reverse: hsl(208, 37%, 60%);

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {color} from "@/style/theme/color";
 
-const StackViewStyle = styled.div`
+const StackViewStyle = styled.section`
   background-color: ${(props) => color.white};
 `
 
