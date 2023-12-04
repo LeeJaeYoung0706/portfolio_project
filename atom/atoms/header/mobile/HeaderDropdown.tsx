@@ -1,9 +1,7 @@
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
-import {OrbitFont} from "@/style/font";
+import {NGodicFont} from "@/style/font";
 import styled from "styled-components";
-import Link from "next/link";
-import {color} from "@/style/theme/color";
-import DropdownLink from "@/atom/atoms/header/DropdownLink";
+import DropdownLink from "@/atom/atoms/header/mobile/DropdownLink";
 
 const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   text-decoration: none;
@@ -40,25 +38,25 @@ export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterfa
         {
             route: '#intro',
             checked: checked,
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             text: 'Intro'
         },
         {
             route: '#about_me',
             checked: checked,
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             text: 'About'
         },
         {
             route: '#stack',
             checked: checked,
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             text: 'Stack'
         },
         {
             route: '',
             checked: checked,
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             text: 'Theme',
             themeHandler: themeHandler
         }

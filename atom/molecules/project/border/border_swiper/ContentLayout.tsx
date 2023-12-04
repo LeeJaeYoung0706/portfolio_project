@@ -11,8 +11,9 @@ interface ProjectContentTransformLayoutInterface extends ComponentPropsInterface
 
 const ContentTransformLayoutStyle = styled.div<{$transform: RuleSet<Object>}>`
   width: 100%;
-  border: 1px solid #d5132c;
   display: flex;
+  height: 100%;
+  position: absolute;
   ${props => props.$transform};
 `
 

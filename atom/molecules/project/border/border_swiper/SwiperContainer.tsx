@@ -1,43 +1,49 @@
 import SwiperLayout from "@/atom/molecules/project/border/border_swiper/SwiperLayout";
 import ContentTransformLayout from "@/atom/molecules/project/border/border_swiper/ContentLayout";
-import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/Content";
-import React, {useCallback, useRef, useState} from "react";
+import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/content/Content";
+import React, {useCallback, useEffect, useRef, useState} from "react";
 import ContentChangeButton from "@/atom/atoms/project/border/ContentChangeButton";
 import {css} from "styled-components";
+import IntroContent from "@/atom/molecules/project/border/border_swiper/content/IntroContent";
 
 interface ProjectContentSwiper {
-    project: ProjectTitleListInterface | undefined
+    project: ProjectInterface | undefined
 }
 
 export default function ProjectContentSwiper ({project} : ProjectContentSwiper) {
 
     const ref = useRef<HTMLDivElement>(null)
-    const testArray = [
-        'test1' , 'test2' , 'test3'
-    ]
+    const arrayLength = 3;
     const projectInitState = {
         index: 0,
         $transform: css`transform: translate(0)`
     }
 
-    const [projectIndex, setProjectIndex] = useState(projectInitState);
+    const [selectProject, setSelectProject] = useState(projectInitState);
     const [touch, setTouch] = useState({
         start: 0,
         end: 0,
     });
 
+    //초기화
+    useEffect(() => {
+        setSelectProject(() => projectInitState)
+    }, [project]);
+    /**
+     * 옆으로 버튼 handler
+     */
     const projectIndexHandler = useCallback( (plus: boolean) => {
         if (plus) {
-            setProjectIndex( (pre) => {
+            setSelectProject( (pre) => {
                 const cal = pre?.index + 1;
-                const result = cal >= testArray?.length ? testArray?.length - 1 : cal;
+                const result = cal >= arrayLength ? arrayLength - 1 : cal;
                 return {
                     index: result,
                     $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%` })`
                 }
             })
         } else {
-            setProjectIndex( (pre) => {
+            setSelectProject( (pre) => {
                 const cal = pre.index - 1;
                 const result = cal <= 0 ? 0 : cal;
                 return{
@@ -46,9 +52,12 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
                 }
             })
         }
-    }, [projectIndex])
+    }, [selectProject])
 
 
+    /**
+     * Mobile 부분 Slide Handler
+     */
     const touchStart = useCallback( (e: React.TouchEvent) => {
         setTouch({
             ...touch,
@@ -58,9 +67,9 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
 
     const touchMove = useCallback( (e: React.TouchEvent) => {
         if (ref?.current) {
-            const current = ref.current.clientWidth * projectIndex.index;
+            const current = ref.current.clientWidth * selectProject.index;
             const result = -current + (e.targetTouches[0].pageX - touch.start);
-            setProjectIndex( (pre) => {
+            setSelectProject( (pre) => {
                 return{
                     ...pre,
                     $transform: css`transform: translate3d(${result === 0 ? 0 : `${result}px , 0px ,0px`  }); transition: 0ms;`
@@ -93,14 +102,14 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
                 position={'forward'}
             />
             <ContentTransformLayout
-                projectIndex={projectIndex}
+                projectIndex={selectProject}
                 ref={ref}
                 touchMove={touchMove}
                 touchEnd={touchEnd}
                 touchStart={touchStart}
             >
                 <ProjectBorderContent>
-                    test1
+                    <IntroContent project={project}/>
                 </ProjectBorderContent>
                 <ProjectBorderContent>
                     test2

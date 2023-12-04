@@ -1,4 +1,5 @@
 
+
 interface HeaderPcMenuInterface extends ComponentPropsInterface {
     children: React.ReactNode
     $isTop: boolean
@@ -7,6 +8,7 @@ interface HeaderPcMenuInterface extends ComponentPropsInterface {
 interface MobileMenuPropsInterface extends ComponentPropsInterface {
     children: React.ReactNode[]
 }
+
 
 interface AboutMeIdCardListViewInterface {
     children: React.ReactNode

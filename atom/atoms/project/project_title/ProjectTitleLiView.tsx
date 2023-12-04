@@ -14,7 +14,7 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   font-size: 2.5em;
   cursor: pointer;
   padding-top: 30px;
-  
+  z-index: 302;
   ${(props) => props.theme.media.tablet} {
     flex: none;
     width: 30%;
@@ -48,7 +48,10 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
  */
 function ProjectTitleLiView ({title  , checked , liOnClick }: ProjectTitleLiViewInterface) : React.JSX.Element {
     return (
-        <ProjectTitleLiStyle id={`${title}_project`} $checked={checked} onClick={liOnClick}>
+        <ProjectTitleLiStyle
+            id={`${title}_project`}
+            $checked={checked}
+            onClick={liOnClick}>
             <p className={TitllFont.className}>{title}</p>
         </ProjectTitleLiStyle>
     )

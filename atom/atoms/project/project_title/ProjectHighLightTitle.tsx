@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import {OrbitFont, TitllFont} from "@/style/font";
+import {TitllFont} from "@/style/font";
 
 
 const ProjectHighLightStyle = styled.div`
@@ -23,10 +23,15 @@ const TitleStyle = styled.h1`
   }
 `
 
-const DescriptionStyle = styled.p`
+const PeriodStyle = styled.p`
   color: ${props => props.theme.palette.primary};
 `
 
+/**
+ * 프로젝트 선택 시 강조
+ * @param project
+ * @constructor
+ */
 function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React.JSX.Element {
 
     if (project === undefined) {
@@ -36,9 +41,9 @@ function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React
     return (
         <ProjectHighLightStyle className={TitllFont.className}>
             <TitleStyle>{project?.title || ''}</TitleStyle>
-            <DescriptionStyle>
-                {project?.description || ''}
-            </DescriptionStyle>
+            <PeriodStyle>
+                {project?.period || ''}
+            </PeriodStyle>
         </ProjectHighLightStyle>
     )
 }

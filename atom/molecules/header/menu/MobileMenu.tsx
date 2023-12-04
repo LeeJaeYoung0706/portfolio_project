@@ -1,6 +1,6 @@
 import React from 'react';
-import HeaderHamburgerButton from "@/atom/atoms/header/HeaderHamburgerButton";
-import HeaderDropdown from "@/atom/atoms/header/HeaderDropdown";
+import HeaderHamburgerButton from "@/atom/atoms/header/mobile/HeaderHamburgerButton";
+import HeaderDropdown from "@/atom/atoms/header/mobile/HeaderDropdown";
 import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/MobileMenuView";
 
 /**
@@ -10,9 +10,7 @@ import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/Mobi
  * @constructor
  */
 
-export default function MobileMenu({checked , checkHandler} : MobileMenuInterface ): React.JSX.Element {
-
-
+export default function MobileMenu({checked, checkHandler}: MobileMenuInterface): React.JSX.Element {
     return (
         <>
             {

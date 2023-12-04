@@ -4,9 +4,12 @@ import ProjectBorderView from "@/atom/molecules/project/border/ProjectBorderView
 import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTitleUlView";
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
 import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
-import {initProjectTitleList} from "@/atom/molecules/project/border/ProjectTitleDescription";
+import {initProjectList} from "@/atom/molecules/project/border/ProjectTitleDescription";
 import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
 import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/InitSwiperContent";
+
+
+
 
 
 /**
@@ -15,16 +18,16 @@ import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/Ini
  */
 export default function ProjectBorder() :React.JSX.Element {
     // Project Title 선택시 Flex 효과로 범위 주기 위해서 생성
-    const [project , setProject] = useState<ProjectTitleListInterface[]>(initProjectTitleList);
+    const [project , setProject] = useState<ProjectInterface[]>(initProjectList);
     // project state 넘기는 핸들러
-    const projectCheckHandler = useCallback( (check: ProjectTitleListInterface) => {
+    const projectCheckHandler = useCallback( (project: ProjectInterface) => {
         setProject( (pre) => {
             const copy = [...pre];
             return copy.map( (value) => {
-                if (value.title === check.title)
+                if (value.title === project.title)
                     return {
                         ...value,
-                        checked: check.checked,
+                        checked: project.checked,
                     }
                 else
                     return {
@@ -43,9 +46,10 @@ export default function ProjectBorder() :React.JSX.Element {
         setChecked( () => result?.length > 0)
     }, [project]);
 
-    const projectPop = () => {
+    // Check 시 list 에서 pop
+    const selectProject = () => {
         const copy = [...project];
-        return copy?.filter((value) => value.checked)?.pop()
+        return copy?.filter((project) => project.checked)?.pop()
     }
 
     return (
@@ -61,22 +65,22 @@ export default function ProjectBorder() :React.JSX.Element {
             {
                 checked ?
                 <>
-                    <ProjectHighLightTitle project={projectPop()}/>
-                    <ProjectContentSwiper project={projectPop()}/>
+                    <ProjectHighLightTitle project={selectProject()}/>
+                    <ProjectContentSwiper project={selectProject()}/>
                 </> :
                 <>
                     <ProjectHighLightTitle project={{
-                        index: 7,
-                        title: 'ERSolution',
+                        index: -1,
+                        title: 'Working for a ERSolution',
                         checked: false,
-                        description: '2022.05.25 ~ 2023.08.31'
+                        period: '2022.05.25 ~ 2023.08.31'
                     }}/>
                     <InitSwiperContent onCheckHandler={ () => projectCheckHandler(
                         {
                             index: 0,
                             title: 'IDTHUB',
                             checked: true,
-                            description: '2023.07.13 ~ 2023.08.31'
+                            period: '2023.07.13 ~ 2023.08.31'
                         })}/>
                 </>
             }

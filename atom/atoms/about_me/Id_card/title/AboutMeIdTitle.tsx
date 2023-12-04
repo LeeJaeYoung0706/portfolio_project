@@ -1,7 +1,7 @@
 import React from "react";
-import AboutMeIdTitleView from "@/atom/atoms/about_me/Id_card/AboutMeIdTitleView";
-import AboutMeIdTitleImage from "@/atom/atoms/about_me/Id_card/AboutMeIdTitleImage";
-import AboutMeIdCardTitle from "@/atom/atoms/about_me/Id_card/AboutMeIdCardTitle";
+import AboutMeIdTitleView from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitleView";
+import AboutMeIdTitleImage from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitleImage";
+import AboutMeIdCardTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdCardTitle";
 
 /**
  * AboutMe Id Title

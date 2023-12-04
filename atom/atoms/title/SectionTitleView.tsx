@@ -28,13 +28,13 @@ const SectionTitleText = styled.h1`
 /**
  * Section 마다 존재하는 Title View
  */
-const SectionTitleView = React.forwardRef(({title , id } : SectionTitlePropsInterface , ref: React.ForwardedRef<HTMLDivElement>):React.JSX.Element => {
+function SectionTitleView ({title , id } : SectionTitlePropsInterface):React.JSX.Element  {
 
     return (
-        <SectionTitleStyle id={id} ref={ref}>
+        <SectionTitleStyle id={id}>
             <SectionTitleText className={TitllFont.className}>{title}</SectionTitleText>
         </SectionTitleStyle>
     )
-})
+}
 
 export default React.memo(SectionTitleView)

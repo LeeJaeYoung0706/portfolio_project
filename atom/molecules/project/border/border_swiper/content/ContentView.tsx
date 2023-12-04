@@ -1,12 +1,13 @@
-import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/Content";
+import ProjectBorderContent from "@/atom/molecules/project/border/border_swiper/content/Content";
 import React from "react";
 import styled from "styled-components";
 
 
 const BorderContentStyle = styled.div`
-  background-color: blueviolet;
-  min-height: 500px;
+  min-height: 100%;
   min-width: 100%;
+  padding: 70px;
+  box-sizing: border-box;
 `
 
 function ProjectBorderContentSwiperView ({children} : ComponentPropsInterface) : React.JSX.Element {

@@ -1,8 +1,9 @@
 'use client'
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styled, {css, keyframes} from "styled-components";
-import {OrbitFont} from "@/style/font";
+import {NGodicFont, OrbitFont} from "@/style/font";
 import {useAppSelector} from "@/lib/redux/hooks";
+import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 
 /**
  * 전체 에니메이션
@@ -92,26 +93,30 @@ const StrongPStyle = styled.span`
     line-height: 1.1;
   }
 `
-function IntroContentView():React.JSX.Element {
+
+/**
+ * AboutMe 한 마디 섹션
+ * @constructor
+ */
+function AboutMeIntroContent():React.JSX.Element {
 
     // Target 요소 관찰
-    const {about_me} = useAppSelector((state) => state.targetSlice);
-    const [contentVisible, setContentVisible] = useState(false);
-
-    useEffect(() => {
-        if (!contentVisible && about_me !== undefined) {
-            setContentVisible(() => about_me.visible)
-        }
-    }, [about_me]);
-
+    //visible 체크를 위한 ref
+    const ref = useRef<HTMLDivElement | null>(null)
+    const [entry, targetId, visible] = useIntersectionObserver(ref,  {
+        threshold: 0.01, // 노출 %
+        root: null,
+        rootMargin: '0%',
+        freezeOnceVisible: false,
+    })
 
     return (
-        <IntroContentStyle $contentVisible={contentVisible}>
-            <IntroDefaultPStyle className={OrbitFont.className}><StrongPStyle>개발자로서</StrongPStyle>,</IntroDefaultPStyle>
-            <IntroDefaultPStyle className={OrbitFont.className}>사용자에게 편안한 경험을 제공하는 것도 중요하지만,</IntroDefaultPStyle>
-            <IntroDefaultPStyle className={OrbitFont.className}><StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>하고 싶습니다.</IntroDefaultPStyle>
+        <IntroContentStyle $contentVisible={visible} ref={ref}>
+            <IntroDefaultPStyle className={NGodicFont.className}><StrongPStyle>개발자로서</StrongPStyle>,</IntroDefaultPStyle>
+            <IntroDefaultPStyle className={NGodicFont.className}>사용자에게 편안한 경험을 제공하는 것도 중요하지만,</IntroDefaultPStyle>
+            <IntroDefaultPStyle className={NGodicFont.className}><StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>하고 싶습니다.</IntroDefaultPStyle>
         </IntroContentStyle>
     )
 }
 
-export default React.memo(IntroContentView)
+export default React.memo(AboutMeIntroContent);

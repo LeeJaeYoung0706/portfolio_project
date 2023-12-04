@@ -7,11 +7,11 @@ const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   background-color: ${(props) => props.theme.palette.middle};
   border: 1px solid ${(props) => props.theme.palette.middle};
   display: block;
-
+  
   text-align: center;
   padding: 11px;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   &:active {
     color: ${(props) => props.theme.palette.primary};
   }

@@ -1,5 +1,11 @@
 import ProjectTitleLiView from "@/atom/atoms/project/project_title/ProjectTitleLiView";
-import React, {useCallback, useEffect, useState} from "react";
+import React from "react";
+
+
+interface ProjectTitleLiInterface {
+    project: ProjectInterface
+    projectCheckHandler: (check: ProjectTitleListInterface) => void
+}
 
 /**
  * Project Title Li Container
@@ -9,6 +15,10 @@ import React, {useCallback, useEffect, useState} from "react";
 export default function ProjectTitleLi({project , projectCheckHandler} : ProjectTitleLiInterface):React.JSX.Element{
 
     return (
-        <ProjectTitleLiView title={project.title}  checked={project.checked} liOnClick={() => projectCheckHandler({index: project.index , title: project.title , checked: !project.checked , description: project?.description})}/>
+        <ProjectTitleLiView
+            title={project.title}
+            checked={project.checked}
+            liOnClick={() => projectCheckHandler({...project , checked: !project.checked})}
+        />
     )
 }

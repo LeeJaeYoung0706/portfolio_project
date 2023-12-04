@@ -1,3 +1,5 @@
+
+
 interface LogoPropsInterface {
     logoText: string
     logoFont?: string
@@ -58,18 +60,15 @@ interface ProjectTitleLiViewInterface {
     liOnClick: () => void
 }
 
-interface ProjectTitleLiInterface {
-    project: ProjectTitleListInterface
-    projectCheckHandler: (check: ProjectTitleListInterface) => void
+
+
+interface ProjectHighLightTitleInterface {
+    project: ProjectInterface | undefined
 }
 
-interface ProjectTitleListInterface {
+interface ProjectInterface {
     index: number,
     title: string,
     checked: boolean
-    description: string
-}
-
-interface ProjectHighLightTitleInterface {
-    project: ProjectTitleListInterface | undefined
+    period: string
 }

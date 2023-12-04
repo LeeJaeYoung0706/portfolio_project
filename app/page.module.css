@@ -1,7 +1,7 @@
 /*.main {*/
 /*  display: flex;*/
 /*  flex-direction: column;*/
-/*  justify-content: space-between;*/
+/*  justify-title: space-between;*/
 /*  align-items: center;*/
 /*  padding: 6rem;*/
 /*  min-height: 100vh;*/
@@ -9,7 +9,7 @@
 
 /*.description {*/
 /*  display: inherit;*/
-/*  justify-content: inherit;*/
+/*  justify-title: inherit;*/
 /*  align-items: inherit;*/
 /*  font-size: 0.85rem;*/
 /*  max-width: var(--max-width);*/
@@ -20,7 +20,7 @@
 
 /*.description a {*/
 /*  display: flex;*/
-/*  justify-content: center;*/
+/*  justify-title: center;*/
 /*  align-items: center;*/
 /*  gap: 0.5rem;*/
 /*}*/
@@ -74,7 +74,7 @@
 
 /*.center {*/
 /*  display: flex;*/
-/*  justify-content: center;*/
+/*  justify-title: center;*/
 /*  align-items: center;*/
 /*  position: relative;*/
 /*  padding: 4rem 0;*/
@@ -97,7 +97,7 @@
 
 /*.center::before,*/
 /*.center::after {*/
-/*  content: '';*/
+/*  title: '';*/
 /*  left: 50%;*/
 /*  position: absolute;*/
 /*  filter: blur(45px);*/
@@ -127,7 +127,7 @@
 
 /*!* Mobile *!*/
 /*@media (max-width: 700px) {*/
-/*  .content {*/
+/*  .title {*/
 /*    padding: 4rem;*/
 /*  }*/
 
@@ -166,7 +166,7 @@
 /*  .description p,*/
 /*  .description div {*/
 /*    display: flex;*/
-/*    justify-content: center;*/
+/*    justify-title: center;*/
 /*    position: fixed;*/
 /*    width: 100%;*/
 /*  }*/

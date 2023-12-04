@@ -1,9 +1,9 @@
-import ProjectBorderContentSwiperView from "@/atom/molecules/project/border/border_swiper/ContentView";
+import ProjectBorderContentSwiperView from "@/atom/molecules/project/border/border_swiper/content/ContentView";
 
 
 export default function ProjectBorderContent({children} :ComponentPropsInterface) {
     return (
-        <ProjectBorderContentSwiperView  >
+        <ProjectBorderContentSwiperView>
             {children}
         </ProjectBorderContentSwiperView>
     )

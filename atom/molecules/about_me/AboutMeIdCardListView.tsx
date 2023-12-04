@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-const AboutMeIdCardListViewStyle = styled.div`
+const AboutMeIdCardListViewStyle = styled.article`
   width: 100%;
   line-height: 1;
   padding-bottom: 60px;

@@ -12,52 +12,8 @@ export default function SectionTitle({title, id}: SectionTitlePropsInterface): R
     //visible 체크를 위한 ref
     const ref = useRef<HTMLDivElement | null>(null)
     const [entry, targetId, visible] = useIntersectionObserver(ref, {})
-    const dispatch = useAppDispatch();
-
-    /**
-     * Scroll Visible Check
-     */
-    useEffect(() => {
-        if (targetId !== undefined) {
-            switch (targetId) {
-                case "about_me": {
-                    dispatch(
-                        setAboutVisible(
-                            {
-                                visible: visible
-                            }
-                        )
-                    );
-                    break;
-                }
-                case "stack": {
-                    dispatch(
-                        setStackVisible(
-                            {
-                                visible: visible
-                            }
-                        )
-                    );
-                    break;
-                }
-                case "project": {
-                    dispatch(
-                        setProjectVisible(
-                            {
-                                visible: visible
-                            }
-                        )
-                    );
-                    break;
-                }
-                default:
-                    break;
-            }
-        }
-    }, [entry]);
-
 
     return (
-        <SectionTitleView title={title} id={id} ref={ref}/>
+        <SectionTitleView title={title} id={id} />
     )
 }

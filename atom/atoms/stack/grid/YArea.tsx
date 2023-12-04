@@ -29,7 +29,12 @@ const YAreaStyle = styled.div<{ $stackVisible: boolean }>`
   }
 `
 
-
+/**
+ * Y축 그리드
+ * @param $stackVisible
+ * @param children
+ * @constructor
+ */
 function YArea({$stackVisible , children} : YAreaInterface) {
 
 

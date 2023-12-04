@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
-import {kdamThmorPro, OrbitFont} from "@/style/font";
+import {kdamThmorPro, NGodicFont, OrbitFont} from "@/style/font";
 import Image from "next/image";
 import Button from "@/atom/atoms/Button";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
@@ -14,35 +14,17 @@ const InitSwiperContentStyle = styled.div`
   position: relative;
   min-width: 1185px;
   padding: 3vw;
-  min-height: 600px;
+  min-height: 800px;
   ${displayFlex('column' , 'center' , 'center')};
-
-  //
-  //
+  
   ${(props) => props.theme.media.tablet} {
     width: 100%;
     min-width: 600px;
   }
-
-  //
+  
   ${(props) => props.theme.media.mobile} {
     width: 100%;
     min-width: 470px;
-  }
-`
-
-const TextPAnimation = keyframes`
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  38% {
-    transform: translate3d(0, -2rem, 0);
-  }
-  69% {
-    transform: translate3d(0, -4rem, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
   }
 `
 
@@ -157,7 +139,7 @@ function InitSwiperContent({onCheckHandler} : {onCheckHandler: () => void}): Rea
                 <TextStyle $content={'t'}  $visible={visible}>T</TextStyle>
             </TextFlexStyle>
             <FiveSecondContentStyle>
-                <Button content={'최근 프로젝트 정보'} onClick={onCheckHandler} font={OrbitFont.className} $type={''} />
+                <Button content={'최근 프로젝트 정보'} onClick={onCheckHandler} font={NGodicFont.className} $type={''} />
             </FiveSecondContentStyle>
         </InitSwiperContentStyle>
     )

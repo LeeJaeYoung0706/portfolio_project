@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderPcMenuView from "@/atom/molecules/header/menu/PcMenuView";
 import Button from "@/atom/atoms/Button";
 import {useRouter} from "next/navigation";
-import {OrbitFont} from "@/style/font";
+import {NGodicFont} from "@/style/font";
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
@@ -23,25 +23,25 @@ export default function HeaderPcMenu(): React.JSX.Element {
         {
             content: 'Intro',
             onClick: () => router.push('#intro'),
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             $type: 'header'
         },
         {
             content: 'About',
             onClick: () => router.push('#about_me'),
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             $type: 'header'
         },
         {
             content: 'Stack',
             onClick: () => router.push('#stack'),
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             $type: 'header'
         },
         {
             content: 'Theme',
             onClick: themeHandler,
-            font: OrbitFont.className,
+            font: NGodicFont.className,
             $type: 'header'
         },
     ]

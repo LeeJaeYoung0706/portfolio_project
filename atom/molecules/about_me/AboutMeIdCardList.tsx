@@ -1,7 +1,7 @@
 import AboutMeIdCardListView from "@/atom/molecules/about_me/AboutMeIdCardListView";
 import React from "react";
 import AboutMeIdCard from "@/atom/atoms/about_me/Id_card/AboutMeIdCard";
-import IntroContentView from "@/atom/atoms/about_me/ introduction/IntroContentView";
+import IntroContentView from "@/atom/atoms/about_me/introduction/AboutMeIntroContent";
 
 /**
  *
