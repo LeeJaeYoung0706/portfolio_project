@@ -174,3 +174,9 @@ export default function ProjectBorderContent(): React.JSX.Element {
 ---
 export 로 스타일 컴포넌트만 리턴 하는 방향과 고민중입니당.
 두가지다 구현해보고 React.memo로 감싸지는지 등을 내일 테스트 하겠습니다. 
+
+
+### 7. 디자인 이슈
+
+---
+혼자 하다보니까 디자인이 마음에 들지는 않는데 어떠한 방향으로 디자인 해야할 지 감이 안잡힌다 어느 효과를 넣어야 맞을 지.. 
