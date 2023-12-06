@@ -6,7 +6,7 @@ const AboutMeIdCardTitleStyle = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 20px;
-  min-width: 120px;
+  min-width: 70px;
 `
 
 /**

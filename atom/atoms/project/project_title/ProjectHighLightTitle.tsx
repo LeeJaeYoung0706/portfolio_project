@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import React from "react";
 import {TitllFont} from "@/style/font";
+import ProjectLinkTag from "@/atom/atoms/project/project_title/ProjectLinkTag";
+import {displayFlex} from "@/style/theme/common";
 
 
 const ProjectHighLightStyle = styled.div`
   width: 100%;
   padding: 30px;
   text-align: center;
+  ${displayFlex('column' , 'center' , 'center')}
 `
 
 const TitleStyle = styled.h1`
@@ -44,6 +47,10 @@ function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React
             <PeriodStyle>
                 {project?.period || ''}
             </PeriodStyle>
+            {
+                project?.link !== undefined &&
+                <ProjectLinkTag link={project?.link} />
+            }
         </ProjectHighLightStyle>
     )
 }

@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
-import styled, {css} from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-//${props => props.$checked ? displayFlex('row' , 'center' , 'center' , 'flex' , true) : displayFlex('row' , 'center' , 'center')};
 
 const ProjectTitleViewStyle = styled.ul`
   list-style: none;

@@ -1,8 +1,7 @@
 'use client'
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef} from "react";
 import styled, {css, keyframes} from "styled-components";
-import {NGodicFont, OrbitFont} from "@/style/font";
-import {useAppSelector} from "@/lib/redux/hooks";
+import {NGodicFont} from "@/style/font";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 
 /**
@@ -17,23 +16,6 @@ const contentAnimation = keyframes`
   }
   100% {
     opacity: 100%;
-  }
-`
-/**
- * 강조 선 에니메이션
- */
-const lineAnimation = keyframes`
-  0% {
-    width: 0;
-    height: 3px;
-  }
-  50% {
-    width: 50%;
-    height: 3px;
-  }
-  100% {
-    width: 100%;
-    height: 3px;
   }
 `
 
@@ -69,18 +51,6 @@ const StrongPStyle = styled.span`
   color: ${props => props.theme.palette.primary};
   font-weight: bold;
   position: relative;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 1.4em;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    border-radius: 1% 40% 40% 40%;
-    background-image: linear-gradient(to bottom right, red , ${props => props.theme.palette.middle} );
-    animation: ${lineAnimation} 2s linear 1;
-  }
   
   ${(props) => props.theme.media.tablet} {
     font-size: 1.5rem;

@@ -1,13 +1,12 @@
 import StackGridView from "@/atom/molecules/stack/StackGridView";
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 import StackLogo from "@/atom/atoms/stack/logo/StackLogo";
 import GridArea from "@/atom/molecules/stack/GridArea";
-import {useAppDispatch, useAppSelector} from "@/lib/redux/hooks";
 import {BackStackLogoArray, EtcStackLogoArray, FrontStackLogoArray} from "@/atom/molecules/stack/LogoArray";
 import StackGridTitle from "@/atom/atoms/stack/title/StackGridTitle";
 import YArea from "@/atom/atoms/stack/grid/YArea";
-import {AreaBack, AreaEtc} from "@/atom/atoms/stack/grid/commonStyle";
-import XArea from "@/atom/atoms/stack/grid/XArea";
+import {AreaBack, AreaEtc, AreaFront} from "@/atom/atoms/stack/grid/commonStyle";
+import XArea from "@/atom/molecules/education/XArea";
 
 
 /**
@@ -15,26 +14,16 @@ import XArea from "@/atom/atoms/stack/grid/XArea";
  * @constructor
  */
 export default function StackGrid(): React.JSX.Element {
-    // Target 요소 관찰
-    const {stack} = useAppSelector((state) => state.targetSlice);
-    const [stackVisible, setStackVisible] = useState(false);
-
-    useEffect(() => {
-        if (!stackVisible && stack !== undefined) {
-            setStackVisible(() => stack.visible)
-        }
-    }, [stack]);
-
 
     return (
         <StackGridView>
-            <YArea $stackVisible={stackVisible}>
+            <YArea $area={AreaFront}>
                 <StackGridTitle title={'Front'}/>
                 {
                     FrontStackLogoArray?.length !== 0 &&
                     FrontStackLogoArray?.map((value, index) => {
                         return (
-                            <GridArea key={`${index}${value.src}`} $style={'y'}>
+                            <GridArea key={`${index}${value.src}`}>
                                 <StackLogo
                                     src={value.src}
                                     alt={value.alt}
@@ -45,13 +34,13 @@ export default function StackGrid(): React.JSX.Element {
                     })
                 }
             </YArea>
-            <XArea $stackVisible={stackVisible} $area={AreaBack} $ani_sec={'0.8s'}>
+            <YArea $area={AreaBack}>
                 <StackGridTitle title={'Back'}/>
                 {
                     BackStackLogoArray?.length !== 0 &&
                     BackStackLogoArray?.map((value, index) => {
                         return (
-                            <GridArea key={`${index}${value.src}`} $style={'x'}>
+                            <GridArea key={`${index}${value.src}`}>
                                 <StackLogo
                                     src={value.src}
                                     alt={value.alt}
@@ -61,14 +50,14 @@ export default function StackGrid(): React.JSX.Element {
                         )
                     })
                 }
-            </XArea>
-            <XArea $stackVisible={stackVisible} $area={AreaEtc} $ani_sec={'1.2s'}>
+            </YArea>
+            <YArea $area={AreaEtc}>
                 <StackGridTitle title={'ETC'}/>
                 {
                     EtcStackLogoArray?.length !== 0 &&
                     EtcStackLogoArray?.map((value, index) => {
                         return (
-                            <GridArea key={`${index}${value.src}`} $style={'x'}>
+                            <GridArea key={`${index}${value.src}`}>
                                 <StackLogo
                                     src={value.src}
                                     alt={value.alt}
@@ -78,7 +67,7 @@ export default function StackGrid(): React.JSX.Element {
                         )
                     })
                 }
-            </XArea>
+            </YArea>
         </StackGridView>
     )
 }

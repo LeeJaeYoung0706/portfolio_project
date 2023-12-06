@@ -8,19 +8,13 @@ import {displayFlex} from "@/style/theme/common";
 const yStyle = css`
   flex: 1;
   width: 100%;
-  ${displayFlex('column', 'center', 'center')}
+  ${displayFlex('column', 'flex-start', 'center')}
   max-height: 30px;
 `
 
-const xStyle = css`
-  width: 40%;
-  ${displayFlex('column', 'center', 'stretch')}
-  max-height: 30px;
-`
-
-const GridAreaStyle= styled.div<{$style: string}>`
-  ${props => props.$style === 'y' ? yStyle : xStyle}
-
+const GridAreaStyle= styled.div`
+  ${yStyle};
+  
   ${(props) => props.theme.media.tablet} {
     ${yStyle};
   }
@@ -30,10 +24,10 @@ const GridAreaStyle= styled.div<{$style: string}>`
   }
 `
 
-export default function GridArea({children , $style}: {children: React.ReactNode , $style: string}) {
+export default function GridArea({children}: {children: React.ReactNode}) {
 
     return (
-        <GridAreaStyle $style={$style}>
+        <GridAreaStyle>
             {children}
         </GridAreaStyle>
     )

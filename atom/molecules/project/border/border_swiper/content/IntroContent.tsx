@@ -1,32 +1,39 @@
-import First_IntroContentView from "@/atom/molecules/project/border/border_swiper/content/IntroContentView";
-import BorderContentTitle from "@/atom/atoms/project/border/BorderContentTitle";
+import IntroContentView from "@/atom/molecules/project/border/border_swiper/content/IntroContentView";
 import BorderContentText from "@/atom/atoms/project/border/BorderContentText";
-import {BorderContentUlStyle, BorderStackLayoutStyle} from "@/atom/atoms/project/border/BorderContentStyles";
-import BorderStack from "@/atom/atoms/project/border/BorderStack";
+import {BorderContentUlStyle} from "@/atom/atoms/project/border/BorderContentStyles";
+import ProjectInnerTitle from "@/atom/atoms/project/project_title/ProjectInnerTitle";
+import React from "react";
 
 
-export default function IntroContent({project} : {project: ProjectInterface}) {
 
-    if (project === undefined){
+
+/**
+ * 슬라이드 스와이퍼 영역 첫 번째 페이지
+ * @param children
+ * @constructor
+ */
+export default function IntroContent({project}: ContentPropsInterface): React.JSX.Element | null{
+
+    if (project?.functions === undefined || project?.introductionTitle === undefined || project?.introduction === undefined) {
         return null;
     }
 
     return (
-        <First_IntroContentView>
-            <BorderContentTitle title={'소개'} />
+        <IntroContentView>
+            <ProjectInnerTitle title={'Introduction'}/>
             <BorderContentUlStyle>
-                <BorderContentText text={project?.introductionTitle} />
-                <BorderContentText text={project?.introduction} />
+                <BorderContentText text={project?.introductionTitle}/>
+                <BorderContentText text={project?.introduction}/>
             </BorderContentUlStyle>
-            <BorderContentTitle title={'Stack'} />
-            <BorderStackLayoutStyle>
+            <ProjectInnerTitle title={'Function'}/>
+            <BorderContentUlStyle>
                 {
-                    project?.stack?.length > 0 &&
-                    project?.stack?.map((value , index) => {
-                        return <BorderStack stack={value} key={`${project?.title}${value}${index}`}/>
+                    project?.functions?.length > 0 &&
+                    project?.functions?.map((value, index) => {
+                        return <BorderContentText text={value} key={`${index}${value}`}/>
                     })
                 }
-            </BorderStackLayoutStyle>
-        </First_IntroContentView>
+            </BorderContentUlStyle>
+        </IntroContentView>
     )
 }

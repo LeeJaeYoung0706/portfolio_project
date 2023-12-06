@@ -2,8 +2,8 @@ import styled, {css} from "styled-components";
 import {introSvgKeyframes} from "@/style/animation";
 import IntroSVG from '@/public/IntroSvg.svg';
 import React from "react";
-import {purple} from "@/style/theme/purple";
 import {displayFlex} from "@/style/theme/common";
+import {CinzelFont} from "@/style/font";
 
 export const IntroSvgStyle = styled.div`
   min-height: 900px;
@@ -23,7 +23,7 @@ export const IntroSvgStyle = styled.div`
 
   ${(props) => props.theme.media.mobile} {
     min-height: 470px;
-    font-size: 2.7em;
+    font-size: 2.4em;
 
   }
 `;
@@ -34,7 +34,7 @@ export const IntroSvgStyle = styled.div`
  */
 function IntroSvg(): React.JSX.Element {
     return (
-        <IntroSvgStyle>
+        <IntroSvgStyle className={CinzelFont.className}>
             <IntroSVG/>
         </IntroSvgStyle>
     )

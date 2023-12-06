@@ -16,7 +16,7 @@ const headerTypeCss = css`
   letter-spacing: 1.2px; // 글자 사이 간격
   font-weight: bold;
   line-height: 1;
-  width: 90px;
+  width: 120px;
   height: 30px;
   border: none;
   @media (hover: hover) and (pointer: fine) {

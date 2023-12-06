@@ -5,21 +5,26 @@ import React, {useCallback, useEffect, useRef, useState} from "react";
 import ContentChangeButton from "@/atom/atoms/project/border/ContentChangeButton";
 import {css} from "styled-components";
 import IntroContent from "@/atom/molecules/project/border/border_swiper/content/IntroContent";
+import ResponsibilitiesContent from "@/atom/molecules/project/border/border_swiper/content/ResponsibilitiesContent";
+import ProjectInnerTitle from "@/atom/atoms/project/project_title/ProjectInnerTitle";
+
 
 interface ProjectContentSwiper {
     project: ProjectInterface | undefined
 }
 
-export default function ProjectContentSwiper ({project} : ProjectContentSwiper) {
+export default function ProjectContentSwiper({project}: ProjectContentSwiper) {
 
     const ref = useRef<HTMLDivElement>(null)
-    const arrayLength = 3;
+    const arrayLength =  2;
+    // 이동 거리
     const projectInitState = {
         index: 0,
         $transform: css`transform: translate(0)`
     }
-
+    // 선택한 프로젝트
     const [selectProject, setSelectProject] = useState(projectInitState);
+    // 모바일에서 사용할 State
     const [touch, setTouch] = useState({
         start: 0,
         end: 0,
@@ -32,23 +37,23 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
     /**
      * 옆으로 버튼 handler
      */
-    const projectIndexHandler = useCallback( (plus: boolean) => {
+    const projectIndexHandler = useCallback((plus: boolean) => {
         if (plus) {
-            setSelectProject( (pre) => {
+            setSelectProject((pre) => {
                 const cal = pre?.index + 1;
                 const result = cal >= arrayLength ? arrayLength - 1 : cal;
                 return {
                     index: result,
-                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%` })`
+                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%`})`
                 }
             })
         } else {
-            setSelectProject( (pre) => {
+            setSelectProject((pre) => {
                 const cal = pre.index - 1;
                 const result = cal <= 0 ? 0 : cal;
-                return{
+                return {
                     index: result,
-                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%` })`
+                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%`})`
                 }
             })
         }
@@ -58,47 +63,66 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
     /**
      * Mobile 부분 Slide Handler
      */
-    const touchStart = useCallback( (e: React.TouchEvent) => {
+    const touchStart = useCallback((e: React.TouchEvent) => {
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
         setTouch({
             ...touch,
             start: e.touches[0].pageX,
         });
-    } , [touch])
+    }, [touch])
+    
+    const touchMove = useCallback((e: React.TouchEvent) => {
 
-    const touchMove = useCallback( (e: React.TouchEvent) => {
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
         if (ref?.current) {
             const current = ref.current.clientWidth * selectProject.index;
             const result = -current + (e.targetTouches[0].pageX - touch.start);
-            setSelectProject( (pre) => {
-                return{
+            setSelectProject((pre) => {
+                return {
                     ...pre,
-                    $transform: css`transform: translate3d(${result === 0 ? 0 : `${result}px , 0px ,0px`  }); transition: 0ms;`
+                    $transform: css`transform: translate3d(${result === 0 ? 0 : `${result}px , 0px ,0px`});
+                      transition: 0ms;`
                 }
             })
         }
-    } , [touch])
+    }, [touch])
 
-    const touchEnd =  useCallback( (e: React.TouchEvent) => {
-             const end = e.changedTouches[0].pageX;
-            if (touch.start > end) {
-                projectIndexHandler(true)
-            } else {
-                projectIndexHandler(false)
-            }
-            setTouch({
-                ...touch,
-                end,
-            });
-    } , [touch])
+    const touchEnd = useCallback((e: React.TouchEvent) => {
+
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
+        const end = e.changedTouches[0].pageX;
+        if (touch.start > end) {
+            projectIndexHandler(true)
+        } else {
+            projectIndexHandler(false)
+        }
+        setTouch({
+            ...touch,
+            end,
+        });
+    }, [touch])
+
+    if (project === undefined) {
+        return null;
+    }
 
     return (
         <SwiperLayout>
             <ContentChangeButton
-                onClick={ () => projectIndexHandler(false)}
+                onClick={() => projectIndexHandler(false)}
                 position={'back'}
             />
             <ContentChangeButton
-                onClick={ () => projectIndexHandler(true)}
+                onClick={() => projectIndexHandler(true)}
                 position={'forward'}
             />
             <ContentTransformLayout
@@ -112,10 +136,7 @@ export default function ProjectContentSwiper ({project} : ProjectContentSwiper) 
                     <IntroContent project={project}/>
                 </ProjectBorderContent>
                 <ProjectBorderContent>
-                    test2
-                </ProjectBorderContent>
-                <ProjectBorderContent>
-                    test3
+                    <ResponsibilitiesContent project={project}/>
                 </ProjectBorderContent>
             </ContentTransformLayout>
         </SwiperLayout>

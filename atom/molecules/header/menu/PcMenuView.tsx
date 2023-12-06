@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-const HeaderPcMenuStyle = styled.div<{$isTop: boolean}>`
+const HeaderPcMenuStyle = styled.nav<{$isTop: boolean}>`
   display: flex;
   padding-right: 1.7vw;
   ${displayFlex('row' , 'space-between' , 'center')};

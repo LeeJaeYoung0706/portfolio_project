@@ -10,7 +10,7 @@ const SwiperLayoutStyle = styled.div`
   box-shadow: 0 10px 20px ${props => props.theme.palette.second}, 0 0 10px ${props => props.theme.palette.middle};
   min-width: 1185px;
   min-height: 800px;
-  
+
   ${(props) => props.theme.media.tablet} {
     width: 100%;
     min-width: 600px;

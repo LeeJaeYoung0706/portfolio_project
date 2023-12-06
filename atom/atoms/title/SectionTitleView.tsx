@@ -1,11 +1,12 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 import {TitllFont} from "@/style/font";
 
 
-const SectionTitleStyle = styled.div`
+const SectionTitleStyle = styled.div<{$id: string}>`
   ${displayFlex('row' , 'center' , 'center')}
+  ${props => props.$id === 'about_me' && css`display: none`}
 `
 
 const SectionTitleText = styled.h1`
@@ -13,9 +14,10 @@ const SectionTitleText = styled.h1`
   color: ${(props) => props.theme.palette.reverse};
   text-shadow: 0 2px 3px ${(props) => props.theme.palette.reverseSecond};
   line-height: 1;
-  margin-bottom: 60px;
+  padding-bottom: 8vh;
   padding-top: 10px;
   text-transform: uppercase;
+
   ${(props) => props.theme.media.tablet} {
     font-size: 4.2em;
   }
@@ -31,7 +33,7 @@ const SectionTitleText = styled.h1`
 function SectionTitleView ({title , id } : SectionTitlePropsInterface):React.JSX.Element  {
 
     return (
-        <SectionTitleStyle id={id}>
+        <SectionTitleStyle id={id} $id={id}>
             <SectionTitleText className={TitllFont.className}>{title}</SectionTitleText>
         </SectionTitleStyle>
     )

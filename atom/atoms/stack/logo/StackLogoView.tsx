@@ -4,7 +4,7 @@ import {displayFlex} from "@/style/theme/common";
 
 
 const StackLogoStyle = styled.div`
-  ${displayFlex('row', 'space-between', 'stretch')}
+  ${displayFlex('row', 'flex-start', 'center')}
   width: 100%;
 `
 

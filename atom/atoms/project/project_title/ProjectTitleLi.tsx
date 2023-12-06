@@ -2,11 +2,6 @@ import ProjectTitleLiView from "@/atom/atoms/project/project_title/ProjectTitleL
 import React from "react";
 
 
-interface ProjectTitleLiInterface {
-    project: ProjectInterface
-    projectCheckHandler: (check: ProjectTitleListInterface) => void
-}
-
 /**
  * Project Title Li Container
  * @param children

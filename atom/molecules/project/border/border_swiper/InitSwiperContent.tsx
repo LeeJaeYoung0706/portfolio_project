@@ -15,6 +15,7 @@ const InitSwiperContentStyle = styled.div`
   min-width: 1185px;
   padding: 3vw;
   min-height: 800px;
+  
   ${displayFlex('column' , 'center' , 'center')};
   
   ${(props) => props.theme.media.tablet} {
@@ -115,7 +116,13 @@ const FiveSecondContentStyle = styled.div`
   text-align: center;
   padding: 30px;
 `
-function InitSwiperContent({onCheckHandler} : {onCheckHandler: () => void}): React.JSX.Element {
+
+/**
+ * 미 선택 시 보여줄 그리드
+ * @param onCheckHandler
+ * @constructor
+ */
+function InitSwiperContent({onCheckHandler} :InitSwiperContentInterface): React.JSX.Element {
 
     //visible 체크를 위한 ref
     const ref = useRef<HTMLDivElement | null>(null)

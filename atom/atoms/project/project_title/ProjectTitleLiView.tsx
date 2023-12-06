@@ -2,7 +2,7 @@
 import React from "react";
 import styled, {css} from "styled-components";
 import {TitllFont, kdamThmorPro} from "@/style/font";
-import {displayFlex} from "@/style/theme/common";
+import {displayFlex, fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 
 
@@ -11,20 +11,20 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
           css`flex: 1; color: ${props.theme.palette.reverse};` 
           : css` flex: 1; color: ${props.theme.palette.primary};`}
   text-align: center;
-  font-size: 2.5em;
+  ${fontMiddleSizePC};
   cursor: pointer;
   padding-top: 30px;
   z-index: 302;
   ${(props) => props.theme.media.tablet} {
     flex: none;
     width: 30%;
-    font-size: 2.2em;
+    ${fontMiddleSizeTablet};
     padding-bottom: 30px;
   }
 
   ${(props) => props.theme.media.mobile} {
     flex: none;
-    font-size: 1.6em;
+    ${fontMiddleSizeMobile};
     width: 40%;
     padding-bottom: 30px;
   }

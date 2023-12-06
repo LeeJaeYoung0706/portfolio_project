@@ -6,6 +6,8 @@ import AboutMe from "@/atom/organisms/about_me/AboutMe";
 import Intro from "@/atom/organisms/intro/Intro";
 import Stack from "@/atom/organisms/stack/Stack";
 import Project from "@/atom/organisms/project/Project";
+import Footer from "@/atom/organisms/Footer";
+import Education from "@/atom/organisms/education/Education";
 
 export default function Home(): React.JSX.Element {
     return (
@@ -16,7 +18,9 @@ export default function Home(): React.JSX.Element {
                 <AboutMe/>
                 <Stack/>
                 <Project />
+                <Education />
             </Main>
+            <Footer />
         </Container>
     )
 }

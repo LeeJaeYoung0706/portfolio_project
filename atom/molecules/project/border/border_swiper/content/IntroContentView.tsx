@@ -1,16 +1,21 @@
 import React from "react";
 import styled from "styled-components";
+import {displayFlex} from "@/style/theme/common";
 
 
-const First_IntroContentViewStyle = styled.div`
-
+const IntroContentViewStyle = styled.div`
+  ${displayFlex('column' , 'center' , 'flex-start')};
 `
-
-function IntroContentView ({children} : any) : React.JSX.Element {
+/**
+ * 슬라이드 스와이퍼 영역 첫 번째 페이지
+ * @param children
+ * @constructor
+ */
+function IntroContentView ({children} : ComponentPropsInterface) : React.JSX.Element {
     return (
-        <First_IntroContentViewStyle>
+        <IntroContentViewStyle>
             {children}
-        </First_IntroContentViewStyle>
+        </IntroContentViewStyle>
     )
 }
 

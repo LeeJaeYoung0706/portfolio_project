@@ -3,11 +3,10 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const StackLogoImageStyle = styled.div`
-  width: 50px;
-  height: 50px;
-  min-width: 50px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
   position: relative;
-  background-color: transparent;
   margin-right: 30px;
 `
 /**

@@ -8,6 +8,10 @@ export const customMediaQuery = (maxWidth: number): string =>
     `@media screen and (max-width: ${maxWidth}px)`
 
 
+export const fontMiddleSizePC = css`font-size: 1.8em;`;
+export const fontMiddleSizeTablet = css`font-size: 1.7em;`;
+export const fontMiddleSizeMobile = css`font-size: 1.3em;`;
+
 type displayType = 'flex' | 'none';
 type flexDirectionType = 'column' | 'column-reverse' | 'row-reverse' | 'row'
 type justifyContentType = 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'space-evenly'

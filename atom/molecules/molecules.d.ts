@@ -40,3 +40,10 @@ interface ProjectBorderContentViewPropsInterface extends ComponentPropsInterface
     children: React.ReactNode,
     projectIndex: number
 }
+
+interface InitSwiperContentInterface {
+    onCheckHandler: () => void
+}
+interface ContentPropsInterface {
+    project: ProjectInterface
+}

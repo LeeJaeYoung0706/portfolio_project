@@ -25,6 +25,7 @@ const ButtonStyle = styled.button<{$position: ProjectBorderSwiperButtonType}>`
   ${props => props.$position === 'forward' ? css`
     top: 50%;
     right: 1%;
+
     &:before {
       transform: translate(-65%, -50%) rotate(135deg);
     }
@@ -37,8 +38,14 @@ const ButtonStyle = styled.button<{$position: ProjectBorderSwiperButtonType}>`
     }
   `};
   transform: translate(-5%, -50%);
-`
 
+`
+/**
+ *  Border 화살표 버튼
+ * @param onClick
+ * @param position
+ * @constructor
+ */
 export default function ContentChangeButton( {onClick , position} : any) {
     return (
         <ButtonStyle onClick={onClick} $position={position} />

@@ -1,20 +1,21 @@
 import React from "react";
 import {NGodicFont} from "@/style/font";
 import styled from "styled-components";
+import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 const AboutMeIdCardContentStyle = styled.p`
- 
-  font-size: 2.0em;
+
+  ${fontMiddleSizePC};
   color: ${(props => props.theme.palette.second)};
   background-color: transparent;
   padding-bottom: 50px;
 
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.8em;
+    ${fontMiddleSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 1.6em;
+    ${fontMiddleSizeMobile};
   }
   
   & a:hover {

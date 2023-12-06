@@ -17,7 +17,11 @@ const ContentTransformLayoutStyle = styled.div<{$transform: RuleSet<Object>}>`
   ${props => props.$transform};
 `
 
-
+/**
+ * 슬라이드 스와이퍼 내부 레이아웃
+ * @param children
+ * @constructor
+ */
 const ContentTransformLayout = React.forwardRef(({children , projectIndex ,
                                                      touchMove , touchStart, touchEnd} : ProjectContentTransformLayoutInterface , ref: React.ForwardedRef<HTMLDivElement>): React.JSX.Element => {
     return (

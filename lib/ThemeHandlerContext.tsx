@@ -37,7 +37,7 @@ export function ThemeHandlerProvider({children} : {children: React.ReactNode}) {
         </ThemeContext.Provider>);
 }
 
-export function useThemeContext() {
+export function useThemeContext(): ThemeHandlerInterface {
     const context = useContext(ThemeContext);
     if (context === null) {
         throw new Error("useThemeContext must be used within ThemeProvider");

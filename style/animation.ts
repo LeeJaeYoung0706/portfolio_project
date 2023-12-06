@@ -27,12 +27,12 @@ export const introSvgKeyframes = (theme: DefaultTheme) => keyframes`
     stroke-dasharray: 0 50%;
     fill:  ${theme.palette.reverse};
     stroke:  ${theme.palette.reverse};
-    stroke-width: 1.2;
+    stroke-width: 0.6;
   }
   70% {
     fill: rgba(72, 138, 204, 0);
     stroke:  ${theme.palette.reverse};
-    stroke-width: 1.2;
+    stroke-width: 0.5;
   }
   80% {
     fill: rgba(169, 180, 185, 0);
@@ -43,7 +43,7 @@ export const introSvgKeyframes = (theme: DefaultTheme) => keyframes`
     stroke-dasharray: 50% 0;
     fill:   ${theme.palette.reverse};
     stroke:  ${theme.palette.reverse};
-    stroke-width: 0.7;
+    stroke-width: 0.3;
   }
 `
 /**
@@ -103,12 +103,17 @@ export const lineReverseBefore = css`
   animation-direction: alternate;
 `;
 
-export const leftGridAnimation = keyframes`
+export const pcGridAnimation = keyframes`
   0% {
-    transform: translateX(-200px);
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0px);
   }
 `
 export const rightGridAnimation = keyframes`

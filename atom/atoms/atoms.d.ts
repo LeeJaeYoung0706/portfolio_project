@@ -42,15 +42,13 @@ interface DropDownLinkInterface {
 }
 
 interface YAreaInterface extends ComponentPropsInterface {
-    $stackVisible: boolean
     children: React.ReactNode[]
+    $area: RuleSet<Object>
 }
 
 interface XAreaInterface extends ComponentPropsInterface {
-    $ani_sec: string
-    $stackVisible: boolean
     $area: RuleSet<object>
-    children: React.ReactNode[]
+    children: React.ReactNode
 }
 
 
@@ -69,6 +67,27 @@ interface ProjectHighLightTitleInterface {
 interface ProjectInterface {
     index: number,
     title: string,
-    checked: boolean
-    period: string
+    checked: boolean,
+    period: string,
+    stack?: string[],
+    introductionTitle?: string,
+    introduction?: string,
+    responsibilities?: string[],
+    functions?: string[],
+    link?: string,
+    review?: string
 }
+
+interface BorderContentReviewInterface {
+    review: string
+}
+
+interface BorderTextInterface {
+    text: string
+}
+
+interface ProjectTitleLiInterface {
+    project: ProjectInterface
+    projectCheckHandler: (check: ProjectInterface) => void
+}
+

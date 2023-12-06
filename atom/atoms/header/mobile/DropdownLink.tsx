@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
 import Link from "next/link";
+import {fontMiddleSizeMobile} from "@/style/theme/common";
 
 const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
-  color: ${(props) => props.theme.palette.second};
-  background-color: ${(props) => props.theme.palette.middle};
+  color: ${(props) => props.theme.palette.middle};
+  background-color: ${(props) => props.theme.palette.reverse};
   border: 1px solid ${(props) => props.theme.palette.middle};
   display: block;
-  
+
   text-align: center;
   padding: 11px;
   font-weight: bold;
-  font-size: 25px;
+  ${fontMiddleSizeMobile};
   &:active {
     color: ${(props) => props.theme.palette.primary};
   }

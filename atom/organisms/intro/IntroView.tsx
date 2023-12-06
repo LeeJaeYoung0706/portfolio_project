@@ -7,6 +7,16 @@ import {color} from "@/style/theme/color";
 
 const IntroLayoutStyle = styled.section`
   background-color: ${(props) => color.white};
+  padding-bottom: 32vh;
+
+  ${(props) => props.theme.media.tablet} {
+    padding-bottom: 32vh;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    padding-top: 30vh;
+    padding-bottom: 30vh;
+  }
 `
 
 /**

@@ -39,6 +39,18 @@ export default function HeaderPcMenu(): React.JSX.Element {
             $type: 'header'
         },
         {
+            content: 'Project',
+            onClick: () => router.push('#project'),
+            font: NGodicFont.className,
+            $type: 'header'
+        },
+        {
+            content: 'Education',
+            onClick: () => router.push('#education'),
+            font: NGodicFont.className,
+            $type: 'header'
+        },
+        {
             content: 'Theme',
             onClick: themeHandler,
             font: NGodicFont.className,

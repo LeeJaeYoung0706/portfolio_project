@@ -1,9 +1,21 @@
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
 import {NGodicFont} from "@/style/font";
-import styled from "styled-components";
+import styled, {css, keyframes} from "styled-components";
 import DropdownLink from "@/atom/atoms/header/mobile/DropdownLink";
 
-const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
+const testAnimation = keyframes`
+  0% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
+
+const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   text-decoration: none;
   display: ${(props) => props.$checked ? 'block' : 'none'};
   position: absolute;
@@ -11,15 +23,15 @@ const HeaderDropdownStyle = styled.div<{ $checked: boolean }>`
   width: 140px;
   opacity: 0.9;
   right: 0;
-    //box-shadow: ${(props) => props.theme.palette.boxShadow};
-
+  
+  ${(props) => props.$checked && css`animation: ${testAnimation} 0.5s normal linear;`};
+  
   ${(props) => props.theme.media.tablet} {
     top: 77px;
   }
 
   ${(props) => props.theme.media.mobile} {
     top: 78px;
-
   }
 
 
@@ -52,6 +64,18 @@ export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterfa
             checked: checked,
             font: NGodicFont.className,
             text: 'Stack'
+        },
+        {
+            route: '#project',
+            checked: checked,
+            font: NGodicFont.className,
+            text: 'Project',
+        },
+        {
+            route: '#education',
+            checked: checked,
+            font: NGodicFont.className,
+            text: 'Education',
         },
         {
             route: '',

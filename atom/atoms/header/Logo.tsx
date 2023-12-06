@@ -1,4 +1,4 @@
-import {NGodicFont, OrbitFont} from "@/style/font";
+import {NotoSansFont} from "@/style/font";
 import styled, {css} from "styled-components";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
@@ -35,7 +35,7 @@ export default function Logo({logoText, logoFont, $logoFontSize , checked}: Logo
             $isTop={isTop}
             $checked={checked}
         >
-            <h1 className={logoFont || NGodicFont.className}> {logoText} </h1>
+            <h1 className={logoFont || NotoSansFont.className}> {logoText} </h1>
         </LogoStyle>
     )
 }

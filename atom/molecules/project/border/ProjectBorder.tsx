@@ -4,12 +4,9 @@ import ProjectBorderView from "@/atom/molecules/project/border/ProjectBorderView
 import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTitleUlView";
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
 import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
-import {initProjectList} from "@/atom/molecules/project/border/ProjectTitleDescription";
 import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
 import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/InitSwiperContent";
-
-
-
+import {initProjectList} from "@/atom/organisms/project/ProjectTitleDescription";
 
 
 /**
@@ -77,11 +74,10 @@ export default function ProjectBorder() :React.JSX.Element {
                     }}/>
                     <InitSwiperContent onCheckHandler={ () => projectCheckHandler(
                         {
-                            index: 0,
-                            title: 'IDTHUB',
-                            checked: true,
-                            period: '2023.07.13 ~ 2023.08.31'
-                        })}/>
+                            ...project[0],
+                            checked: true
+                        }
+                    )}/>
                 </>
             }
 
