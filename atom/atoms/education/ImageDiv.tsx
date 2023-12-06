@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 const ImageDivStyle = styled.div`
   position: relative;
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
   filter: grayscale(100%);
 `
 function ImageDiv({alt , src} : any):React.JSX.Element {

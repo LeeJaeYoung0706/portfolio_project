@@ -6,24 +6,39 @@ import {displayFlex} from "@/style/theme/common";
 import {CinzelFont} from "@/style/font";
 
 export const IntroSvgStyle = styled.div`
-  min-height: 900px;
-  font-size: 2.2em;
+  position: relative;
+  font-size: 30px;
   width: 100%;
+  background-image: url('/2.jpg');
+  background-size:cover;
+  background-attachment:fixed;
+  background-position: 0 , 50%;
+  height:105vh;
   ${displayFlex('row', 'center', 'center')}
+
   -webkit-animation: ${(props) => introSvgKeyframes(props.theme)} 8s infinite alternate;
   -moz-animation: ${(props) => introSvgKeyframes(props.theme)} 8s infinite alternate;
   -o-animation: ${(props) => introSvgKeyframes(props.theme)} 8s infinite alternate;
   animation: ${(props) => introSvgKeyframes(props.theme)} 8s infinite alternate;
-  fill: coral;
+  
 
+  &:after{
+    content: '';
+    display:block;
+    width:100%;
+    height: 300px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,0,0,0) 100%);
+    bottom: 0;
+    position: absolute;
+  }
   ${(props) => props.theme.media.tablet} {
     min-height: 700px;
-    font-size: 2.5em;
+    font-size: 40px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    min-height: 470px;
-    font-size: 2.4em;
+    min-height: 370px;
+    font-size: 40px;
 
   }
 `;

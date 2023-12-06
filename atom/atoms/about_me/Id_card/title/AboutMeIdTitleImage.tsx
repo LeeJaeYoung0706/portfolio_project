@@ -6,20 +6,20 @@ import Image from "next/image";
 const ImageDiv = styled.div`
   width: 30px;
   height: 30px;
-  margin-right: 0.5vw;
+  margin-right: 15px;
   box-sizing: border-box;
   position: relative;
 
   ${(props) => props.theme.media.tablet} {
     width: 25px;
     height: 25px;
-    margin-right: 0.75vw;
+    margin-right: 15px;
   }
 
   ${(props) => props.theme.media.mobile} {
     width: 20px;
-    height: 19.5px;
-    margin-right: 2.3vw;
+    height: 20px;
+    margin-right: 12px;
   }
 `
 

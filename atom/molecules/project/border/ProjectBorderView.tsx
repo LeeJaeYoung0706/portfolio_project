@@ -27,7 +27,7 @@ const ProjectBorderViewStyle = styled.article<{$visible: boolean}>`
   }
 
   ${(props) => props.theme.media.mobile} {
-    min-width: 470px;
+    min-width: 370px;
   }
 `
 

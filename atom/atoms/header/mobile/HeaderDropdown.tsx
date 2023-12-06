@@ -20,18 +20,18 @@ const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   display: ${(props) => props.$checked ? 'block' : 'none'};
   position: absolute;
   top: 53px;
-  width: 140px;
+  width: 100vw;
   opacity: 0.9;
   right: 0;
   
   ${(props) => props.$checked && css`animation: ${testAnimation} 0.5s normal linear;`};
   
   ${(props) => props.theme.media.tablet} {
-    top: 77px;
+    top: 62px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    top: 78px;
+    top: 62px;
   }
 
 

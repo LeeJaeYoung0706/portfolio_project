@@ -3,15 +3,17 @@ import styled, {css, RuleSet} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 import {AreaBack, areaCommonCSS} from "@/atom/atoms/stack/grid/commonStyle";
 import {
+    leftGridAnimation,
     mobileLeftGridAnimation,
     mobileRightGridAnimation,
     rightGridAnimation
 } from "@/style/animation";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {AcademyGrid} from "@/atom/molecules/education/EducationStyle";
+import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/style";
 
-const XAreaStyle = styled.div<{
-    $stackVisible: boolean, $area: RuleSet<Object>
+const SlideStyle = styled.div<{
+    $stackVisible: boolean, $area: RuleSet<Object> , $checked: boolean
 }>`
   ${props => props.$area};
   gap: 80px;
@@ -21,23 +23,28 @@ const XAreaStyle = styled.div<{
   
   height: 100%;
   width: 100%;
-  background-color: ${props => props.$area === AcademyGrid ? props.theme.palette.primary : props.theme.palette.second};
-  ${(props) => props.$stackVisible && css`animation: ${ props.$area === AreaBack && rightGridAnimation } 1s normal linear;`}
+  background-color: ${props => ( props.$area === IntroductionGrid || props.$area === FunctionsGrid ) ? props.theme.palette.primary : props.theme.palette.second};
+  ${(props) => props.$stackVisible && css`animation: ${ ( props.$area === IntroductionGrid || props.$area === FunctionsGrid ) ? rightGridAnimation : leftGridAnimation} 1s normal linear;`}
   ${(props) => !props.$stackVisible ? css`opacity: 0;` : css`opacity: 1;`};
   ${(props) => props.theme.media.tablet} {
     width: 100%;
     min-width: 600px;
     ${displayFlex('column', 'flex-start', 'flex-start')}
-    ${(props) => props.$stackVisible && css`animation: ${props.$area === AreaBack ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
+    ${(props) => props.$stackVisible && css`animation: ${ ( props.$area === IntroductionGrid || props.$area === FunctionsGrid ) ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
   }
 
   ${(props) => props.theme.media.mobile} {
     width: 100%;
     min-width: 370px;
     ${displayFlex('column', 'flex-start', 'flex-start')}
-    ${(props) => props.$stackVisible && css`animation: ${props.$area === AreaBack ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
+    ${(props) => props.$stackVisible && css`animation: ${( props.$area === IntroductionGrid || props.$area === FunctionsGrid ) ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
   }
 `
+interface SlideAreaInterface extends ComponentPropsInterface {
+    $area: RuleSet<object>
+    children: React.ReactNode
+    $checked: boolean
+}
 
 /**
  * X 축 그리드
@@ -47,7 +54,7 @@ const XAreaStyle = styled.div<{
  * @param children
  * @constructor
  */
-function XArea({$area , children}: XAreaInterface):React.JSX.Element {
+function SlideArea({$area , children , $checked}: SlideAreaInterface):React.JSX.Element {
 
     //visible 체크를 위한 ref
     const ref = useRef<HTMLDivElement | null>(null)
@@ -59,10 +66,10 @@ function XArea({$area , children}: XAreaInterface):React.JSX.Element {
     })
 
     return (
-        <XAreaStyle $stackVisible={visible} $area={$area} ref={ref}>
+        <SlideStyle $stackVisible={visible} $area={$area} $checked={$checked} ref={ref}>
             {children}
-        </XAreaStyle>
+        </SlideStyle>
     )
 }
 
-export default React.memo(XArea)
+export default React.memo(SlideArea)

@@ -130,7 +130,7 @@ export const initProjectList: ProjectInterface[] = [
         functions: [
             '개인 이력서 정보 제공.'
         ],
-        link: 'https://www.notion.so/leejaeyoung/Portfolio-cbb7fb9d7636466e8e58b561ca6aeafe',
+        link: 'https://github.com/LeeJaeYoung0706/portfolio_project',
         review: '면접을 봤을 때 어느 큰 기업의 면접관님이 여러 기술을 사용할 줄 알고 경험이 있지만 퍼블리싱을 직접 한 프로젝트가 없어서 마치 모래성과 같다고 하셨습니다. 그 말을 듣고 많은 것을 느꼈기 때문에 만들기로 마음먹었고 실전 퍼블리싱이라는 온라인 강의를 들으면서 레이아웃작업부터 디자인작업까지 라이브러리를 최대한 사용하지 않으면서 만들었습니다. 기초적인 부분이 어렵지는 않았지만 의외로 알아야 할 것들이 많았고 또한 이전 회사 코드를 노출할 수 없어서 제 코드를 보여드릴 기회가 없었는데 보여드릴 수 있게 된 프로젝트입니다.'
     },
 ]

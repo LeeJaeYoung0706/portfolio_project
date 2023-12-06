@@ -22,7 +22,7 @@ const YAreaStyle = styled.div<{ $stackVisible: boolean , $area: RuleSet<Object>}
   }
 
   ${(props) => props.theme.media.mobile} {
-    min-width: 470px;
+    min-width: 370px;
     ${(props) => props.$stackVisible && css`animation: ${props.$area === AreaBack ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`};
     width: 100%;
   }

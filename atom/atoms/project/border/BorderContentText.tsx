@@ -1,20 +1,21 @@
 import React from 'react';
 import styled from "styled-components";
 import {NGodicFont} from "@/style/font";
+import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 const BorderContentTextStyle = styled.li`
-  line-height: 1.3em;
+  ${fontMiddleSizePC};
   font-size: 1.2em;
   color: ${props => props.theme.palette.second};
   margin-bottom: 15px;
   font-weight: bold;
 
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.1em;
+    ${fontMiddleSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 0.96em;
+    ${fontMiddleSizeMobile};
   }
 `
 

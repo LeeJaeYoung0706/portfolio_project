@@ -5,7 +5,7 @@ import {displayFlex} from "@/style/theme/common";
 const AboutMeIdCardListViewStyle = styled.article`
   width: 100%;
   line-height: 1;
-  padding-bottom: 60px;
+  padding-bottom: 130px;
   ${displayFlex('row' , 'space-around' , 'center' , 'flex' , true)}
   
   ${(props) => props.theme.media.tablet} {

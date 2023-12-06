@@ -4,8 +4,9 @@ import {displayFlex} from "@/style/theme/common";
 
 const AboutMeIdCardStyle = styled.div`
   ${displayFlex('column' , 'space-around' , 'center')};
-  width: 32vw;
+  width: 300px;
   box-sizing: border-box;
+  margin-top: 50px;
 `
 function AboutMeIdCardView({children}: AboutMeIdCardViewInterface): React.JSX.Element {
     return (

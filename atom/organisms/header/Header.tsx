@@ -25,7 +25,7 @@ export default function Header(): React.JSX.Element {
         <HeaderView isTop={isTop} checked={checked}>
             <Logo
                 logoText={'Portfolio'}
-                $logoFontSize={'57px'}
+                $logoFontSize={'50px'}
                 checked={checked}
             />
             <PcMenu/>

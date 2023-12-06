@@ -18,7 +18,7 @@ const SwiperLayoutStyle = styled.div`
 
   ${(props) => props.theme.media.mobile} {
     width: 100%;
-    min-width: 470px;
+    min-width: 370px;
   }
 `
 

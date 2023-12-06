@@ -3,8 +3,8 @@ import styled from "styled-components";
 import {TitllFont} from "@/style/font";
 
 const ProjectInnerTitleStyle = styled.div`
-  font-size: 3.2em;
-  line-height: 2.7em;
+  font-size: 30px;
+  line-height: 2.7;
   font-weight: bold;
   color: ${props => props.theme.palette.second};
   position: relative;
@@ -12,9 +12,9 @@ const ProjectInnerTitleStyle = styled.div`
   &:before {
     content: '';
     position: absolute;
-    top: 2.0em;
+    top: 61px;
     left: 0;
-    width: 1.5em;
+    width: 51px;
     height: 3px;
     border-radius: 1% 40% 40% 40%;
     background-image: linear-gradient(to bottom right, ${props => props.theme.palette.reverseSecond} , ${props => props.theme.palette.middle} );

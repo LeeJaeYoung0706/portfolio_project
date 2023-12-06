@@ -6,7 +6,7 @@ import {fontMiddleSizeMobile} from "@/style/theme/common";
 const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   color: ${(props) => props.theme.palette.middle};
   background-color: ${(props) => props.theme.palette.reverse};
-  border: 1px solid ${(props) => props.theme.palette.middle};
+  border-bottom: 1px solid ${(props) => props.theme.palette.middle};
   display: block;
 
   text-align: center;

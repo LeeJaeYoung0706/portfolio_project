@@ -5,7 +5,7 @@ import {displayFlex} from "@/style/theme/common";
 const HeaderLayoutStyle = styled.header<{ $isTop: boolean  , $checked:  boolean}>`
   position: fixed;
   width: 100%;
-  min-height: 130px;
+  min-height: 100px;
   transition: 0.5s;
   z-index: 100;
   ${displayFlex('row', 'space-between', 'center')}

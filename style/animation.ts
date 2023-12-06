@@ -124,6 +124,14 @@ export const rightGridAnimation = keyframes`
     transform: translateX(0);
   }
 `
+export const leftGridAnimation = keyframes`
+  0% {
+    transform: translateX(-250px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`
 
 export const mobileRightGridAnimation = keyframes`
   0% {

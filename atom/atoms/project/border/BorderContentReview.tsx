@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import {NGodicFont} from "@/style/font";
+import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 
 const BoarderContentReviewStyle = styled.div`
-  font-size: 1.2em;
+  ${fontMiddleSizePC};
   line-height: 1.3;
   padding-right: 50px;
   padding-bottom: 70px;
@@ -12,12 +13,12 @@ const BoarderContentReviewStyle = styled.div`
 
   ${(props) => props.theme.media.tablet} {
     padding-right: 0;
-    font-size: 1.2em;
+    ${fontMiddleSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
     padding-right: 0;
-    font-size: 1.1em;
+    ${fontMiddleSizeMobile};
     line-height: 1.5;
 
   }

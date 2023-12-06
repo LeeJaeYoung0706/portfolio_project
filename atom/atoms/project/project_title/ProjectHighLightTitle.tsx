@@ -13,16 +13,16 @@ const ProjectHighLightStyle = styled.div`
 `
 
 const TitleStyle = styled.h1`
-  font-size: 3.2em;
+  font-size: 42px;
   font-weight: bold;
   color: ${props => props.theme.palette.second};
   line-height: 1.5;
   ${(props) => props.theme.media.tablet} {
-    font-size: 3.0em;
+    font-size: 38px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 2.8em;
+    font-size: 32px;
   }
 `
 
@@ -47,10 +47,7 @@ function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React
             <PeriodStyle>
                 {project?.period || ''}
             </PeriodStyle>
-            {
-                project?.link !== undefined &&
-                <ProjectLinkTag link={project?.link} />
-            }
+
         </ProjectHighLightStyle>
     )
 }

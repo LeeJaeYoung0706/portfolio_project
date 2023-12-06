@@ -7,6 +7,7 @@ import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHig
 import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
 import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/InitSwiperContent";
 import {initProjectList} from "@/atom/organisms/project/ProjectTitleDescription";
+import SlideLayout from "@/atom/atoms/project/slide/SlideLayout";
 
 
 /**
@@ -63,7 +64,8 @@ export default function ProjectBorder() :React.JSX.Element {
                 checked ?
                 <>
                     <ProjectHighLightTitle project={selectProject()}/>
-                    <ProjectContentSwiper project={selectProject()}/>
+                    {/*<ProjectContentSwiper project={selectProject()}/>*/}
+                    <SlideLayout project={selectProject()} />
                 </> :
                 <>
                     <ProjectHighLightTitle project={{

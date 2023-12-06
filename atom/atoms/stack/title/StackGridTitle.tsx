@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {kdamThmorPro} from "@/style/font";
 
 const StackGridTitleStyle = styled.div`
-  font-size: 4em;
+  font-size: 45px;
   color: ${props => props.theme.palette.primary};
   width: 100%;
   text-align: center;

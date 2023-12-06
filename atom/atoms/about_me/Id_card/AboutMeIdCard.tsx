@@ -1,7 +1,6 @@
 import React from "react";
 import AboutMeIdCardView from "@/atom/atoms/about_me/Id_card/AboutMeIdCardView";
-import styled from "styled-components";
-import {NGodicFont, OrbitFont} from "@/style/font";
+import {NGodicFont} from "@/style/font";
 import AboutMeIdTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitle";
 import AboutMeIdCardContent from "@/atom/atoms/about_me/Id_card/content/AboutMeIdCardContent";
 

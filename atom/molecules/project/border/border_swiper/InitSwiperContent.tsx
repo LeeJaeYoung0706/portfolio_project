@@ -1,8 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
-import {kdamThmorPro, NGodicFont, OrbitFont} from "@/style/font";
-import Image from "next/image";
+import {kdamThmorPro, NGodicFont} from "@/style/font";
 import Button from "@/atom/atoms/Button";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 
@@ -25,7 +24,7 @@ const InitSwiperContentStyle = styled.div`
   
   ${(props) => props.theme.media.mobile} {
     width: 100%;
-    min-width: 470px;
+    min-width: 370px;
   }
 `
 
@@ -50,7 +49,7 @@ const TextAnimation = keyframes`
 
 const TextStyle = styled.div<{$content: string ,  $visible: boolean}>`
   color: ${props => props.theme.palette.second};
-  font-size: 4em;
+  font-size: 50px;
   font-weight: 700;
   bottom: 0;
   text-align: center;

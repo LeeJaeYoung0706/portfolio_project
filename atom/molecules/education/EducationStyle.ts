@@ -8,8 +8,7 @@ export const EducationGridStyle = styled.article`
   overflow-x: hidden;
   grid-template-areas: 'university university university'
                        'academy academy academy'
-                       'online online online'
-;
+                       'online online online';
   grid-gap: 15px; /* 각 그리드 아이템 사이의 간격 */
   
 `

@@ -8,9 +8,9 @@ export const customMediaQuery = (maxWidth: number): string =>
     `@media screen and (max-width: ${maxWidth}px)`
 
 
-export const fontMiddleSizePC = css`font-size: 1.8em;`;
-export const fontMiddleSizeTablet = css`font-size: 1.7em;`;
-export const fontMiddleSizeMobile = css`font-size: 1.3em;`;
+export const fontMiddleSizePC = css`font-size: 24px;`;
+export const fontMiddleSizeTablet = css`font-size: 22px;`;
+export const fontMiddleSizeMobile = css`font-size: 20px;`;
 
 type displayType = 'flex' | 'none';
 type flexDirectionType = 'column' | 'column-reverse' | 'row-reverse' | 'row'

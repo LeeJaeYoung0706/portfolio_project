@@ -8,7 +8,7 @@ const AboutMeIdCardContentStyle = styled.p`
   ${fontMiddleSizePC};
   color: ${(props => props.theme.palette.second)};
   background-color: transparent;
-  padding-bottom: 50px;
+
 
   ${(props) => props.theme.media.tablet} {
     ${fontMiddleSizeTablet};

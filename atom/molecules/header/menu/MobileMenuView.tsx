@@ -19,7 +19,7 @@ export const CloseBackGround = styled.div`
 const HeaderMobileMenuStyle = styled.div`
   display: none;
   position: relative;
-  padding-right: 6vw;
+  padding-right: 18px;
   z-index: 400;
 
   ${(props) => props.theme.media.tablet} {

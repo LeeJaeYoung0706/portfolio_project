@@ -3,6 +3,7 @@ import React, {useRef} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {NGodicFont} from "@/style/font";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
+import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 /**
  * 전체 에니메이션
@@ -25,27 +26,30 @@ const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   margin-bottom: 70px;
   padding: 20px;
   ${props => props.$contentVisible ? css`animation: ${contentAnimation} 2s linear normal; opacity: 1` : css`opacity: 0`}
-`
-const IntroDefaultPStyle = styled.p`
-  font-size: 2rem;
-  line-height: 1.7;
-
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.3rem;
-    line-height: 1.5;
-    
+    margin-bottom: 70px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 1.2rem;
-    font-weight: bold;
-    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+`
+const IntroDefaultPStyle = styled.p`
+  ${fontMiddleSizePC};
+  line-height: 1.5;
+
+  ${(props) => props.theme.media.tablet} {
+    ${fontMiddleSizeTablet};
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    ${fontMiddleSizeMobile};
   }
 `
 
 const StrongPStyle = styled.span`
   display: inline;
-  font-size: 2.2rem;
+  ${fontMiddleSizePC};
   height: auto;
   line-height: 1.5;
   color: ${props => props.theme.palette.primary};
@@ -53,14 +57,12 @@ const StrongPStyle = styled.span`
   position: relative;
   
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.5rem;
-    line-height: 1.2;
+    ${fontMiddleSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 1.5rem;
+    ${fontMiddleSizeMobile};
     font-weight: bold;
-    line-height: 1.1;
   }
 `
 
