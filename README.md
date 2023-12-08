@@ -175,10 +175,71 @@ export default function ProjectBorderContent(): React.JSX.Element {
 export 로 스타일 컴포넌트만 리턴 하는 방향과 고민중입니당.
 두가지다 구현해보고 React.memo로 감싸지는지 등을 내일 테스트 하겠습니다. 
 
+이 부분을 간단하게 예를 들면,
+
+```ts
+const AboutMeIdCardTitleFontStyle = styled.h3`
+  ${fontMiddleSizePC};
+  padding-bottom: 3px;
+  line-height: 1;
+  color: ${(props => props.theme.palette.primary)};
+  font-weight: bold;
+
+  ${(props) => props.theme.media.tablet} {
+    ${fontMiddleSizeTablet};
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    ${fontMiddleSizeMobile};
+  }
+}
+`
+
+/**
+ * About Me Id Card Title
+ * @param font
+ * @param title
+ * @constructor
+ */
+function AboutMeIdCardTitle ( {font , title} : {font: string , title: string}) :React.JSX.Element {
+    return (
+        <AboutMeIdCardTitleFontStyle className={font}>
+            {title}
+        </AboutMeIdCardTitleFontStyle>
+    )
+}
+
+export default React.memo(AboutMeIdCardTitle)
+```
+
+/aboutMe_style/styles.ts
+```ts
+
+export const AboutMeIdCardTitleFontStyle = styled.h3`
+  ${fontMiddleSizePC};
+  padding-bottom: 3px;
+  line-height: 1;
+  color: ${(props => props.theme.palette.primary)};
+  font-weight: bold;
+
+  ${(props) => props.theme.media.tablet} {
+    ${fontMiddleSizeTablet};
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    ${fontMiddleSizeMobile};
+  }
+}
+`
+```
+
+이런 상황일 때 Styles를 한 파일에서 관리하는 것은 좋았지만 문제는 export 되어서 다른 곳에서 부를 수 있는 경우가 발생했고 
+ReactMemo를 통해서 얻을 수 있는 이점을 얻기 위해서는 Props의 변경처리를 하나하나 잡아줘야하고 분할이 되어있지 않아서 오히려 찾기 어려울 수 있다는 단점이 있었다.
+Build 시 파일 크기가 커지는 것이 아니라면, 오히려 파일하나를 더 만드는 것이 유지보수하기에는 좋아보인다. 
+
 
 ### 7. 디자인 이슈
 
 ---
 혼자 하다보니까 디자인이 마음에 들지는 않는데 어떠한 방향으로 디자인 해야할 지 감이 안잡힌다 어느 효과를 넣어야 맞을 지.. 
 결국 프로젝트 부분을 변경하기로 했습니다.
-
