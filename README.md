@@ -243,3 +243,140 @@ Build 시 파일 크기가 커지는 것이 아니라면, 오히려 파일하나
 ---
 혼자 하다보니까 디자인이 마음에 들지는 않는데 어떠한 방향으로 디자인 해야할 지 감이 안잡힌다 어느 효과를 넣어야 맞을 지.. 
 결국 프로젝트 부분을 변경하기로 했습니다.
+
+기존 프로젝트 방식 
+```ts
+  const ref = useRef<HTMLDivElement>(null)
+    const arrayLength =  2;
+    // 이동 거리
+    const projectInitState = {
+        index: 0,
+        $transform: css`transform: translate(0)`
+    }
+    // 선택한 프로젝트
+    const [selectProject, setSelectProject] = useState(projectInitState);
+    // 모바일에서 사용할 State
+    const [touch, setTouch] = useState({
+        start: 0,
+        end: 0,
+    });
+
+    //초기화
+    useEffect(() => {
+        setSelectProject(() => projectInitState)
+    }, [project]);
+    /**
+     * 옆으로 버튼 handler
+     */
+    const projectIndexHandler = useCallback((plus: boolean) => {
+        if (plus) {
+            setSelectProject((pre) => {
+                const cal = pre?.index + 1;
+                const result = cal >= arrayLength ? arrayLength - 1 : cal;
+                return {
+                    index: result,
+                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%`})`
+                }
+            })
+        } else {
+            setSelectProject((pre) => {
+                const cal = pre.index - 1;
+                const result = cal <= 0 ? 0 : cal;
+                return {
+                    index: result,
+                    $transform: css`transform: translate(${result === 0 ? 0 : `-${result}00%`})`
+                }
+            })
+        }
+    }, [selectProject])
+
+
+    /**
+     * Mobile 부분 Slide Handler
+     */
+    const touchStart = useCallback((e: React.TouchEvent) => {
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
+        setTouch({
+            ...touch,
+            start: e.touches[0].pageX,
+        });
+    }, [touch])
+    
+    const touchMove = useCallback((e: React.TouchEvent) => {
+
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
+        if (ref?.current) {
+            const current = ref.current.clientWidth * selectProject.index;
+            const result = -current + (e.targetTouches[0].pageX - touch.start);
+            setSelectProject((pre) => {
+                return {
+                    ...pre,
+                    $transform: css`transform: translate3d(${result === 0 ? 0 : `${result}px , 0px ,0px`});
+                      transition: 0ms;`
+                }
+            })
+        }
+    }, [touch])
+
+    const touchEnd = useCallback((e: React.TouchEvent) => {
+
+        const target = e.target as HTMLElement;
+        if (target?.tagName === 'BUTTON')
+            return false;
+
+        const end = e.changedTouches[0].pageX;
+        if (touch.start > end) {
+            projectIndexHandler(true)
+        } else {
+            projectIndexHandler(false)
+        }
+        setTouch({
+            ...touch,
+            end,
+        });
+    }, [touch])
+
+```
+
+변경후 선택기능만 살리고 기본적인 시선 분산처리 디자인으로 변경 
+```ts
+ const [project , setProject] = useState<ProjectInterface[]>(initProjectList);
+    // project state 넘기는 핸들러
+    const projectCheckHandler = useCallback( (project: ProjectInterface) => {
+        setProject( (pre) => {
+            const copy = [...pre];
+            return copy.map( (value) => {
+                if (value.title === project.title)
+                    return {
+                        ...value,
+                        checked: project.checked,
+                    }
+                else
+                    return {
+                        ...value,
+                        checked: false
+                    }
+            })
+        })
+
+    } , [project])
+
+    // Title Select
+    const [checked , setChecked] = useState(false);
+    useEffect(() => {
+        const result = project?.filter( (value) => value.checked);
+        setChecked( () => result?.length > 0)
+    }, [project]);
+
+    // Check 시 list 에서 pop
+    const selectProject = () => {
+        const copy = [...project];
+        return copy?.filter((project) => project.checked)?.pop()
+    }
+```
