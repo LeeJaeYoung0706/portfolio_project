@@ -13,9 +13,12 @@ const StackLogoImageStyle = styled.div`
     border-radius: 10px;
   }
 `
+
 /**
- * Stack Logo Image
- * @param children
+ *
+ * @param src 이미지 경로
+ * @param alt 이미지 alt
+ * @param size sizes
  * @constructor
  */
 function StackLogoImage({src , alt , size}: StackLogoImageInterface):React.JSX.Element {

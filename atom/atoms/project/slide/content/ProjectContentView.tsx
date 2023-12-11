@@ -4,10 +4,15 @@ import {displayFlex} from "@/style/theme/common";
 
 
 const ProjectContentViewStyle = styled.div`
-  ${displayFlex("row", "space-between", "center")};
+  ${displayFlex("column", "space-around", "center")};
   width: 100%;
 `
 
+/**
+ * Project 클릭 시 내부 요소 스타일
+ * @param children
+ * @constructor
+ */
 function ProjectContentView({children}: ComponentPropsInterface): React.JSX.Element {
     return (
         <ProjectContentViewStyle>

@@ -1,5 +1,6 @@
 import {css, DefaultTheme, keyframes} from 'styled-components';
 import {color} from "@/style/theme/color";
+import {commonAnimation} from "@/style/theme/common";
 
 
 /*
@@ -25,24 +26,24 @@ export const introSvgKeyframes = (theme: DefaultTheme) => keyframes`
   0% {
     stroke-dashoffset: 25%;
     stroke-dasharray: 0 50%;
-    fill:  ${theme.palette.reverse};
-    stroke:  ${theme.palette.reverse};
+    fill:  ${theme.palette.primary70};
+    stroke:  ${theme.palette.primary70};
     stroke-width: 0.6;
   }
   70% {
     fill: rgba(72, 138, 204, 0);
-    stroke:  ${theme.palette.reverse};
+    stroke:  ${theme.palette.primary70};
     stroke-width: 0.5;
   }
   80% {
     fill: rgba(169, 180, 185, 0);
-    stroke:  ${theme.palette.reverse};
+    stroke:  ${theme.palette.primary70};
   }
   100% {
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0;
-    fill:   ${theme.palette.reverse};
-    stroke:  ${theme.palette.reverse};
+    fill:   ${theme.palette.primary70};
+    stroke:  ${theme.palette.primary};
     stroke-width: 0.3;
   }
 `
@@ -69,6 +70,20 @@ export const aboutMeTitleAnimation = keyframes`
   
   100% {
     width: 0; right: 0;
+  }
+`
+/**
+ * Header DropDown
+ */
+export const dropdownAnimation = keyframes`
+  0% {
+    transform: translateX(200px);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
   }
 `
 
@@ -99,7 +114,7 @@ export const lineReverseBefore = css`
   height: 2px;
   width: 0;
   box-shadow: 0 1px 5px 1px ${(props => props.theme.palette.fontColor)};
-  animation: ${aboutMeTitleAnimation} 2s infinite;
+  ${commonAnimation(css`${aboutMeTitleAnimation} 2s infinite;`)}
   animation-direction: alternate;
 `;
 
@@ -118,34 +133,42 @@ export const pcGridAnimation = keyframes`
 `
 export const rightGridAnimation = keyframes`
   0% {
+    opacity: 0;
     transform: translateX(250px);
   }
   100% {
+    opacity: 0.9;
     transform: translateX(0);
   }
 `
 export const leftGridAnimation = keyframes`
   0% {
+    opacity: 0;
     transform: translateX(-250px);
   }
   100% {
+    opacity: 0.9;
     transform: translateX(0);
   }
 `
 
 export const mobileRightGridAnimation = keyframes`
   0% {
+    opacity: 0;
     transform: translateX(180px);
   }
   100% {
+    opacity: 0.9;
     transform: translateX(0);
   }
 `
 export const mobileLeftGridAnimation = keyframes`
   0% {
+    opacity: 0;
     transform: translateX(-180px);
   }
   100% {
+    opacity: 0.9;
     transform: translateX(0);
   }
 `

@@ -2,7 +2,7 @@ import React from "react";
 import styled, {css} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
-const HeaderLayoutStyle = styled.header<{ $isTop: boolean  , $checked:  boolean}>`
+const HeaderLayoutStyle = styled.header<{ $isTop: boolean, $checked: boolean }>`
   position: fixed;
   width: 100%;
   min-height: 100px;
@@ -11,8 +11,7 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean  , $checked:  boolean}
   ${displayFlex('row', 'space-between', 'center')}
   flex-wrap: wrap;
 
-  ${(props) => (props.$checked || props.$isTop ) ? css`background-color: ${props.theme.palette.reverse};` : css`background-color: transparent;` }
-  box-shadow: ${(props) =>  (props.$checked || props.$isTop ) ? css`0 0 4px 1px ${props.theme.palette.reverseSecond}` : 'none' };
+  ${(props) => (props.$checked || props.$isTop) ? css`background-color: ${props.theme.palette.reverse};` : css`background-color: transparent;`}
 `
 
 /**
@@ -22,7 +21,7 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean  , $checked:  boolean}
  * @param checked
  * @constructor
  */
-function HeaderView({children, isTop , checked}: HeaderPropsInterface): React.JSX.Element {
+function HeaderView({children, isTop, checked}: HeaderPropsInterface): React.JSX.Element {
     return (
         <HeaderLayoutStyle $isTop={isTop} $checked={checked}>
             {children}

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import {TitllFont} from "@/style/font";
-import ProjectLinkTag from "@/atom/atoms/project/project_title/ProjectLinkTag";
+import {NotoSansFont, RussoFont} from "@/style/font";
 import {displayFlex} from "@/style/theme/common";
 
 
@@ -13,7 +12,7 @@ const ProjectHighLightStyle = styled.div`
 `
 
 const TitleStyle = styled.h1`
-  font-size: 42px;
+  font-size: 52px;
   font-weight: bold;
   color: ${props => props.theme.palette.second};
   line-height: 1.5;
@@ -32,22 +31,21 @@ const PeriodStyle = styled.p`
 
 /**
  * 프로젝트 선택 시 강조
- * @param project
+ * @param project 프로젝트 정보  ProjectInterface 참고
  * @constructor
  */
 function ProjectHighLightTitle({project}: ProjectHighLightTitleInterface): React.JSX.Element {
 
     if (project === undefined) {
-        return <ProjectHighLightStyle className={TitllFont.className}>Project</ProjectHighLightStyle>;
+        return <ProjectHighLightStyle className={NotoSansFont.className}>Project</ProjectHighLightStyle>;
     }
 
     return (
-        <ProjectHighLightStyle className={TitllFont.className}>
+        <ProjectHighLightStyle className={RussoFont.className}>
             <TitleStyle>{project?.title || ''}</TitleStyle>
             <PeriodStyle>
                 {project?.period || ''}
             </PeriodStyle>
-
         </ProjectHighLightStyle>
     )
 }

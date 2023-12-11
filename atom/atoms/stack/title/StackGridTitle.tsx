@@ -1,21 +1,22 @@
 import styled from "styled-components";
-import {kdamThmorPro} from "@/style/font";
+import {HanSansFont, kdamThmorPro, NotoSansFont} from "@/style/font";
 
-const StackGridTitleStyle = styled.div`
+const StackGridTitleStyle = styled.p`
   font-size: 45px;
-  color: ${props => props.theme.palette.primary};
+  color: ${props => props.theme.palette.second};
   width: 100%;
   text-align: center;
+  font-weight: bold;
 `
 /**
  * Stack Grid Title View
- * @param title
+ * @param title String title
  * @constructor
  */
-export default function StackGridTitle({title} : {title: string}) {
+export default function StackGridTitle({title} : StackGridTitlePropsInterface) {
     return (
-        <StackGridTitleStyle>
-            <h4 className={kdamThmorPro.className}>{title}</h4>
+        <StackGridTitleStyle className={HanSansFont.className}>
+           {title}
         </StackGridTitleStyle>
     )
 }

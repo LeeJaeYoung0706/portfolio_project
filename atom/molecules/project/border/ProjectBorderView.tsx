@@ -27,7 +27,7 @@ const ProjectBorderViewStyle = styled.article<{$visible: boolean}>`
   }
 
   ${(props) => props.theme.media.mobile} {
-    min-width: 370px;
+    min-width: 360px;
   }
 `
 
@@ -40,7 +40,7 @@ function ProjectBorderView ({children} : ComponentPropsInterface) : React.JSX.El
 
     const ref = useRef<HTMLDivElement | null>(null)
     const [entry, targetId, visible] = useIntersectionObserver(ref,  {
-        threshold: 0.01, // 노출 %
+        threshold: 0.01,
         root: null,
         rootMargin: '0%',
         freezeOnceVisible: false,

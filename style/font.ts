@@ -1,13 +1,9 @@
 import {NextFont} from "next/dist/compiled/@next/font";
 import {
-    Anton,
-    Beau_Rivage, Cinzel, Indie_Flower,
+    Black_Han_Sans,
+    Cinzel, Gasoek_One,
     Kdam_Thmor_Pro,
-    Labrada,
-    Nanum_Gothic, Nanum_Pen_Script, Noto_Sans,
-    Orbit,
-    Pacifico, Shadows_Into_Light,
-    Shadows_Into_Light_Two,
+    Nanum_Gothic, Noto_Sans, Russo_One,
     Titillium_Web
 } from "next/font/google";
 
@@ -39,6 +35,19 @@ export const NGodicFont: NextFont = Nanum_Gothic({
 })
 
 export const NotoSansFont: NextFont = Noto_Sans({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+})
+
+
+export const RussoFont  = Russo_One({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+})
+
+export const HanSansFont = Black_Han_Sans({
     weight: '400',
     subsets: ['latin'],
     display: 'swap',

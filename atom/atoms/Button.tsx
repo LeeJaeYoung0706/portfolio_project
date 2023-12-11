@@ -13,15 +13,16 @@ const headerTypeCss = css`
   background-color: transparent;
   text-align: center;
   font-size: 19px;
+  padding: 10px;
   letter-spacing: 1.2px; // 글자 사이 간격
   font-weight: bold;
   line-height: 1;
-  width: 120px;
+  min-width: 120px;
   height: 30px;
   border: none;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      color: ${(props) => props.theme.palette.reverseSecond};
+      color: ${(props) => props.theme.palette.primary};
       //opacity: 0.9;
     }
   }
@@ -30,7 +31,7 @@ const headerTypeCss = css`
     max-width: 110px;
 
     &:active {
-      color: ${(props) => props.theme.palette.reverseSecond};
+      color: ${(props) => props.theme.palette.primary};
       opacity: 0.9;
     }
   }
@@ -39,7 +40,7 @@ const headerTypeCss = css`
     max-width: 100px;
 
     &:active {
-      color: ${(props) => props.theme.palette.reverseSecond};
+      color: ${(props) => props.theme.palette.primary};
       opacity: 0.9;
     }
   }
@@ -50,8 +51,8 @@ const DefaultButtonStyle = css`
   border: none;
   padding: 30px;
   border-radius: 4px;
-  background-color:  ${props => props.theme.palette.second};
-  color: ${(props) => props.theme.palette.middle};
+  background-color:  ${props => props.theme.palette.primary70};
+  color: ${(props) => props.theme.palette.reverseSecond70};
   font-weight: bold;
    @media (hover: hover) and (pointer: fine) {
     &:hover {
@@ -75,7 +76,7 @@ const DefaultButtonStyle = css`
     max-width: 200px;
 
     &:active {
-      color: ${(props) => props.theme.palette.reverseSecond};
+      color: ${(props) => props.theme.palette.middle};
       background-color:  ${props => props.theme.palette.primary};
       opacity: 0.9;
     }
@@ -85,6 +86,14 @@ const DefaultButtonStyle = css`
 const ButtonStyle = styled.button<{ $type: string }>`
   ${(props) => props.$type === 'header' ? headerTypeCss : DefaultButtonStyle}
 `
+/**
+ *
+ * @param content 보여질 글자
+ * @param onClick 온클릭 콜백함수
+ * @param font 폰트 클래스네임 String
+ * @param $type header 기본 형태 지정을 위해서 생성
+ * @constructor
+ */
 export default function Button({content, onClick, font, $type}: ButtonInterface) {
     return (
         <ButtonStyle

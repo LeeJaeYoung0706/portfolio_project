@@ -3,7 +3,7 @@ import React, {useRef} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {NGodicFont} from "@/style/font";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
-import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {commonAnimation, fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
 
 /**
  * 전체 에니메이션
@@ -25,7 +25,9 @@ const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   text-align: center;
   margin-bottom: 70px;
   padding: 20px;
-  ${props => props.$contentVisible ? css`animation: ${contentAnimation} 2s linear normal; opacity: 1` : css`opacity: 0`}
+  ${props => props.$contentVisible ? css`opacity: 1` : css`opacity: 0`};
+  ${props => props.$contentVisible && commonAnimation(css`${contentAnimation} 2s linear normal;`)};
+  
   ${(props) => props.theme.media.tablet} {
     margin-bottom: 70px;
   }
@@ -37,7 +39,7 @@ const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
 const IntroDefaultPStyle = styled.p`
   ${fontMiddleSizePC};
   line-height: 1.5;
-
+  color: ${props => props.theme.palette.primary};
   ${(props) => props.theme.media.tablet} {
     ${fontMiddleSizeTablet};
   }
@@ -52,7 +54,7 @@ const StrongPStyle = styled.span`
   ${fontMiddleSizePC};
   height: auto;
   line-height: 1.5;
-  color: ${props => props.theme.palette.primary};
+  color: ${props => props.theme.palette.second};
   font-weight: bold;
   position: relative;
   
@@ -76,17 +78,25 @@ function AboutMeIntroContent():React.JSX.Element {
     //visible 체크를 위한 ref
     const ref = useRef<HTMLDivElement | null>(null)
     const [entry, targetId, visible] = useIntersectionObserver(ref,  {
-        threshold: 0.01, // 노출 %
+        threshold: 0.1,
         root: null,
-        rootMargin: '0%',
+        rootMargin: '10%',
         freezeOnceVisible: false,
     })
 
     return (
         <IntroContentStyle $contentVisible={visible} ref={ref}>
-            <IntroDefaultPStyle className={NGodicFont.className}><StrongPStyle>개발자로서</StrongPStyle>,</IntroDefaultPStyle>
-            <IntroDefaultPStyle className={NGodicFont.className}>사용자에게 편안한 경험을 제공하는 것도 중요하지만,</IntroDefaultPStyle>
-            <IntroDefaultPStyle className={NGodicFont.className}><StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>하고 싶습니다.</IntroDefaultPStyle>
+            <IntroDefaultPStyle
+                className={NGodicFont.className}>
+                <StrongPStyle>개발자로서</StrongPStyle>,
+            </IntroDefaultPStyle>
+            <IntroDefaultPStyle className={NGodicFont.className}>
+                사용자에게 편안한 경험을 제공하는 것도 중요하지만,
+            </IntroDefaultPStyle>
+            <IntroDefaultPStyle className={NGodicFont.className}>
+                <StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>
+                하고 싶습니다.
+            </IntroDefaultPStyle>
         </IntroContentStyle>
     )
 }

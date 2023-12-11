@@ -3,8 +3,9 @@ import React from "react";
 
 
 /**
- * Project Title Li Container
- * @param children
+ *
+ * @param project 프로젝트 정보  ProjectInterface 참고
+ * @param projectCheckHandler 프로젝트 선택 콜백 함수
  * @constructor
  */
 export default function ProjectTitleLi({project , projectCheckHandler} : ProjectTitleLiInterface):React.JSX.Element{

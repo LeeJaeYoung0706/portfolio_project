@@ -1,4 +1,4 @@
-import {css} from "styled-components";
+import {css, RuleSet} from "styled-components";
 
 /**
  * 반응형 쿼리
@@ -7,6 +7,12 @@ import {css} from "styled-components";
 export const customMediaQuery = (maxWidth: number): string =>
     `@media screen and (max-width: ${maxWidth}px)`
 
+export const commonAnimation = (animationCss: RuleSet<Object>) => css`
+  -webkit-animation: ${animationCss};
+  -moz-animation: ${animationCss};
+  -o-animation: ${animationCss};
+  animation: ${animationCss};
+`
 
 export const fontMiddleSizePC = css`font-size: 24px;`;
 export const fontMiddleSizeTablet = css`font-size: 22px;`;

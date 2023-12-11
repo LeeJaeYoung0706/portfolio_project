@@ -13,12 +13,12 @@ interface Args extends IntersectionObserverInit {
  * @param freezeOnceVisible
  */
 export const useIntersectionObserver = (elementRef: RefObject<Element>,
-                                          {
-                                              threshold = 1, // 노출 %
-                                              root = null,
-                                              rootMargin = '0%',
-                                              freezeOnceVisible = false,
-                                          }: Args,): [IntersectionObserverEntry | undefined , string | undefined , boolean] => {
+                                        {
+                                            threshold = 1,
+                                            root = null,
+                                            rootMargin = '0%',
+                                            freezeOnceVisible = false,
+                                        }: Args,): [IntersectionObserverEntry | undefined, string | undefined, boolean] => {
 
     const [entry, setEntry] = useState<IntersectionObserverEntry>()
 
@@ -33,11 +33,11 @@ export const useIntersectionObserver = (elementRef: RefObject<Element>,
         const hasIOSupport = !!window.IntersectionObserver // 비어 있나 없나 체크 => Boolean 으로 변환
         if (!hasIOSupport || frozen || !node)
             return
-        const observerParams = { threshold, root, rootMargin } // Intersection 기본 파라미터
+        const observerParams = {threshold, root, rootMargin} // Intersection 기본 파라미터
         const observer = new IntersectionObserver(updateEntry, observerParams)
         observer.observe(node) // 지정 ref 관찰
         return () => observer.disconnect() // 끝난 후 종료
     }, [elementRef?.current, JSON.stringify(threshold), root, rootMargin, frozen])
 
-    return [entry , entry?.target?.id , !!entry?.isIntersecting]
+    return [entry, entry?.target?.id, !!entry?.isIntersecting]
 }

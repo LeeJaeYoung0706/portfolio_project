@@ -3,10 +3,21 @@ import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
 const AboutMeIdCardStyle = styled.div`
-  ${displayFlex('column' , 'space-around' , 'center')};
-  width: 300px;
+  ${displayFlex('row' , 'space-between' , 'center')};
+  width: 32%;
   box-sizing: border-box;
   margin-top: 50px;
+  min-width:  320px;
+  padding-bottom: 30px;
+
+  border-bottom: 2px solid ${props => props.theme.palette.middle};
+  ${(props) => props.theme.media.tablet} {
+    width: 40%;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    min-width: 300px;
+  }
 `
 function AboutMeIdCardView({children}: AboutMeIdCardViewInterface): React.JSX.Element {
     return (

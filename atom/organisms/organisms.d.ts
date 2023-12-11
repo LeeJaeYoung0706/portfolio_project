@@ -1,3 +1,4 @@
+
 interface HeaderPropsInterface extends ComponentPropsInterface {
     isTop: boolean
     children: React.ReactNode[]
@@ -5,7 +6,7 @@ interface HeaderPropsInterface extends ComponentPropsInterface {
 }
 
 interface AboutMeInterface extends ComponentPropsInterface {
-    children: React.ReactNode[]
+    children: React.ReactNode
 }
 
 interface IntroInterface extends ComponentPropsInterface {
@@ -26,4 +27,9 @@ interface MobileMenuInterface {
 
 interface ProjectPropsInterface extends ComponentPropsInterface {
     children: React.ReactNode[]
+}
+
+interface EducationAreaInterface extends ComponentPropsInterface {
+    $area: RuleSet<object>
+    children: React.ReactNode
 }

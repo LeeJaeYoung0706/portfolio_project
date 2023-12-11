@@ -4,10 +4,9 @@ import ProjectBorderView from "@/atom/molecules/project/border/ProjectBorderView
 import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTitleUlView";
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
 import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
-import ProjectContentSwiper from "@/atom/molecules/project/border/border_swiper/SwiperContainer";
-import InitSwiperContent from "@/atom/molecules/project/border/border_swiper/InitSwiperContent";
+import InitSwiperContent from "@/atom/molecules/project/border/InitSwiperContent";
 import {initProjectList} from "@/atom/organisms/project/ProjectTitleDescription";
-import SlideLayout from "@/atom/atoms/project/slide/SlideLayout";
+import SlideLayout from "@/atom/molecules/project/slide/SlideLayout";
 
 
 /**
@@ -19,6 +18,10 @@ export default function ProjectBorder() :React.JSX.Element {
     const [project , setProject] = useState<ProjectInterface[]>(initProjectList);
     // project state 넘기는 핸들러
     const projectCheckHandler = useCallback( (project: ProjectInterface) => {
+
+        if (!project.checked)
+            return false;
+
         setProject( (pre) => {
             const copy = [...pre];
             return copy.map( (value) => {
@@ -64,7 +67,6 @@ export default function ProjectBorder() :React.JSX.Element {
                 checked ?
                 <>
                     <ProjectHighLightTitle project={selectProject()}/>
-                    {/*<ProjectContentSwiper project={selectProject()}/>*/}
                     <SlideLayout project={selectProject()} />
                 </> :
                 <>

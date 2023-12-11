@@ -10,6 +10,9 @@ import Footer from "@/atom/organisms/Footer";
 import Education from "@/atom/organisms/education/Education";
 
 export default function Home(): React.JSX.Element {
+
+
+
     return (
         <Container>
             <Header/>

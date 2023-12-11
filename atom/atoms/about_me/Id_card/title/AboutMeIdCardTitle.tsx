@@ -1,31 +1,32 @@
 import React from "react";
 import styled from "styled-components";
 import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {NotoSansFont} from "@/style/font";
 
 const AboutMeIdCardTitleFontStyle = styled.h3`
-  ${fontMiddleSizePC};
-  padding-bottom: 3px;
+  font-size: 30px;
   line-height: 1;
-  color: ${(props => props.theme.palette.primary)};
-  font-weight: bold;
-
+  color: ${(props => props.theme.palette.second)};
+  min-width: 100px;
+  
   ${(props) => props.theme.media.tablet} {
-    ${fontMiddleSizeTablet};
+    font-size: 28px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${fontMiddleSizeMobile};
+    font-size: 24px;
   }
+
 }
 `
 
 /**
  * About Me Id Card Title
- * @param font
- * @param title
+ * @param font => font ClassName => String
+ * @param title => 타이틀 명
  * @constructor
  */
-function AboutMeIdCardTitle ( {font , title} : {font: string , title: string}) :React.JSX.Element {
+function AboutMeIdCardTitle ( {font , title} : AboutMeIdCardTitlePropsInterface) :React.JSX.Element {
     return (
         <AboutMeIdCardTitleFontStyle className={font}>
             {title}

@@ -4,7 +4,8 @@ import {color} from "@/style/theme/color";
 
 
 const ProjectViewStyle = styled.section`
-  background-color: ${color.white};
+  background-color: ${props => props.theme.palette.background};
+
 `
 
 /**

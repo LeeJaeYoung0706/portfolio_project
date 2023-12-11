@@ -1,36 +1,40 @@
 import { createGlobalStyle } from 'styled-components';
 import { reset } from '@/style/mixin';
+import {dark} from "@/style/theme/dark";
 
 
 export const GlobalStyle = createGlobalStyle`
 
   :root {
+    --purple-primary: hsl(0, 100%, 0%);
+    --purple-primary-70: hsl(243, 54%, 16%, 85%);
+    --purple-second: hsl(241, 89%, 29%);
+    --purple-second-70: hsl(248, 52%, 23%, 85%);
+    --purple-middle: hsl(238, 100%, 57%);
+    --purple-middle-70: hsl(253, 33%, 78%, 85%);
+    --purple-reverse-second: hsl(235, 100%, 73%);
+    --purple-reverse-second-70: hsl(274, 35%, 92%, 85%);
+    --purple-reverse: hsl(309, 100%, 99%);
+    --purple-reverse-70: hsl(270, 64%, 40%, 85%);
 
-    //Purple
 
-    //--purple-primary: hsl(268, 46%, 16%);
-    //--purple-second: hsl(304, 42%, 27%);
-    //--purple-middle: hsl(187, 39%, 37%);
-    //--purple-reverse-second: hsl(40, 74%, 72%);
-    //--purple-reverse: hsl(31, 50%, 58%);
+    --dark-primary: hsl(240, 7%, 95%);
+    --dark-second: hsl(16, 64%, 59%);
+    --dark-middle: hsl(0, 0%, 5%);
+    --dark-reverse-second: hsla(6, 60%, 56%, 0.85);
+    --dark-reverse: hsl(0, 0%, 0%);
 
-    --purple-primary: hsl(231, 54%, 30%);
-    --purple-second: hsl(342, 49%, 9%);
-    --purple-middle: hsl(29, 71%, 83%);
-    --purple-reverse-second: hsl(197, 83%, 71%);
-    --purple-reverse: hsl(208, 37%, 60%);
-
-    //Greean
-    --green-primary: hsl(28, 21%, 56%);
-    --green-second: hsl(202, 59%, 13%);
-    --green-middle: hsl(57, 29%, 65%);
-    --green-reverse-second: hsl(145, 25%, 80%);
-    --green-reverse: hsl(186, 20%, 29%);
+    --dark-primary-70: hsl(0, 0%, 100%, 85%);
+    --dark-second-70: hsl(16, 64%, 59%);
+    --dark-middle-70: hsl(0, 0%, 5%, 85%);
+    --dark-reverse-second-70: hsla(6, 60%, 56%, 0.85);
+    --dark-reverse-70: hsla(0, 0%, 2%, 85%);
 
 
     --white: hsl(0, 100%, 100%);
     --black: hsl(0, 100%, 0%);
-
+    --white-70: hsl(0, 0%, 84%);
+    --black-70: hsl(240, 1%, 35%);
   }
 
   *,
@@ -49,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     height: 100%;
     -webkit-text-size-adjust: 100%;
-    min-width: 500px;
+    min-width: 375px;
 
     &.is-mobile {
       font-size: 12px;

@@ -9,11 +9,11 @@ import ProjectBorder from "@/atom/molecules/project/border/ProjectBorder";
  * Project Container
  * @constructor
  */
-export default function Project():React.JSX.Element {
-    return (
-        <ProjectView>
-            <SectionTitle title={'Project'} id={'project'} />
-            <ProjectBorder />
-        </ProjectView>
-    )
+export default function Project(): React.JSX.Element {
+  return (
+    <ProjectView>
+      <SectionTitle title={'Project'} id={'project'}/>
+      <ProjectBorder/>
+    </ProjectView>
+  )
 }

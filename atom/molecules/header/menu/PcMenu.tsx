@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderPcMenuView from "@/atom/molecules/header/menu/PcMenuView";
 import Button from "@/atom/atoms/Button";
 import {useRouter} from "next/navigation";
-import {NGodicFont} from "@/style/font";
+import {NGodicFont, RussoFont} from "@/style/font";
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
@@ -21,39 +21,39 @@ export default function HeaderPcMenu(): React.JSX.Element {
 
     const MenuButtonArray: MenuButtonArrayInterface[] = [
         {
-            content: 'Intro',
+            content: 'INTRO',
             onClick: () => router.push('#intro'),
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
         {
-            content: 'About',
+            content: 'ABOUT',
             onClick: () => router.push('#about_me'),
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
         {
-            content: 'Stack',
+            content: 'STACK',
             onClick: () => router.push('#stack'),
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
         {
-            content: 'Project',
+            content: 'PROJECT',
             onClick: () => router.push('#project'),
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
         {
-            content: 'Education',
+            content: 'EDUCATION',
             onClick: () => router.push('#education'),
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
         {
-            content: 'Theme',
+            content: 'THEME',
             onClick: themeHandler,
-            font: NGodicFont.className,
+            font: RussoFont.className,
             $type: 'header'
         },
     ]

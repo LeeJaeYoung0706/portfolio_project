@@ -4,7 +4,11 @@ import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
 const FooterStyle = styled.footer`
-  background-color: ${props => props.theme.palette.middle};
+  background-color: ${props => props.theme.palette.background};
+  
+  & > p {
+    color:  ${props => props.theme.palette.primary70};
+  }
   height: 160px;
   bottom: 0;
   width: 100%;

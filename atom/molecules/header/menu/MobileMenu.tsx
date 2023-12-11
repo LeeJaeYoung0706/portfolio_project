@@ -5,8 +5,8 @@ import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/Mobi
 
 /**
  * Mobile 메뉴 Container
- * @param checked
- * @param checkHandler
+ * @param checked 오픈 여부
+ * @param checkHandler 오픈 헨들러
  * @constructor
  */
 

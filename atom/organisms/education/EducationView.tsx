@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import {color} from "@/style/theme/color";
+
 
 const EducationLayoutStyle = styled.section`
-    background-color: ${color.white};
+  background-color: ${props => props.theme.palette.background};
+  padding-bottom: 150px;
 `
 
 /**

@@ -4,9 +4,8 @@ import StackLogo from "@/atom/atoms/stack/logo/StackLogo";
 import GridArea from "@/atom/molecules/stack/GridArea";
 import {BackStackLogoArray, EtcStackLogoArray, FrontStackLogoArray} from "@/atom/molecules/stack/LogoArray";
 import StackGridTitle from "@/atom/atoms/stack/title/StackGridTitle";
-import YArea from "@/atom/atoms/stack/grid/YArea";
+import StackArea from "@/atom/atoms/stack/grid/StackArea";
 import {AreaBack, AreaEtc, AreaFront} from "@/atom/atoms/stack/grid/commonStyle";
-import XArea from "@/atom/molecules/education/XArea";
 
 
 /**
@@ -17,8 +16,8 @@ export default function StackGrid(): React.JSX.Element {
 
     return (
         <StackGridView>
-            <YArea $area={AreaFront}>
-                <StackGridTitle title={'Front'}/>
+            <StackArea $area={AreaFront}>
+                <StackGridTitle title={'FRONT'}/>
                 {
                     FrontStackLogoArray?.length !== 0 &&
                     FrontStackLogoArray?.map((value, index) => {
@@ -33,9 +32,9 @@ export default function StackGrid(): React.JSX.Element {
                         )
                     })
                 }
-            </YArea>
-            <YArea $area={AreaBack}>
-                <StackGridTitle title={'Back'}/>
+            </StackArea>
+            <StackArea $area={AreaBack}>
+                <StackGridTitle title={'BACK'}/>
                 {
                     BackStackLogoArray?.length !== 0 &&
                     BackStackLogoArray?.map((value, index) => {
@@ -50,8 +49,8 @@ export default function StackGrid(): React.JSX.Element {
                         )
                     })
                 }
-            </YArea>
-            <YArea $area={AreaEtc}>
+            </StackArea>
+            <StackArea $area={AreaEtc}>
                 <StackGridTitle title={'ETC'}/>
                 {
                     EtcStackLogoArray?.length !== 0 &&
@@ -67,7 +66,7 @@ export default function StackGrid(): React.JSX.Element {
                         )
                     })
                 }
-            </YArea>
+            </StackArea>
         </StackGridView>
     )
 }

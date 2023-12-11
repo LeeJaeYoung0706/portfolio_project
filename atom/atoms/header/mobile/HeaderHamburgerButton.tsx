@@ -1,30 +1,32 @@
 import React from 'react';
 import styled from "styled-components";
-import {color} from "@/style/theme/color";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
 const HamburgerButtonStyle = styled.label<{}>`
   display: none;
-  width: 38px;
-  height: 25px;
+  width: 30px;
+  height: 20px;
   position: relative;
   cursor: pointer;
  
 
   ${(props) => props.theme.media.tablet} {
     display: block;
+    top: -10px;
   }
 
   ${(props) => props.theme.media.mobile} {
     display: block;
-    right: 15px;
+    right: 10px;
+    top: -4px;
   }
   
 `
 
 /**
  * Mobile Header Menu
- * @param children
+ * @param checked 클릭 여부
+ * @param onClick 클릭 시 실행할 콜백함수 ( 테마 핸들러 or 라우트 )
  * @constructor
  */
 
@@ -50,9 +52,26 @@ export default function HeaderHamburgerButton({checked, onClick}: HeaderHamburge
 
     return (
         <HamburgerButtonStyle onClick={onClick}>
-            <HamburgerButtonSpanStyle $top={'0'} $checked={checked} $rotate={'rotate(45deg)'} $trans_top={'50%'} $isTop={isTop}/>
-            <HamburgerButtonSpanStyle $top={'50%'} $checked={checked} $opacity={0} $isTop={isTop}/>
-            <HamburgerButtonSpanStyle $top={'100%'} $checked={checked} $rotate={'rotate(-45deg)'} $trans_top={'50%'} $isTop={isTop}/>
+            <HamburgerButtonSpanStyle
+                $top={'0'}
+                $checked={checked}
+                $rotate={'rotate(45deg)'}
+                $trans_top={'50%'}
+                $isTop={isTop}
+            />
+            <HamburgerButtonSpanStyle
+                $top={'50%'}
+                $checked={checked}
+                $opacity={0}
+                $isTop={isTop}
+            />
+            <HamburgerButtonSpanStyle
+                $top={'100%'}
+                $checked={checked}
+                $rotate={'rotate(-45deg)'}
+                $trans_top={'50%'}
+                $isTop={isTop}
+            />
         </HamburgerButtonStyle>
     )
 }

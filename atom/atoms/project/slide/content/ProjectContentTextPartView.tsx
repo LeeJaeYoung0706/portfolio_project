@@ -1,58 +1,73 @@
 import React from "react";
 import styled from "styled-components";
 import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
-import {NGodicFont} from "@/style/font";
+import {NGodicFont, NotoSansFont} from "@/style/font";
 
-const PartTitleStyle = styled.div`
-  ${fontMiddleSizePC};
-  padding-bottom: 10px;
-  color: white;
-  ${(props) => props.theme.media.tablet} {
-    padding-right: 0;
-    ${fontMiddleSizeTablet};
-  }
-
-  ${(props) => props.theme.media.mobile} {
-    padding-right: 0;
-    ${fontMiddleSizeMobile};
-  }
-`
 
 const ContentStyle = styled.div`
-  font-size: 16px;
-  color: white;
+  font-size: 18px;
+  line-height: 1.7;
+  padding-bottom: 20px;
+  color: ${props => props.theme.palette.primary};
   ${(props) => props.theme.media.tablet} {
-    padding-right: 0;
-    font-size: 15px;
+    font-size: 16px;
+    padding-bottom: 15px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    padding-right: 0;
-    font-size: 14px;
+    font-size: 16px;
+    padding-bottom: 10px;
   }
 `
 
 const ProjectTextPartViewStyle = styled.div`
-  padding: 30px 90px;
+  padding: 30px 10px;
   width: 100%;
+  
+  ${(props) => props.theme.media.tablet} {
+    padding: 30px 10px;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    padding: 30px 20px;
+  }
 `
-function ProjectContentTextPartView({partTitle , content}: {partTitle: string , content: string[]}):React.JSX.Element {
+
+const NumberColorSpan = styled.span`
+  color: ${props => props.theme.palette.second70};
+  font-weight: bold;
+  font-size: 22px;
+  
+  ${(props) => props.theme.media.tablet} {
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    font-size: 18px;
+    padding-bottom: 10px;
+  }
+`
+
+/**
+ * Content Text 요소
+ * @param content 프로젝트 콘텐츠
+ * @constructor
+ */
+function ProjectContentTextPartView({content}: ProjectContentTextPartPropsInterface):React.JSX.Element {
     return (
         <ProjectTextPartViewStyle>
-            <PartTitleStyle className={NGodicFont.className}>
-                {partTitle}
-            </PartTitleStyle>
             {
                 content?.length > 0 ?
                     content?.map( (value , index) => {
                         return (
-                            <ContentStyle key={`${index}_${value}`}>
-                                {value}
+                            <ContentStyle key={`${index}_${value}`} className={NotoSansFont.className}>
+                               <NumberColorSpan>* </NumberColorSpan>&nbsp; &nbsp; {value}
                             </ContentStyle>
                         )
                     }) : (
-                        <ContentStyle>
-                            {content}
+                        <ContentStyle className={NotoSansFont.className}>
+                            ✱ {content}
                         </ContentStyle>
                     )
             }

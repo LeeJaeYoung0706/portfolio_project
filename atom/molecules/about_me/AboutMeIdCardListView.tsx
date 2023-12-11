@@ -6,10 +6,10 @@ const AboutMeIdCardListViewStyle = styled.article`
   width: 100%;
   line-height: 1;
   padding-bottom: 130px;
-  ${displayFlex('row' , 'space-around' , 'center' , 'flex' , true)}
+  ${displayFlex('column' , 'space-around' , 'center' , 'flex' , true)}
   
   ${(props) => props.theme.media.tablet} {
-    ${displayFlex('row' , 'space-around' , 'center', 'flex' , true)}
+    ${displayFlex('column' , 'space-around' , 'center', 'flex' , true)}
   }
 
   ${(props) => props.theme.media.mobile} {

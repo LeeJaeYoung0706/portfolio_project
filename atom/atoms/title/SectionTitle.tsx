@@ -1,19 +1,33 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import SectionTitleView from "@/atom/atoms/title/SectionTitleView";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
-import {useAppDispatch, useAppSelector} from "@/lib/redux/hooks";
-import {setAboutVisible, setProjectVisible, setStackVisible} from "@/lib/redux/slice/targetSlice";
+
 
 /**
  * Section 마다 존재하는 Title Container
+ * @param title title String
+ * @param id
+ * @constructor
  */
 export default function SectionTitle({title, id}: SectionTitlePropsInterface): React.JSX.Element {
 
-    //visible 체크를 위한 ref
-    const ref = useRef<HTMLDivElement | null>(null)
-    const [entry, targetId, visible] = useIntersectionObserver(ref, {})
+    const [titleArray , setTitleArray] = useState<{first: string , other: string}>({
+        first: "",
+        other: ""
+    });
+
+    useEffect(() => {
+        if ( title !== undefined ){
+            setTitleArray( () => {
+                return {
+                    first: title.substring(0 , 1),
+                    other: title.substring(1 , title?.length)
+                }
+            })
+        }
+    }, [title]);
 
     return (
-        <SectionTitleView title={title} id={id} />
+        <SectionTitleView title={titleArray} id={id} />
     )
 }

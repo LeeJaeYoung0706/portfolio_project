@@ -1,5 +1,4 @@
 
-
 interface LogoPropsInterface {
     logoText: string
     logoFont?: string
@@ -33,6 +32,12 @@ interface SectionTitlePropsInterface {
     ref?: React.RefObject<HTMLDivElement>
 }
 
+interface SectionTitleViewPropsInterface {
+    title: {first: string , other: string}
+    id: string
+    ref?: React.RefObject<HTMLDivElement>
+}
+
 interface DropDownLinkInterface {
     route: string
     checked: boolean
@@ -46,18 +51,12 @@ interface YAreaInterface extends ComponentPropsInterface {
     $area: RuleSet<Object>
 }
 
-interface XAreaInterface extends ComponentPropsInterface {
-    $area: RuleSet<object>
-    children: React.ReactNode
-}
-
 
 interface ProjectTitleLiViewInterface {
     title: string
     checked: boolean
     liOnClick: () => void
 }
-
 
 
 interface ProjectHighLightTitleInterface {
@@ -91,3 +90,63 @@ interface ProjectTitleLiInterface {
     projectCheckHandler: (check: ProjectInterface) => void
 }
 
+interface ProjectInnerTitleInterface {
+    title: string
+}
+
+interface ProjectLinkTagInterface {
+    link: string
+    $area: RuleSet<Object>
+}
+
+interface ImageDivPropsInterface {
+    alt: string
+    src: string
+}
+
+interface ProjectContentPropsInterface {
+    position: boolean,
+    content: string[],
+}
+
+interface ProjectContentTextPartPropsInterface {
+    content: string[]
+}
+
+interface StackLogoTextPropsInterface {
+    text: string
+}
+
+interface StackGridTitlePropsInterface {
+    title: string
+}
+
+interface AboutMeIdCardContentPropsInterface {
+    content: string
+}
+
+interface AboutMeIdCardTitlePropsInterface {
+    font: string , title: string
+}
+
+interface AboutMeIdTitlePropsInterface {
+    font: string,
+    title: string,
+    imageUrl: string
+}
+
+interface AboutMeIdTitleImagePropsInterface {
+    title: string,
+    imageUrl: string
+}
+
+interface AboutMeIdTitleViewPropsInterface {
+    children: React.ReactNode
+}
+
+interface ProjectSlideTitleDivPropsInterface {
+    title: string,
+    position: boolean,
+    src: string,
+    alt:string
+}

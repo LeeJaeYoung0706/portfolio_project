@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Image from "next/image";
+import {displayFlex} from "@/style/theme/common";
+
 
 const AboutMeIdCardTitleStyle = styled.div`
-  display: flex;
-  align-items: center;
-  padding-bottom: 20px;
   min-width: 70px;
+  ${displayFlex("column" , "center" , "center")};
 `
 
 /**
@@ -14,8 +13,7 @@ const AboutMeIdCardTitleStyle = styled.div`
  * @param children
  * @constructor
  */
-
-function AboutMeIdTitleView({children} : {children: React.ReactNode}): React.JSX.Element{
+function AboutMeIdTitleView({children} : AboutMeIdTitleViewPropsInterface): React.JSX.Element{
     return (
         <AboutMeIdCardTitleStyle>
             {children}

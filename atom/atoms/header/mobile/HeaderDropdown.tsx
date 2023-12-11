@@ -1,19 +1,10 @@
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
-import {NGodicFont} from "@/style/font";
-import styled, {css, keyframes} from "styled-components";
+import {NotoSansFont} from "@/style/font";
+import styled, {css} from "styled-components";
 import DropdownLink from "@/atom/atoms/header/mobile/DropdownLink";
+import {dropdownAnimation} from "@/style/animation";
+import {commonAnimation} from "@/style/theme/common";
 
-const testAnimation = keyframes`
-  0% {
-    transform: translateX(200px);
-  }
-  50% {
-    transform: translateX(100px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`
 
 const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   text-decoration: none;
@@ -24,22 +15,27 @@ const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   opacity: 0.9;
   right: 0;
   
-  ${(props) => props.$checked && css`animation: ${testAnimation} 0.5s normal linear;`};
+  
+  &:last-child(li) {
+    border-bottom: none;
+  }
+  
+  ${(props) => props.$checked && commonAnimation(css`${dropdownAnimation} 0.5s normal linear;`)};
   
   ${(props) => props.theme.media.tablet} {
-    top: 62px;
+    top: 60px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    top: 62px;
+    top: 60px;
   }
 
 
 `
 /**
  * Mobile Header Menu Open Dropdown
- * @param checked
- * @param onClick
+ * @param checked 클릭 여부
+ * @param onClick 테마 핸들러 또는 라우트를 위한 클릭펑션
  * @constructor
  */
 
@@ -50,37 +46,37 @@ export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterfa
         {
             route: '#intro',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'Intro'
         },
         {
             route: '#about_me',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'About'
         },
         {
             route: '#stack',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'Stack'
         },
         {
             route: '#project',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'Project',
         },
         {
             route: '#education',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'Education',
         },
         {
             route: '',
             checked: checked,
-            font: NGodicFont.className,
+            font: NotoSansFont.className,
             text: 'Theme',
             themeHandler: themeHandler
         }

@@ -2,19 +2,21 @@ import AboutMeIdCardListView from "@/atom/molecules/about_me/AboutMeIdCardListVi
 import React from "react";
 import AboutMeIdCard from "@/atom/atoms/about_me/Id_card/AboutMeIdCard";
 import IntroContentView from "@/atom/atoms/about_me/introduction/AboutMeIntroContent";
-import {IdCardListLayout} from "@/atom/atoms/about_me/Id_card/IdCardListLayout";
+import {IdCardListStyles} from "@/atom/atoms/about_me/Id_card/Styles";
+import SectionTitle from "@/atom/atoms/title/SectionTitle";
 
 /**
  *
  * About Me Id card Container
- * @param idCardContentList
+ * @param idCardContentList title: string , before: string , $imageUrl: string list 형태
  * @constructor
  */
 export default function AboutMeIdCardList( {idCardContentList} : AboutMeIdCardListInterface): React.JSX.Element {
     return (
         <AboutMeIdCardListView>
             <IntroContentView />
-            <IdCardListLayout>
+            <SectionTitle title={'ABOUT'} id={'about'} />
+            <IdCardListStyles>
                 {
                     idCardContentList?.length !== 0 &&
                     idCardContentList?.map( (value, index) => {
@@ -28,7 +30,7 @@ export default function AboutMeIdCardList( {idCardContentList} : AboutMeIdCardLi
                         )
                     })
                 }
-            </IdCardListLayout>
+            </IdCardListStyles>
         </AboutMeIdCardListView>
     )
 }
