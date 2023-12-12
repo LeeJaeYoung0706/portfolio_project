@@ -8,12 +8,12 @@ import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/st
 
 const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   ${ props => props.$checked ? 
-          css`flex: 1; color: ${props.theme.palette.reverseSecond}; & > p {font-weight: bold;}` 
+          css`flex: 1; color: ${props.theme.palette.middle}; & > p {font-weight: bold;}` 
           : css` flex: 1; color: ${props.theme.palette.primary};`}
   text-align: center;
   ${fontMiddleSizePC};
   cursor: pointer;
-  z-index: 302;
+  z-index: 350;
   ${(props) => props.theme.media.tablet} {
     flex: none;
     width: 30%;
@@ -30,12 +30,12 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      color: ${(props) => props.theme.palette.middle};
+      color: ${(props) => !props.$checked && props.theme.palette.reverseSecond};
     }
   }
 
   &:active {
-    color: ${(props) => props.theme.palette.middle};
+    color: ${(props) => !props.$checked && props.theme.palette.reverseSecond};
   }
 `
 

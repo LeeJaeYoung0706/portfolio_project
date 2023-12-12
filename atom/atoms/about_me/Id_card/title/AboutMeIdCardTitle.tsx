@@ -6,7 +6,7 @@ import {NotoSansFont} from "@/style/font";
 const AboutMeIdCardTitleFontStyle = styled.h3`
   font-size: 30px;
   line-height: 1;
-  color: ${(props => props.theme.palette.second)};
+  color: ${(props => props.theme.palette.middle)};
   min-width: 100px;
   
   ${(props) => props.theme.media.tablet} {

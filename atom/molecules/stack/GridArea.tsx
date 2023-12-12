@@ -10,18 +10,11 @@ const yStyle = css`
   width: 100%;
   ${displayFlex('column', 'flex-start', 'center')}
   max-height: 30px;
+  z-index: 100;
 `
 
 const GridAreaStyle= styled.div`
   ${yStyle};
-  
-  ${(props) => props.theme.media.tablet} {
-    ${yStyle};
-  }
-
-  ${(props) => props.theme.media.mobile} {
-    ${yStyle};
-  }
 `
 
 export default function GridArea({children}: {children: React.ReactNode}) {

@@ -1,6 +1,6 @@
 import React from "react";
 import AboutMeIdCardView from "@/atom/atoms/about_me/Id_card/AboutMeIdCardView";
-import {HanSansFont, NGodicFont} from "@/style/font";
+import {HanSansFont, NGodicFont, RussoFont} from "@/style/font";
 import AboutMeIdTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitle";
 import AboutMeIdCardContent from "@/atom/atoms/about_me/Id_card/content/AboutMeIdCardContent";
 
@@ -15,7 +15,7 @@ export default function AboutMeIdCard ( {title , content , imageUrl} : AboutMeId
     return (
         <AboutMeIdCardView>
             <AboutMeIdTitle
-                font={HanSansFont.className}
+                font={RussoFont.className}
                 title={title}
                 imageUrl={imageUrl}
             />

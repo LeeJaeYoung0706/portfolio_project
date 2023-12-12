@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 
 const EducationLayoutStyle = styled.section`
-  background-color: ${props => props.theme.palette.background};
+  background-color: ${props => props.theme.palette.reverse};
   padding-bottom: 150px;
+    padding-bottom: 180px;
+    padding-top: 150px;
 `
 
 /**

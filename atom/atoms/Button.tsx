@@ -20,9 +20,12 @@ const headerTypeCss = css`
   min-width: 120px;
   height: 30px;
   border: none;
+  
+
+  
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      color: ${(props) => props.theme.palette.primary};
+      color: ${(props) => props.theme.palette.middle};
       //opacity: 0.9;
     }
   }
@@ -54,7 +57,7 @@ const DefaultButtonStyle = css`
   background-color:  ${props => props.theme.palette.primary70};
   color: ${(props) => props.theme.palette.reverseSecond70};
   font-weight: bold;
-   @media (hover: hover) and (pointer: fine) {
+  @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};
       background-color:  ${props => props.theme.palette.primary};

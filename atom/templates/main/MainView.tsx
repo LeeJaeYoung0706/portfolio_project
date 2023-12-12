@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const MainViewLayout = styled.main`
   min-height: 100%;
-  background-color: ${props => props.theme.palette.background};
+  background-color: ${props => props.theme.palette.reverse};
   position: relative;
 `
 

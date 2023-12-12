@@ -14,7 +14,7 @@ const ProjectHighLightStyle = styled.div`
 const TitleStyle = styled.h1`
   font-size: 52px;
   font-weight: bold;
-  color: ${props => props.theme.palette.second};
+  color: ${props => props.theme.palette.middle};
   line-height: 1.5;
   ${(props) => props.theme.media.tablet} {
     font-size: 38px;

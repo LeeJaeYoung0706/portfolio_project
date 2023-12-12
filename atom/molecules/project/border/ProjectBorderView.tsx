@@ -18,16 +18,19 @@ const OpacityAnimation = keyframes`
 
 const ProjectBorderViewStyle = styled.article<{$visible: boolean}>`
   width: 100%;
-  padding: 20px 12vw 80px 12vw;
- 
+  margin: 0 auto;
+  max-width: 1500px;
+
   ${props => props.$visible && css`animation: ${OpacityAnimation} 1s linear normal`};
   ${(props) => props.theme.media.tablet} {
     ${displayFlex('column' , 'center' , 'center')}
     min-width: 600px;
+    max-width: 700px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    min-width: 360px;
+    min-width: 350px;
+    max-width: 360px;
   }
 `
 

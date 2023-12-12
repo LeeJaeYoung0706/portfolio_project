@@ -8,21 +8,18 @@ import {StackLogoTextStyle} from "@/atom/atoms/stack/logo/StackLogoText";
 
 
 const StackAreaStyle = styled.div<{ $stackVisible: boolean , $area: RuleSet<Object>}>`
-  gap: 40px;
+  gap: 40px;  
+  z-index: 100;
   ${props => props.$area};
   ${displayFlex('column', 'flex-start', 'flex-start')}
   ${areaCommonCSS};
   ${(props) => !props.$stackVisible ? css`opacity: 0;` : css`opacity: 1;`};
   ${(props) => props.$stackVisible && commonAnimation(css`${pcGridAnimation} ${props.$area === AreaBack ? 1.4 : props.$area === AreaEtc ? 1.8 : 1}s normal linear;`) };
-  background-color: ${props => props.theme.palette.background};
+  background-color: ${props => props.theme.palette.reverse};
   opacity: 0.9;
   
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      // background-color: ${props => props.theme.palette.primary};
-      // ${StackLogoTextStyle} {
-      //   color: ${props => props.theme.palette.reverse};
-      // }
       opacity: 1;
     }
   }

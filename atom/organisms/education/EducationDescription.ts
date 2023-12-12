@@ -50,19 +50,17 @@ export const educationArray = [
         $area: OnlineGrid,
         partTitle:['온라인 강의' , '인프런 , 코딩애플'],
         content: [
-            '김영한' ,
-            'Spring MVC 1 , 2편',
-            'Spring 기본 원리 , 고급 원리 , 핵심 원리',
-            'Spring DATA JPA , 자바 ORM 표준 JPA 기본편 , Query DSL , 실전! 스프링 부트와 JPA 활용 1, 2',
-            '모든 개발자를 위한 HTTP 웹 기본 지식',
-            '백기선',
-            '이펙티브 자바 완벽 공략 1, 2부',
-            '백기선 - GodOfDesignPettern',
-            '장수원 - Spring Boot 기반으로 개발하는 Spring Security',
-            'Next.js 기반으로 지도 앱 만들기',
-            'React.js 시작하기',
-            'Next.js App Router 버전',
-            'JavaScript ES6 입문'
+            '김영한 ) Spring MVC 1 , 2편 ',
+            '김영한 ) Spring 기본 원리 , 고급 원리 , 핵심 원리',
+            '김영한 ) Spring DATA JPA , 자바 ORM 표준 JPA 기본편 , Query DSL , 실전! 스프링 부트와 JPA 활용 1, 2',
+            '김영한 ) 모든 개발자를 위한 HTTP 웹 기본 지식',
+            '백기선 ) 이펙티브 자바 완벽 공략 1, 2부',
+            '백기선 ) GodOfDesignPettern',
+            '장수원 ) Spring Boot 기반으로 개발하는 Spring Security',
+            '박용주 ) Next.js 기반으로 지도 앱 만들기',
+            '코딩애플 ) React.js 시작하기',
+            '코딩애플 ) Next.js App Router 버전',
+            '코딩애플 ) JavaScript ES6 입문'
         ]
     },
 ]

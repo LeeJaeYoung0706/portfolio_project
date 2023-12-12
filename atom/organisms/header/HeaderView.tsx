@@ -7,7 +7,7 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean, $checked: boolean }>`
   width: 100%;
   min-height: 100px;
   transition: 0.5s;
-  z-index: 100;
+  z-index: 300;
   ${displayFlex('row', 'space-between', 'center')}
   flex-wrap: wrap;
 

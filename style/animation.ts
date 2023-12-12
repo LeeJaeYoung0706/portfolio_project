@@ -26,23 +26,23 @@ export const introSvgKeyframes = (theme: DefaultTheme) => keyframes`
   0% {
     stroke-dashoffset: 25%;
     stroke-dasharray: 0 50%;
-    fill:  ${theme.palette.primary70};
-    stroke:  ${theme.palette.primary70};
+    fill:  ${theme.palette.middle};
+    stroke:  ${theme.palette.middle};
     stroke-width: 0.6;
   }
-  70% {
+  50% {
     fill: rgba(72, 138, 204, 0);
-    stroke:  ${theme.palette.primary70};
+    stroke:  ${theme.palette.second};
     stroke-width: 0.5;
   }
   80% {
     fill: rgba(169, 180, 185, 0);
-    stroke:  ${theme.palette.primary70};
+    stroke:  ${theme.palette.primary};
   }
   100% {
     stroke-dashoffset: -25%;
     stroke-dasharray: 50% 0;
-    fill:   ${theme.palette.primary70};
+    fill:   ${theme.palette.primary};
     stroke:  ${theme.palette.primary};
     stroke-width: 0.3;
   }

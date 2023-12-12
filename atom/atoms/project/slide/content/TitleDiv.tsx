@@ -29,7 +29,7 @@ const TitlePStyled = styled.p`
   position: relative;
   font-size: 40px;
   padding-bottom: 10px;
-  
+ 
   &:after {
     content: '';
     position: absolute;
@@ -37,7 +37,7 @@ const TitlePStyled = styled.p`
     left: 0;
     width: 600%;
     height: 3px;
-    background-color: ${props => props.theme.palette.middle};
+    background-color: ${props => props.theme.palette.primary};
   }
 
   ${(props) => props.theme.media.tablet} {

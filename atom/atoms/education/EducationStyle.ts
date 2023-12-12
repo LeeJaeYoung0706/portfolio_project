@@ -20,7 +20,7 @@ export const EducationGridContentTitleStyle = styled.div`
   line-height: 1.4;
   font-weight: bold;
   margin-bottom: 10px;
-  color: ${props => props.theme.palette.second};
+  color: ${props => props.theme.palette.primary};
   
   ${(props) => props.theme.media.tablet} {
     font-size: 26px;
@@ -33,7 +33,7 @@ export const EducationGridContentTitleStyle = styled.div`
 
 export const EducationGridContentTextStyle = styled.div`
   margin-top: 20px;
-  color: white;
+  color: ${props => props.theme.palette.primary};
   font-size: 18px;
   ${(props) => props.theme.media.tablet} {
     font-size: 16px;

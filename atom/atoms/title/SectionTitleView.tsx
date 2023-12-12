@@ -9,20 +9,20 @@ const SectionTitleStyle = styled.div<{$id: string}>`
 `
 
 const SectionTitleText = styled.h1<{$first: boolean}>`
-
-  color: ${(props) => props.$first ? props.theme.palette.reverse : props.theme.palette.primary};
+  z-index: 100;
+  color: ${(props) => props.$first ? props.theme.palette.reverse : props.theme.palette.second};
   ${(props) => props.$first ? 
           css`
-            text-shadow: -1px 0px ${props.theme.palette.primary},
-            0px 1px ${props.theme.palette.primary},
-            1px 0px ${props.theme.palette.primary},
-              0px -1px ${props.theme.palette.primary};
+            text-shadow: -1px 0px ${props.theme.palette.second},
+            0px 1px ${props.theme.palette.second},
+            1px 0px ${props.theme.palette.second},
+              0px -1px ${props.theme.palette.second};
             font-size: 90px;
             padding-right: 5px;
           ` : css`font-size: 80px;`};
   line-height: 1;
-  padding-bottom: 150px;
-  padding-top: 100px;
+  margin-top: 50px;
+  margin-bottom: 150px;
   text-transform: uppercase;
   font-weight: bold;
   ${(props) => props.theme.media.tablet} {

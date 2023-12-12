@@ -24,19 +24,18 @@ export const IntroSvgStyle = styled.div`
   background-image: url('/intro_background.jpg');
   background-size: cover;
   background-attachment: fixed;
-  background-position: 0, 50%;
+  background-position: 0, 10%;
   height: 105vh;
+
   ${displayFlex('row', 'center', 'center')}
   ${props => commonAnimation(css`${introSvgKeyframes(props.theme)} 8s infinite alternate;`)}
-
-
   ${props => props.theme === purple && css`filter: invert(100%);`}
   &:after {
     content: '';
     display: block;
     width: 100%;
     height: 300px;
-    background: linear-gradient(0deg, rgba(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, ${props => props.theme.palette.reverse}, rgba(0, 0, 0, 0) 100%);
     bottom: -10px;
     position: absolute;
   }
@@ -46,7 +45,7 @@ export const IntroSvgStyle = styled.div`
     background-position: 50%, 50%;
     font-size: 40px;
   }
-  
+
 
   ${(props) => props.theme.media.mobile} {
     min-height: 370px;

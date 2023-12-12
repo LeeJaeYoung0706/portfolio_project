@@ -17,12 +17,12 @@ const AboutMeIdCardContentStyle = styled.p`
   & a:hover {
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        color: ${(props) => props.theme.palette.second};
+        color: ${(props) => props.theme.palette.middle};
       }
     }
   }
   & a:active {
-    color: ${(props) => props.theme.palette.second};
+    color: ${(props) => props.theme.palette.middle};
     opacity: 0.9; 
   }
 `

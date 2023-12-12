@@ -4,8 +4,9 @@ import {kdamThmorPro} from "@/style/font";
 
 
 const IntroLayoutStyle = styled.section`
-  background-color: ${props => props.theme.palette.background};
+  background-color: ${props => props.theme.palette.reverse};
   height: 105vh;
+    
 `
 
 /**

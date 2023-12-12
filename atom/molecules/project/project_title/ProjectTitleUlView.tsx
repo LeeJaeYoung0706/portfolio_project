@@ -9,7 +9,7 @@ const ProjectTitleViewStyle = styled.ul`
   min-height: 120px;
   margin-bottom: 1em;
  
-  z-index: 302;
+  z-index: 350;
   ${displayFlex('row' , 'center' , 'center')};
   & li:last-child {
     border-right: none;

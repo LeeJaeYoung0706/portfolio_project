@@ -1,21 +1,21 @@
 export const IdCardContentList = [
     {
-        title: '이름',
+        title: 'Name',
         content: '이재영',
         $imageUrl: '/signature.svg',
     },
     {
-        title: '이메일',
+        title: 'Email',
         content: 'qaz774422<br/>@naver.com',
         $imageUrl: '/envelope.svg',
     },
     {
-        title: '주소',
+        title: 'Address',
         content: '안양시',
         $imageUrl: '/alternate-map-marker.svg',
     },
     {
-        title: '전화',
+        title: 'Phone',
         content: '01037346433',
         $imageUrl: '/phone-call.svg',
     },

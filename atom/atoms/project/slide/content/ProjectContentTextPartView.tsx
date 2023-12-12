@@ -67,7 +67,7 @@ function ProjectContentTextPartView({content}: ProjectContentTextPartPropsInterf
                         )
                     }) : (
                         <ContentStyle className={NotoSansFont.className}>
-                            ✱ {content}
+                          <NumberColorSpan>* </NumberColorSpan> {content}
                         </ContentStyle>
                     )
             }

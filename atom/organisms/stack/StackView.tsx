@@ -4,8 +4,24 @@ import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {color} from "@/style/theme/color";
 
 const StackViewStyle = styled.section`
-  background-color: ${props => props.theme.palette.background};
-  background-image: url("/academy.jpg");
+  background-color: ${props => props.theme.palette.reverse};
+
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url("/pxfuel.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0, 10%;
+    filter: grayscale(100%);
+  }
+
+  padding-bottom: 120px;
+
 `
 
 /**

@@ -9,8 +9,7 @@ const AboutMeIdCardStyle = styled.div`
   margin-top: 50px;
   min-width:  320px;
   padding-bottom: 30px;
-
-  border-bottom: 2px solid ${props => props.theme.palette.middle};
+  border-bottom: 2px solid ${props => props.theme.palette.primary70};
   ${(props) => props.theme.media.tablet} {
     width: 40%;
   }

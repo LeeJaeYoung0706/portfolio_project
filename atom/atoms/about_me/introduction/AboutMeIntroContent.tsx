@@ -13,7 +13,7 @@ const contentAnimation = keyframes`
     opacity: 0;
   }
   50% {
-    opacity: 50%;
+    opacity: 30%;
   }
   100% {
     opacity: 100%;
@@ -23,10 +23,11 @@ const contentAnimation = keyframes`
 const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   width: 100%;
   text-align: center;
-  margin-bottom: 70px;
-  padding: 20px;
+  margin-bottom: 170px;
+  padding: 90px 0;
+
   ${props => props.$contentVisible ? css`opacity: 1` : css`opacity: 0`};
-  ${props => props.$contentVisible && commonAnimation(css`${contentAnimation} 2s linear normal;`)};
+  ${props => props.$contentVisible && commonAnimation(css`${contentAnimation} 3s linear normal;`)};
   
   ${(props) => props.theme.media.tablet} {
     margin-bottom: 70px;
@@ -78,14 +79,14 @@ function AboutMeIntroContent():React.JSX.Element {
     //visible 체크를 위한 ref
     const ref = useRef<HTMLDivElement | null>(null)
     const [entry, targetId, visible] = useIntersectionObserver(ref,  {
-        threshold: 0.1,
+        threshold: 0.5,
         root: null,
         rootMargin: '10%',
-        freezeOnceVisible: false,
+        freezeOnceVisible: true,
     })
 
     return (
-        <IntroContentStyle $contentVisible={visible} ref={ref}>
+        <IntroContentStyle $contentVisible={visible} ref={ref} id={'about_me'}>
             <IntroDefaultPStyle
                 className={NGodicFont.className}>
                 <StrongPStyle>개발자로서</StrongPStyle>,

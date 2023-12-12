@@ -3,6 +3,7 @@ import styled, {css, keyframes, RuleSet} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/style";
+import {AcademyGrid, OnlineGrid, UniversityGrid} from "@/atom/molecules/education/EducationStyle";
 
 
 const EducationAreaLayoutStyle = styled.div<{
@@ -14,7 +15,9 @@ const EducationAreaLayoutStyle = styled.div<{
   align-content: flex-start;
   height: 100%;
   width: 100%;
-  background-color: ${props => (props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? props.theme.palette.primary : props.theme.palette.reverse70};
+  background-color: ${props => props.$area === UniversityGrid ? props?.theme.palette.reverseSecond 
+          : props.$area === OnlineGrid ?  props?.theme.palette.middle :  props.$area === AcademyGrid ? props?.theme.palette.second : props?.theme.palette.reverse
+  };
 
   ${(props) => props.theme.media.tablet} {
     width: 100%;
@@ -35,7 +38,7 @@ const EducationAreaLayoutStyle = styled.div<{
  * @param $delay 에니메이션 딜레이
  * @constructor
  */
-function EducationArea({$area, children}: EducationAreaInterface): React.JSX.Element {
+function EducationArea({$area, children }: EducationAreaInterface): React.JSX.Element {
 
   //visible 체크를 위한 ref
   const ref = useRef<HTMLDivElement | null>(null)
