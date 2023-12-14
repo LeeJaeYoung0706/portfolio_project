@@ -6,7 +6,7 @@ const StackGridViewStyle = styled.article`
   display: grid;
   grid-template-columns: repeat(3, 1fr); // 3열
   //grid-template-rows: repeat(2, 1fr); // 2행
-  z-index: 100;
+
   margin: 0 auto;
   max-width: 1500px;
   overflow-x: hidden;

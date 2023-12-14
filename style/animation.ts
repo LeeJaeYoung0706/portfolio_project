@@ -106,28 +106,16 @@ export const dropdownAnimation = keyframes`
 //     text-shadow: 0 0 3px ${color.primary} , 0 2px 4px ${color.primary}, 0 0 3px ${color.primary}; ;
 //   }
 // `
-export const lineReverseBefore = css`
-  position: absolute;
-  bottom: 0;
-  content: "";
-  background-color: ${(props => props.theme.palette.fontColorHover)};
-  height: 2px;
-  width: 0;
-  box-shadow: 0 1px 5px 1px ${(props => props.theme.palette.fontColor)};
-  ${commonAnimation(css`${aboutMeTitleAnimation} 2s infinite;`)}
-  animation-direction: alternate;
-`;
+
 
 export const pcGridAnimation = keyframes`
   0% {
-    opacity: 0;
     transform: translateY(300px);
   }
   50% {
-    opacity: 0.5;
+    transform: translateY(100px);
   }
   100% {
-    opacity: 1;
     transform: translateY(0px);
   }
 `

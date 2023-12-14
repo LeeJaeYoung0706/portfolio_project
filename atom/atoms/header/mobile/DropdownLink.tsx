@@ -4,9 +4,9 @@ import Link from "next/link";
 import {fontMiddleSizeMobile} from "@/style/theme/common";
 
 const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
-  color: ${(props) => props.theme.palette.primary70};
+  color: ${(props) => props.theme.palette.second};
   background-color: ${(props) => props.theme.palette.reverse};
-  border-bottom: 1px solid ${(props) => props.theme.palette.middle};
+  border-bottom: 1px solid ${(props) => props.theme.palette.reverseSecond};
   display: block;
   text-align: center;
   padding: 11px;

@@ -20,16 +20,30 @@ export const IntroSvgStyle = styled.div`
   position: relative;
   font-size: 30px;
   width: 100%;
-
-  background-image: url('/intro_background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 0, 10%;
+  //opacity: 0.1;
+  //background-image: url('/intro_background.jpg');
+  //background-size: cover;
+  //background-attachment: fixed;
+  //background-position: 0, 10%;
   height: 105vh;
-
+  
   ${displayFlex('row', 'center', 'center')}
   ${props => commonAnimation(css`${introSvgKeyframes(props.theme)} 8s infinite alternate;`)}
-  ${props => props.theme === purple && css`filter: invert(100%);`}
+
+  
+  &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    //${props => props.theme === purple ? css`opacity: 0.4;` : css`opacity: 0.4;`}
+    background-image: url('/intro_background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0, 10%;
+  }
+  
   &:after {
     content: '';
     display: block;

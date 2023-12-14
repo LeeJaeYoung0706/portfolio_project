@@ -50,7 +50,7 @@ export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterfa
             text: 'Intro'
         },
         {
-            route: '#about_me',
+            route: '#about',
             checked: checked,
             font: NotoSansFont.className,
             text: 'About'

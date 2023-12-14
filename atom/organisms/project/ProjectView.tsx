@@ -4,9 +4,9 @@ import {color} from "@/style/theme/color";
 
 
 const ProjectViewStyle = styled.section`
-  background-color: ${props =>props.theme.palette.reverse};
-    padding-bottom: 180px;
-    padding-top: 150px;
+  background-color: ${props => props.theme.palette.reverse};
+  padding-bottom: 180px;
+  padding-top: 150px;
 `
 
 /**
@@ -14,12 +14,12 @@ const ProjectViewStyle = styled.section`
  * @param children
  * @constructor
  */
-function ProjectView({children}: ProjectPropsInterface):React.JSX.Element {
-    return (
-        <ProjectViewStyle>
-            {children}
-        </ProjectViewStyle>
-    )
+function ProjectView({children}: ProjectPropsInterface): React.JSX.Element {
+  return (
+    <ProjectViewStyle>
+      {children}
+    </ProjectViewStyle>
+  )
 }
 
 export default React.memo(ProjectView)

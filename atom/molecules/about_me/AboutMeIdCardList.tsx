@@ -11,26 +11,26 @@ import SectionTitle from "@/atom/atoms/title/SectionTitle";
  * @param idCardContentList title: string , before: string , $imageUrl: string list 형태
  * @constructor
  */
-export default function AboutMeIdCardList( {idCardContentList} : AboutMeIdCardListInterface): React.JSX.Element {
-    return (
-        <AboutMeIdCardListView>
-            <IntroContentView />
-            <SectionTitle title={'ABOUT'} id={'about'} />
-            <IdCardListStyles>
-                {
-                    idCardContentList?.length !== 0 &&
-                    idCardContentList?.map( (value, index) => {
-                        return (
-                            <AboutMeIdCard
-                                title={value.title}
-                                content={value.content}
-                                key={index}
-                                imageUrl={value.$imageUrl}
-                            />
-                        )
-                    })
-                }
-            </IdCardListStyles>
-        </AboutMeIdCardListView>
-    )
+export default function AboutMeIdCardList({idCardContentList}: AboutMeIdCardListInterface): React.JSX.Element {
+  return (
+    <AboutMeIdCardListView>
+      <SectionTitle title={'ABOUT'} id={'about'}/>
+      <IntroContentView/>
+      <IdCardListStyles>
+        {
+          idCardContentList?.length !== 0 &&
+          idCardContentList?.map((value, index) => {
+            return (
+              <AboutMeIdCard
+                title={value.title}
+                content={value.content}
+                key={index}
+                imageUrl={value.$imageUrl}
+              />
+            )
+          })
+        }
+      </IdCardListStyles>
+    </AboutMeIdCardListView>
+  )
 }

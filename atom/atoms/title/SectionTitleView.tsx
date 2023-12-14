@@ -5,7 +5,9 @@ import {NotoSansFont, RussoFont, TitllFont} from "@/style/font";
 
 
 const SectionTitleStyle = styled.div<{$id: string}>`
-  ${displayFlex('row' , 'center' , 'flex-end')}
+  ${displayFlex('row' , 'center' , 'flex-end')};
+  width: 100%;
+
 `
 
 const SectionTitleText = styled.h1<{$first: boolean}>`
@@ -21,10 +23,10 @@ const SectionTitleText = styled.h1<{$first: boolean}>`
             padding-right: 5px;
           ` : css`font-size: 80px;`};
   line-height: 1;
-  margin-top: 50px;
-  margin-bottom: 150px;
   text-transform: uppercase;
   font-weight: bold;
+  padding-top: 120px;
+  padding-bottom: 80px;
   ${(props) => props.theme.media.tablet} {
     font-size: 72px;
   }

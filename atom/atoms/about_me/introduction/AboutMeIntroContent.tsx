@@ -23,7 +23,7 @@ const contentAnimation = keyframes`
 const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   width: 100%;
   text-align: center;
-  margin-bottom: 170px;
+  margin-bottom: 130px;
   padding: 90px 0;
 
   ${props => props.$contentVisible ? css`opacity: 1` : css`opacity: 0`};
@@ -86,7 +86,7 @@ function AboutMeIntroContent():React.JSX.Element {
     })
 
     return (
-        <IntroContentStyle $contentVisible={visible} ref={ref} id={'about_me'}>
+        <IntroContentStyle $contentVisible={visible} ref={ref}>
             <IntroDefaultPStyle
                 className={NGodicFont.className}>
                 <StrongPStyle>개발자로서</StrongPStyle>,

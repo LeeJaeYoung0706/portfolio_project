@@ -11,7 +11,7 @@ export const EducationGridContentLayoutStyle = styled.div`
   }
 
   ${(props) => props.theme.media.mobile} {
-    padding: 0;
+    padding: 20px;
   }
 `
 

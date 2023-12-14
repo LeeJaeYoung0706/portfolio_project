@@ -19,7 +19,8 @@ import {css} from "styled-components";
 
 
 /**
- * About Me Container
+ * Education Container
+ * 스타일 Component vs React Component 중 어느 것이 편한지 테스트 하기위해 다르게 구성했습니다.
  * @constructor
  */
 export default function Education(): React.JSX.Element {

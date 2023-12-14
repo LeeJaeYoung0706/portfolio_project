@@ -4,7 +4,7 @@ import {displayFlex} from "@/style/theme/common";
 export const IdCardListStyles = styled.div`
   padding-bottom: 50px;
   ${displayFlex('row' , 'space-around' , 'center' , 'flex' , true)};
-  width: 60%;
+  width: 100%;
   box-sizing: border-box;
   gap: 50px;
 

@@ -10,7 +10,7 @@ const yStyle = css`
   width: 100%;
   ${displayFlex('column', 'flex-start', 'center')}
   max-height: 30px;
-  z-index: 100;
+
 `
 
 const GridAreaStyle= styled.div`

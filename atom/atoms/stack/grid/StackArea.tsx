@@ -8,12 +8,12 @@ import {StackLogoTextStyle} from "@/atom/atoms/stack/logo/StackLogoText";
 
 
 const StackAreaStyle = styled.div<{ $stackVisible: boolean , $area: RuleSet<Object>}>`
-  gap: 40px;  
-  z-index: 100;
+  gap: 40px;
+  z-index: 200;
   ${props => props.$area};
   ${displayFlex('column', 'flex-start', 'flex-start')}
   ${areaCommonCSS};
-  ${(props) => !props.$stackVisible ? css`opacity: 0;` : css`opacity: 1;`};
+  ${(props) => !props.$stackVisible ? css`opacity: 0.3;` : css`opacity: 1;`};
   ${(props) => props.$stackVisible && commonAnimation(css`${pcGridAnimation} ${props.$area === AreaBack ? 1.4 : props.$area === AreaEtc ? 1.8 : 1}s normal linear;`) };
   background-color: ${props => props.theme.palette.reverse};
   opacity: 0.9;
@@ -53,9 +53,11 @@ function StackArea({children , $area} : YAreaInterface) {
     const [entry, targetId, visible] = useIntersectionObserver(ref,  {
         threshold: 0.1,
         root: null,
-        rootMargin: '20%',
+        rootMargin: '0%',
         freezeOnceVisible: true,
     })
+
+
 
     return (
         <StackAreaStyle $stackVisible={visible} ref={ref} $area={$area}>

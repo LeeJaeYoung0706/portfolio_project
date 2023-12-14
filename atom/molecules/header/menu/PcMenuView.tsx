@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
 const HeaderPcMenuStyle = styled.nav<{$isTop: boolean}>`
@@ -7,7 +7,9 @@ const HeaderPcMenuStyle = styled.nav<{$isTop: boolean}>`
   padding-right: 1.7vw;
   ${displayFlex('row' , 'space-between' , 'center')};
   gap: 20px;
-  color: ${ (props) => props.$isTop ? props.theme.palette.primary : props.theme.palette.second};
+  ${ (props) => props.$isTop ? css` color: ${props.theme.palette.primary};`
+          :  css` color: ${props.theme.palette.second}; opacity: 1;`
+  };
   
   
   ${(props) => props.theme.media.tablet} {

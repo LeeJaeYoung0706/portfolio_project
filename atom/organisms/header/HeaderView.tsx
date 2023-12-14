@@ -11,7 +11,10 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean, $checked: boolean }>`
   ${displayFlex('row', 'space-between', 'center')}
   flex-wrap: wrap;
 
-  ${(props) => (props.$checked || props.$isTop) ? css`background-color: ${props.theme.palette.reverse};` : css`background-color: transparent;`}
+  ${(props) => (props.$checked || props.$isTop) ?
+          css`background-color: ${props.theme.palette.reverse70};` 
+          : 
+          css`background-color: transparent;`}
 `
 
 /**

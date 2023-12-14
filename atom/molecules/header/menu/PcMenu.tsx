@@ -28,7 +28,7 @@ export default function HeaderPcMenu(): React.JSX.Element {
         },
         {
             content: 'ABOUT',
-            onClick: () => router.push('#about_me'),
+            onClick: () => router.push('#about'),
             font: RussoFont.className,
             $type: 'header'
         },

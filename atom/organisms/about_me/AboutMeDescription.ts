@@ -6,7 +6,7 @@ export const IdCardContentList = [
     },
     {
         title: 'Email',
-        content: 'qaz774422<br/>@naver.com',
+        content: 'qaz774422@naver.com',
         $imageUrl: '/envelope.svg',
     },
     {
@@ -16,17 +16,17 @@ export const IdCardContentList = [
     },
     {
         title: 'Phone',
-        content: '01037346433',
+        content: '010-3734-6433',
         $imageUrl: '/phone-call.svg',
     },
     {
         title: 'Notion',
-        content: `<a href="https://www.notion.so/leejaeyoung/LeeJaeYoung-Dev-Note-e75eb214139e4d098ba484f11d7f72b0">Move</a>`,
+        content: `<a href="https://www.notion.so/leejaeyoung/LeeJaeYoung-Dev-Note-e75eb214139e4d098ba484f11d7f72b0">More</a>`,
         $imageUrl: '/notion.png',
     },
     {
         title: 'Github',
-        content: `<a href="https://github.com/LeeJaeYoung0706?tab=repositories">Move</a>`,
+        content: `<a href="https://github.com/LeeJaeYoung0706?tab=repositories">More</a>`,
         $imageUrl: '/github.png',
     },
 
