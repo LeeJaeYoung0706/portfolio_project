@@ -1,49 +1,42 @@
-
-
 interface HeaderPcMenuInterface extends ComponentPropsInterface {
-    children: React.ReactNode
-    $isTop: boolean
+  children: React.ReactNode
+  $isTop: boolean
 }
 
 interface MobileMenuPropsInterface extends ComponentPropsInterface {
-    children: React.ReactNode[]
+  children: React.ReactNode[]
 }
 
 
 interface AboutMeIdCardListViewInterface {
-    children: React.ReactNode
+  children: React.ReactNode
 }
 
 interface MenuButtonArrayInterface {
-    content: string,
-    onClick: () => void,
-    font: string,
-    $type: string
+  content: string,
+  onClick: () => void,
+  font: string,
+  $type: string
 }
-interface ProjectTitleViewInterface extends ComponentPropsInterface{
-    children: React.ReactNode
+
+interface ProjectTitleViewInterface extends ComponentPropsInterface {
+  children: React.ReactNode
 }
 
 interface StackLogoImageInterface {
-    src: string,
-    alt: string,
-    size: string
+  src: string,
+  alt: string,
+  size: string
 }
 
 interface StackLogoInterface {
-    src: string,
-    alt: string,
-    text: string
+  src: string,
+  alt: string,
+  text: string
 }
 
-interface ProjectBorderContentViewPropsInterface extends ComponentPropsInterface{
-    children: React.ReactNode,
-    projectIndex: number
-}
 
 interface InitSwiperContentInterface {
-    onCheckHandler: () => void
+  onCheckHandler: () => void
 }
-interface ContentPropsInterface {
-    project: ProjectInterface
-}
+

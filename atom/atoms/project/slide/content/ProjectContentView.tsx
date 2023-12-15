@@ -14,11 +14,11 @@ const ProjectContentViewStyle = styled.div`
  * @constructor
  */
 function ProjectContentView({children}: ComponentPropsInterface): React.JSX.Element {
-    return (
-        <ProjectContentViewStyle>
-            {children}
-        </ProjectContentViewStyle>
-    )
+  return (
+    <ProjectContentViewStyle>
+      {children}
+    </ProjectContentViewStyle>
+  )
 }
 
 export default React.memo(ProjectContentView)

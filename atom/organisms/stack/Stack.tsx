@@ -5,6 +5,7 @@ import SectionTitle from "@/atom/atoms/title/SectionTitle";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import StackGrid from "@/atom/molecules/stack/StackGrid";
+import {StackArticleLayout} from "@/atom/molecules/stack/StackArticleLayout";
 
 /**
  * 스택 부분 Container
@@ -12,11 +13,13 @@ import StackGrid from "@/atom/molecules/stack/StackGrid";
  */
 export default function Stack(): React.JSX.Element {
 
-    return (
-        <StackView >
-            <SectionTitle title={'Stack'} id={'stack'} />
-            <StackGrid />
-        </StackView>
-    )
+  return (
+    <StackView>
+      <StackArticleLayout>
+        <SectionTitle title={'Stack'} id={'stack'}/>
+        <StackGrid/>
+      </StackArticleLayout>
+    </StackView>
+  )
 }
 

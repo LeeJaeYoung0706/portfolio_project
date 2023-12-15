@@ -5,13 +5,14 @@ import {displayFlex} from "@/style/theme/common";
 const HeaderPcMenuStyle = styled.nav<{$isTop: boolean}>`
 
   padding-right: 1.7vw;
-  ${displayFlex('row' , 'space-between' , 'center')};
+  ${displayFlex('row', 'space-between', 'center')};
   gap: 20px;
-  ${ (props) => props.$isTop ? css` color: ${props.theme.palette.primary};`
-          :  css` color: ${props.theme.palette.second}; opacity: 1;`
+  ${(props) => props.$isTop ? css` color: ${props.theme.palette.primary};`
+          : css` color: ${props.theme.palette.second};
+            opacity: 1;`
   };
-  
-  
+
+
   ${(props) => props.theme.media.tablet} {
     display: none;
   }

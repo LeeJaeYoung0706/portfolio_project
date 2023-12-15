@@ -7,21 +7,23 @@ const ProjectTitleViewStyle = styled.ul`
   list-style: none;
   padding: 0;
   min-height: 120px;
-  margin-bottom: 1em;
- 
+  margin-bottom: 40px;
+
   z-index: 350;
-  ${displayFlex('row' , 'center' , 'center')};
+  ${displayFlex('row', 'center', 'center')};
+
   & li:last-child {
     border-right: none;
   }
+
   ${(props) => props.theme.media.tablet} {
     min-height: 230px;
-    ${displayFlex('row' , 'space-between' , 'center' , 'flex' , true)}
+    ${displayFlex('row', 'space-between', 'center', 'flex', true)}
   }
 
   ${(props) => props.theme.media.mobile} {
     min-height: 230px;
-    ${displayFlex('row' , 'space-between' , 'center' , 'flex' , true)}
+    ${displayFlex('row', 'space-around', 'center', 'flex', true)}
   }
 `
 

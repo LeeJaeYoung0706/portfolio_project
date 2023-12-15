@@ -1,20 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
-import {NotoSansFont} from "@/style/font";
+import {MiddleTitleFontSizeMobile, MiddleTitleFontSizePC, MiddleTitleFontSizeTablet} from "@/style/theme/common";
+
 
 const AboutMeIdCardTitleFontStyle = styled.h3`
-  font-size: 30px;
+  ${MiddleTitleFontSizePC};
   line-height: 1;
   color: ${(props => props.theme.palette.middle)};
   min-width: 100px;
   
   ${(props) => props.theme.media.tablet} {
-    font-size: 28px;
+    ${MiddleTitleFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 24px;
+    ${MiddleTitleFontSizeMobile};
   }
 
 }

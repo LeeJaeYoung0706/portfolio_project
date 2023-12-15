@@ -14,11 +14,11 @@ const StackLogoStyle = styled.div`
  * @constructor
  */
 function StackLogoView({children}: ComponentPropsInterface): React.JSX.Element {
-    return (
-        <StackLogoStyle>
-            {children}
-        </StackLogoStyle>
-    )
+  return (
+    <StackLogoStyle>
+      {children}
+    </StackLogoStyle>
+  )
 }
 
 export default React.memo(StackLogoView)

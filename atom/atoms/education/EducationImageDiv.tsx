@@ -11,7 +11,7 @@ const EducationImageDivStyle = styled.div`
   overflow: hidden;
 
   ${(props) => props.theme.media.tablet} {
-    
+
   }
 
   ${(props) => props.theme.media.mobile} {

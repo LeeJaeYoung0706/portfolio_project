@@ -1,18 +1,19 @@
 import styled, {css} from "styled-components";
 import {color} from "@/style/theme/color";
+import {ContentFontSizeMobile, ContentFontSizePC, ContentFontSizeTablet} from "@/style/theme/common";
 
 
 interface ButtonInterface {
-    content: React.ReactNode
-    onClick: () => void
-    font: string
-    $type: string
+  content: React.ReactNode
+  onClick: () => void
+  font: string
+  $type: string
 }
 
 const headerTypeCss = css`
   background-color: transparent;
   text-align: center;
-  font-size: 19px;
+  ${ContentFontSizePC};
   padding: 10px;
   letter-spacing: 1.2px; // 글자 사이 간격
   font-weight: bold;
@@ -20,9 +21,8 @@ const headerTypeCss = css`
   min-width: 120px;
   height: 30px;
   border: none;
-  
 
-  
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.middle};
@@ -32,6 +32,7 @@ const headerTypeCss = css`
 
   ${(props) => props.theme.media.tablet} {
     max-width: 110px;
+    ${ContentFontSizeTablet};
 
     &:active {
       color: ${(props) => props.theme.palette.primary};
@@ -41,6 +42,7 @@ const headerTypeCss = css`
 
   ${(props) => props.theme.media.mobile} {
     max-width: 100px;
+    ${ContentFontSizeMobile};
 
     &:active {
       color: ${(props) => props.theme.palette.primary};
@@ -53,34 +55,41 @@ const headerTypeCss = css`
 const DefaultButtonStyle = css`
   border: none;
   padding: 30px;
-  border-radius: 4px;
-  background-color:  ${props => props.theme.palette.primary70};
-  color: ${(props) => props.theme.palette.reverseSecond70};
+  border-radius: 1px;
+  ${ContentFontSizePC};
+  background-color: ${props => props.theme.palette.reverse70};
+  
+  border-bottom: 1px solid  ${props => props.theme.palette.second};
+  border-top: 1px solid  ${props => props.theme.palette.second};
+  
+  color: ${(props) => props.theme.palette.second};
   font-weight: bold;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};
-      background-color:  ${props => props.theme.palette.primary};
+      background-color: ${props => props.theme.palette.reverse};
       //opacity: 0.9;
     }
   }
 
   ${(props) => props.theme.media.tablet} {
     max-width: 200px;
+    ${ContentFontSizeTablet};
 
     &:active {
       color: ${(props) => props.theme.palette.reverseSecond};
-      background-color:  ${props => props.theme.palette.primary};
+      background-color: ${props => props.theme.palette.reverse};
       opacity: 0.9;
     }
   }
 
   ${(props) => props.theme.media.mobile} {
     max-width: 200px;
+    ${ContentFontSizeMobile};
 
     &:active {
       color: ${(props) => props.theme.palette.middle};
-      background-color:  ${props => props.theme.palette.primary};
+      background-color: ${props => props.theme.palette.primary};
       opacity: 0.9;
     }
   }
@@ -98,13 +107,13 @@ const ButtonStyle = styled.button<{ $type: string }>`
  * @constructor
  */
 export default function Button({content, onClick, font, $type}: ButtonInterface) {
-    return (
-        <ButtonStyle
-            onClick={onClick}
-            className={font}
-            $type={$type}
-        >
-            {content}
-        </ButtonStyle>
-    )
+  return (
+    <ButtonStyle
+      onClick={onClick}
+      className={font}
+      $type={$type}
+    >
+      {content}
+    </ButtonStyle>
+  )
 }

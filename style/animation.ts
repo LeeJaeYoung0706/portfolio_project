@@ -121,42 +121,34 @@ export const pcGridAnimation = keyframes`
 `
 export const rightGridAnimation = keyframes`
   0% {
-    opacity: 0;
     transform: translateX(250px);
   }
   100% {
-    opacity: 0.9;
     transform: translateX(0);
   }
 `
 export const leftGridAnimation = keyframes`
   0% {
-    opacity: 0;
     transform: translateX(-250px);
   }
   100% {
-    opacity: 0.9;
     transform: translateX(0);
   }
 `
 
 export const mobileRightGridAnimation = keyframes`
   0% {
-    opacity: 0;
     transform: translateX(180px);
   }
   100% {
-    opacity: 0.9;
     transform: translateX(0);
   }
 `
 export const mobileLeftGridAnimation = keyframes`
   0% {
-    opacity: 0;
     transform: translateX(-180px);
   }
   100% {
-    opacity: 0.9;
     transform: translateX(0);
   }
 `

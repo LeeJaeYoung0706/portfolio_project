@@ -9,9 +9,9 @@ import React from "react";
  * @constructor
  */
 export default function Intro(): React.JSX.Element {
-    return (
-        <IntroView>
-            <IntroSvg/>
-        </IntroView>
-    )
+  return (
+    <IntroView>
+      <IntroSvg/>
+    </IntroView>
+  )
 }

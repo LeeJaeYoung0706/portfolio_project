@@ -1,52 +1,62 @@
 import React from "react";
 import styled from "styled-components";
-import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  ContentFontSizeMobile,
+  ContentFontSizePC,
+  ContentFontSizeTablet, ContentLineHeight,
+} from "@/style/theme/common";
 import {NGodicFont, NotoSansFont} from "@/style/font";
+import Image from "next/image";
 
 
 const ContentStyle = styled.div`
-  font-size: 18px;
-  line-height: 1.7;
-  padding-bottom: 20px;
+  ${ContentFontSizePC};
+  ${ContentLineHeight};
+
   color: ${props => props.theme.palette.primary};
+
   ${(props) => props.theme.media.tablet} {
-    font-size: 16px;
-    padding-bottom: 15px;
+    ${ContentFontSizeTablet};
+    line-height: 2.1;
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 16px;
-    padding-bottom: 10px;
+    ${ContentFontSizeMobile};
   }
 `
 
 const ProjectTextPartViewStyle = styled.div`
-  padding: 30px 10px;
+  padding: 15px;
   width: 100%;
-  
+
   ${(props) => props.theme.media.tablet} {
-    padding: 30px 10px;
+    padding: 15px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    padding: 30px 20px;
+    padding: 15px;
   }
 `
 
-const NumberColorSpan = styled.span`
-  color: ${props => props.theme.palette.second70};
-  font-weight: bold;
-  font-size: 22px;
-  
+const CheckIconLayout = styled.div`
+  position: relative;
+  width: 35px;
+  height: 35px;
+  padding: 5px;
+  display: inline-block;
+  margin-right: 10px;
   ${(props) => props.theme.media.tablet} {
-    font-size: 20px;
-    padding-bottom: 15px;
+    ${ContentFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 18px;
-    padding-bottom: 10px;
+    ${ContentFontSizeMobile};
   }
+`
+
+const CheckIcon = styled(Image)`
+  color: ${props => props.theme.palette.second70};
+  position: absolute;
 `
 
 /**
@@ -54,25 +64,42 @@ const NumberColorSpan = styled.span`
  * @param content 프로젝트 콘텐츠
  * @constructor
  */
-function ProjectContentTextPartView({content}: ProjectContentTextPartPropsInterface):React.JSX.Element {
-    return (
-        <ProjectTextPartViewStyle>
-            {
-                content?.length > 0 ?
-                    content?.map( (value , index) => {
-                        return (
-                            <ContentStyle key={`${index}_${value}`} className={NotoSansFont.className}>
-                               <NumberColorSpan>* </NumberColorSpan>&nbsp; &nbsp; {value}
-                            </ContentStyle>
-                        )
-                    }) : (
-                        <ContentStyle className={NotoSansFont.className}>
-                          <NumberColorSpan>* </NumberColorSpan> {content}
-                        </ContentStyle>
-                    )
-            }
-        </ProjectTextPartViewStyle>
-    )
+function ProjectContentTextPartView({content}: ProjectContentTextPartPropsInterface): React.JSX.Element {
+  return (
+    <ProjectTextPartViewStyle>
+      {
+        content?.length > 0 ?
+          content?.map((value, index) => {
+            return (
+              <ContentStyle key={`${index}_${value}`} className={NotoSansFont.className}>
+
+                <CheckIconLayout>
+                  <CheckIcon
+                    alt={"check"}
+                    src={"/check.png"}
+                    fill
+                    sizes={"30px"}
+                  />
+                </CheckIconLayout>
+                {value}
+              </ContentStyle>
+            )
+          }) : (
+            <ContentStyle className={NotoSansFont.className}>
+              <CheckIconLayout>
+                <CheckIcon
+                  alt={"check"}
+                  src={"/check.png"}
+                  fill
+                  sizes={"30px"}
+                />
+              </CheckIconLayout>
+              {content}
+            </ContentStyle>
+          )
+      }
+    </ProjectTextPartViewStyle>
+  )
 }
 
 export default React.memo(ProjectContentTextPartView)

@@ -3,15 +3,16 @@ import styled from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 
 const AboutMeIdCardStyle = styled.div`
-  ${displayFlex('row' , 'flex-start' , 'center')};
+  ${displayFlex('row', 'flex-start', 'center')};
   width: 32%;
   box-sizing: border-box;
   margin-top: 50px;
-  min-width:  320px;
+  min-width: 320px;
   padding-bottom: 23px;
   gap: 50px;
   padding-left: 20px;
   border-bottom: 2px solid ${props => props.theme.palette.primary70};
+
   ${(props) => props.theme.media.tablet} {
     width: 40%;
   }

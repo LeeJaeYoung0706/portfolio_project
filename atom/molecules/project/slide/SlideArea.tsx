@@ -8,7 +8,7 @@ import {
     rightGridAnimation
 } from "@/style/animation";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
-import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/style";
+import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/StyleGridArea";
 
 
 const SlideStyle = styled.div<{

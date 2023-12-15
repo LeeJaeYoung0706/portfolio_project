@@ -5,8 +5,6 @@ import {color} from "@/style/theme/color";
 
 const ProjectViewStyle = styled.section`
   background-color: ${props => props.theme.palette.reverse};
-  padding-bottom: 180px;
-  padding-top: 150px;
 `
 
 /**

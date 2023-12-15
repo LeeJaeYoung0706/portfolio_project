@@ -11,18 +11,18 @@ import AboutMeIdCardContent from "@/atom/atoms/about_me/Id_card/content/AboutMeI
  * @param imageUrl => 이미지 url
  * @constructor
  */
-export default function AboutMeIdCard ( {title , content , imageUrl} : AboutMeIdCardPropsInterface): React.JSX.Element {
-    return (
-        <AboutMeIdCardView>
-            <AboutMeIdTitle
-                font={RussoFont.className}
-                title={title}
-                imageUrl={imageUrl}
-            />
-            <AboutMeIdCardContent
-                content={content}
-            />
-        </AboutMeIdCardView>
-    )
+export default function AboutMeIdCard({title, content, imageUrl}: AboutMeIdCardPropsInterface): React.JSX.Element {
+  return (
+    <AboutMeIdCardView>
+      <AboutMeIdTitle
+        font={RussoFont.className}
+        title={title}
+        imageUrl={imageUrl}
+      />
+      <AboutMeIdCardContent
+        content={content}
+      />
+    </AboutMeIdCardView>
+  )
 }
 

@@ -2,7 +2,7 @@ import React, {useRef} from "react";
 import styled, {css, keyframes, RuleSet} from "styled-components";
 import {displayFlex} from "@/style/theme/common";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
-import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/style";
+import {FunctionsGrid, IntroductionGrid} from "@/atom/atoms/project/slide/StyleGridArea";
 import {AcademyGrid, OnlineGrid, UniversityGrid} from "@/atom/molecules/education/EducationStyle";
 
 

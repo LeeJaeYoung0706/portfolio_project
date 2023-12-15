@@ -14,11 +14,11 @@ const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   width: 100vw;
   opacity: 0.9;
   right: 0;
-  
-  
-  &:last-child(li) {
-    border-bottom: none;
-  }
+
+
+    &:last-child {
+        border-bottom: 2px solid ${props => props.theme.palette.middle};
+    }
   
   ${(props) => props.$checked && commonAnimation(css`${dropdownAnimation} 0.5s normal linear;`)};
   

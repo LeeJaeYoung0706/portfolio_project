@@ -6,8 +6,7 @@ import {kdamThmorPro} from "@/style/font";
 const IntroLayoutStyle = styled.section`
   background-color: ${props => props.theme.palette.reverse};
   height: 105vh;
-    
-`
+`;
 
 /**
  * Intro View
@@ -15,11 +14,11 @@ const IntroLayoutStyle = styled.section`
  * @constructor
  */
 function IntroView({children}: IntroInterface): React.JSX.Element {
-    return (
-        <IntroLayoutStyle className={kdamThmorPro.className}>
-            {children}
-        </IntroLayoutStyle>
-    )
+  return (
+    <IntroLayoutStyle className={kdamThmorPro.className}>
+      {children}
+    </IntroLayoutStyle>
+  )
 }
 
 export default React.memo(IntroView)

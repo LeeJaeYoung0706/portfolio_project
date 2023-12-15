@@ -2,35 +2,62 @@ import React from 'react';
 import Link from "next/link";
 import styled, {RuleSet} from "styled-components";
 import {NGodicFont} from "@/style/font";
-import {displayFlex} from "@/style/theme/common";
+import {ContentFontSizeMobile, ContentFontSizePC, ContentFontSizeTablet, displayFlex} from "@/style/theme/common";
 
 const LinkOutSideStyle = styled.div<{$area: RuleSet<Object>}>`
   ${props => props.$area};
   width: 100%;
-  margin-top: 30px;
+  margin-top: 230px;
   ${displayFlex('row' , 'center' , 'center')};
 `
 
 const LinkStyle = styled(Link)`
   text-align: center;
   padding: 30px;
+  
   & > p {
     font-weight: bold;
   }
-  color: ${props => props.theme.palette.reverseSecond70};
-  background-color: ${props => props.theme.palette.primary70};
-  border-radius: 5px;
-  margin-top: 100px;
+
+  border: none;
+  
+  border-radius: 1px;
+  ${ContentFontSizePC};
+  background-color: ${props => props.theme.palette.reverse70};
+
+  border-bottom: 1px solid  ${props => props.theme.palette.second};
+  border-top: 1px solid  ${props => props.theme.palette.second};
+
+  color: ${(props) => props.theme.palette.second};
+  font-weight: bold;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};
-      background-color: ${props => props.theme.palette.primary};
+      background-color: ${props => props.theme.palette.reverse};
+      //opacity: 0.9;
     }
   }
 
-  &:active {
-    color: ${(props) => props.theme.palette.reverseSecond};
-    background-color: ${props => props.theme.palette.primary};
+  ${(props) => props.theme.media.tablet} {
+    max-width: 200px;
+    ${ContentFontSizeTablet};
+
+    &:active {
+      color: ${(props) => props.theme.palette.reverseSecond};
+      background-color: ${props => props.theme.palette.reverse};
+      opacity: 0.9;
+    }
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    max-width: 200px;
+    ${ContentFontSizeMobile};
+
+    &:active {
+      color: ${(props) => props.theme.palette.middle};
+      background-color: ${props => props.theme.palette.primary};
+      opacity: 0.9;
+    }
   }
 `
 /**
@@ -47,7 +74,7 @@ export default function ProjectLinkTag({link , $area}: ProjectLinkTagInterface) 
                        rel="noopener noreferrer"
                        className={NGodicFont.className}
             >
-                <p>More Information</p>
+                <p>READ MORE&nbsp;&nbsp; &gt;</p>
             </LinkStyle>
         </LinkOutSideStyle>
     )

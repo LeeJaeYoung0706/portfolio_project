@@ -7,13 +7,13 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean, $checked: boolean }>`
   width: 100%;
   min-height: 100px;
   transition: 0.5s;
-  z-index: 300;
+  z-index: 400;
   ${displayFlex('row', 'space-between', 'center')}
   flex-wrap: wrap;
 
   ${(props) => (props.$checked || props.$isTop) ?
-          css`background-color: ${props.theme.palette.reverse70};` 
-          : 
+          css`background-color: ${props.theme.palette.reverse70};`
+          :
           css`background-color: transparent;`}
 `
 
@@ -25,11 +25,11 @@ const HeaderLayoutStyle = styled.header<{ $isTop: boolean, $checked: boolean }>`
  * @constructor
  */
 function HeaderView({children, isTop, checked}: HeaderPropsInterface): React.JSX.Element {
-    return (
-        <HeaderLayoutStyle $isTop={isTop} $checked={checked}>
-            {children}
-        </HeaderLayoutStyle>
-    )
+  return (
+    <HeaderLayoutStyle $isTop={isTop} $checked={checked}>
+      {children}
+    </HeaderLayoutStyle>
+  )
 }
 
 export default React.memo(HeaderView)

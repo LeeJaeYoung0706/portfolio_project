@@ -2,32 +2,52 @@
 import React from "react";
 import styled, {css} from "styled-components";
 import {NotoSansFont, RussoFont} from "@/style/font";
-import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  LargeTitleFontSizeMobile, LargeTitleFontSizePC,
+  LargeTitleFontSizeTablet,
+  MiddleTitleFontSizeMobile,
+  MiddleTitleFontSizePC,
+  MiddleTitleFontSizeTablet
+} from "@/style/theme/common";
 
 
 
 const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
-  ${ props => props.$checked ? 
-          css`flex: 1; color: ${props.theme.palette.middle}; & > p {font-weight: bold;}` 
-          : css` flex: 1; color: ${props.theme.palette.primary};`}
+  ${props => props.$checked ?
+          css`flex: 1;
+            color: ${props.theme.palette.middle};
+
+            & > p {
+              font-weight: bold;
+            };
+            border-radius: 2px;
+            border-bottom: 1px solid  ${props => props.theme.palette.second};
+            background-color: ${props => props.theme.palette.reverse};
+          `
+          : css` flex: 1;
+            color: ${props.theme.palette.primary};
+            background-color: ${props => props.theme.palette.reverse70};
+          `}
   text-align: center;
-  ${fontMiddleSizePC};
+  ${LargeTitleFontSizePC};
   cursor: pointer;
   z-index: 350;
+  
   ${(props) => props.theme.media.tablet} {
     flex: none;
     width: 30%;
-    ${fontMiddleSizeTablet};
-    padding-bottom: 30px;
+    ${LargeTitleFontSizeTablet};
+    padding-bottom: 10px;
   }
 
   ${(props) => props.theme.media.mobile} {
     flex: none;
-    ${fontMiddleSizeMobile};
+    ${LargeTitleFontSizeMobile};
     width: 40%;
-    padding-bottom: 30px;
+    min-width: 160px;
+    padding-bottom: 6px;
   }
-  
+
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => !props.$checked && props.theme.palette.reverseSecond};

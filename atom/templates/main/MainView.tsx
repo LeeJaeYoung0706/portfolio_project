@@ -8,12 +8,12 @@ const MainViewLayout = styled.main`
   position: relative;
 `
 
-function MainView({children} : MainPropsInterface) {
-    return (
-        <MainViewLayout>
-            {children}
-        </MainViewLayout>
-    )
+function MainView({children}: MainPropsInterface) {
+  return (
+    <MainViewLayout>
+      {children}
+    </MainViewLayout>
+  )
 }
 
 export default React.memo(MainView)

@@ -5,15 +5,15 @@ import {displayFlex} from "@/style/theme/common";
 const AboutMeIdCardListViewStyle = styled.article`
   width: 100%;
   line-height: 1;
-  padding-bottom: 130px;
-  ${displayFlex('column' , 'space-around' , 'center' , 'flex' , true)}
-  
+  padding-bottom: 180px;
+
+  ${displayFlex('column', 'space-around', 'center', 'flex', true)}
   ${(props) => props.theme.media.tablet} {
-    ${displayFlex('column' , 'space-around' , 'center', 'flex' , true)}
+    ${displayFlex('column', 'space-around', 'center', 'flex', true)}
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${displayFlex('column' , 'space-around' , 'center')}
+    ${displayFlex('column', 'space-around', 'center')}
   }
 `
 
@@ -22,12 +22,12 @@ const AboutMeIdCardListViewStyle = styled.article`
  * @param children
  * @constructor
  */
-function AboutMeIdCardListView ({children} : AboutMeIdCardListViewInterface): React.JSX.Element {
-    return (
-        <AboutMeIdCardListViewStyle>
-            {children}
-        </AboutMeIdCardListViewStyle>
-    )
+function AboutMeIdCardListView({children}: AboutMeIdCardListViewInterface): React.JSX.Element {
+  return (
+    <AboutMeIdCardListViewStyle>
+      {children}
+    </AboutMeIdCardListViewStyle>
+  )
 }
 
 export default React.memo(AboutMeIdCardListView)

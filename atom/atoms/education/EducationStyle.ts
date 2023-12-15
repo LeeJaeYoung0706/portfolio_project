@@ -1,11 +1,16 @@
 import styled from "styled-components";
-import {displayFlex, fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  ContentFontSizeMobile,
+  ContentFontSizePC, ContentFontSizeTablet, ContentLineHeight,
+  MiddleTitleFontSizeMobile,
+  MiddleTitleFontSizePC, MiddleTitleFontSizeTablet
+} from "@/style/theme/common";
 
 
 export const EducationGridContentLayoutStyle = styled.div`
   padding: 40px;
   width: 100%;
-  
+
   ${(props) => props.theme.media.tablet} {
     padding: 20px;
   }
@@ -16,30 +21,30 @@ export const EducationGridContentLayoutStyle = styled.div`
 `
 
 export const EducationGridContentTitleStyle = styled.div`
-  font-size: 28px;
-  line-height: 1.4;
+  ${MiddleTitleFontSizePC};
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: ${props => props.theme.palette.primary};
-  
+
   ${(props) => props.theme.media.tablet} {
-    font-size: 26px;
+    ${MiddleTitleFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 24px;
+    ${MiddleTitleFontSizeMobile};
   }
 `
 
 export const EducationGridContentTextStyle = styled.div`
-  margin-top: 20px;
+  margin-top: 10px;
   color: ${props => props.theme.palette.primary};
-  font-size: 18px;
+  ${ContentFontSizePC};
+  ${ContentLineHeight};
   ${(props) => props.theme.media.tablet} {
-    font-size: 16px;
+    ${ContentFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 14px;
+    ${ContentFontSizeMobile};
   }
 `

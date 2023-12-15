@@ -1,10 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import {displayFlex, fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  displayFlex,
+  MiddleTitleFontSizeMobile,
+  MiddleTitleFontSizePC, MiddleTitleFontSizeTablet
+} from "@/style/theme/common";
 import {NGodicFont, NotoSansFont} from "@/style/font";
 
-const TitleDivStyle = styled.div<{$position: boolean}>`
+const TitleDivStyle = styled.div<{ $position: boolean }>`
 
   padding: 15px;
   overflow-x: hidden;
@@ -13,10 +17,10 @@ const TitleDivStyle = styled.div<{$position: boolean}>`
   font-weight: bold;
   height: 100%;
 
- 
-  ${ props => props?.$position ? displayFlex("row" , "flex-start" , "center") :
-          displayFlex("row" , "flex-end" , "center")};
-  
+
+  ${props => props?.$position ? displayFlex("row", "flex-start", "center") :
+          displayFlex("row", "flex-end", "center")};
+
   ${(props) => props.theme.media.tablet} {
   }
 
@@ -27,9 +31,9 @@ const TitleDivStyle = styled.div<{$position: boolean}>`
 const TitlePStyled = styled.p`
   color: ${props => props.theme.palette.second};
   position: relative;
-  font-size: 40px;
+  ${MiddleTitleFontSizePC};
   padding-bottom: 10px;
- 
+
   &:after {
     content: '';
     position: absolute;
@@ -41,14 +45,16 @@ const TitlePStyled = styled.p`
   }
 
   ${(props) => props.theme.media.tablet} {
-    font-size: 28px;
+    ${MiddleTitleFontSizeTablet};
+
     &:after {
       width: 700%;
     }
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 24px;
+    ${MiddleTitleFontSizeMobile};
+
     &:after {
       width: 500%;
     }
@@ -64,14 +70,14 @@ const TitlePStyled = styled.p`
  * @param alt 사용 할지 안할지 아직 모릅니다
  * @constructor
  */
-function TitleDiv({title , position , src , alt} : ProjectSlideTitleDivPropsInterface ):React.JSX.Element {
+function TitleDiv({title, position, src, alt}: ProjectSlideTitleDivPropsInterface): React.JSX.Element {
 
-    return (
-        <TitleDivStyle className={NGodicFont.className} $position={position}>
-            <TitlePStyled>{title}</TitlePStyled>
-            {/*<ImageDiv src={src} alt={alt} fill />*/}
-        </TitleDivStyle>
-    )
+  return (
+    <TitleDivStyle className={NGodicFont.className} $position={position}>
+      <TitlePStyled>{title}</TitlePStyled>
+      {/*<ImageDiv src={src} alt={alt} fill />*/}
+    </TitleDivStyle>
+  )
 }
 
 export default React.memo(TitleDiv)

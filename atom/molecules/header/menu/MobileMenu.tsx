@@ -11,15 +11,15 @@ import MobileMenuView, {CloseBackGround} from "@/atom/molecules/header/menu/Mobi
  */
 
 export default function MobileMenu({checked, checkHandler}: MobileMenuInterface): React.JSX.Element {
-    return (
-        <>
-            {
-                checked && <CloseBackGround onClick={checkHandler}/>
-            }
-            <MobileMenuView>
-                <HeaderHamburgerButton checked={checked} onClick={checkHandler}/>
-                <HeaderDropdown checked={checked} onClick={checkHandler}/>
-            </MobileMenuView>
-        </>
-    )
+  return (
+    <>
+      {
+        checked && <CloseBackGround onClick={checkHandler}/>
+      }
+      <MobileMenuView>
+        <HeaderHamburgerButton checked={checked} onClick={checkHandler}/>
+        <HeaderDropdown checked={checked} onClick={checkHandler}/>
+      </MobileMenuView>
+    </>
+  )
 }

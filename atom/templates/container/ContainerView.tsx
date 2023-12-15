@@ -12,11 +12,11 @@ const ContainerLayoutStyle = styled.div`
 `
 
 const ContainerView = ({children}: ContainerPropsInterface) => {
-    return (
-        <ContainerLayoutStyle>
-            {children}
-        </ContainerLayoutStyle>
-    )
+  return (
+    <ContainerLayoutStyle>
+      {children}
+    </ContainerLayoutStyle>
+  )
 }
 
 export default React.memo(ContainerView);

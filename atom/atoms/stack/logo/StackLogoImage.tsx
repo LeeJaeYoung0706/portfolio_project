@@ -9,6 +9,7 @@ const StackLogoImageStyle = styled.div`
   position: relative;
   margin-right: 30px;
   border-radius: 20px;
+
   & > img {
     border-radius: 10px;
   }

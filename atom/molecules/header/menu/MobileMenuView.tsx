@@ -12,7 +12,7 @@ export const CloseBackGround = styled.div`
   width: 100%;
   height: 100%;
   position: fixed;
-  z-index: 300;
+  z-index: 350;
 `
 
 
@@ -20,7 +20,7 @@ const HeaderMobileMenuStyle = styled.div`
   display: none;
   position: relative;
   padding-right: 18px;
-  z-index: 400;
+  z-index: 450;
 
   ${(props) => props.theme.media.tablet} {
     ${displayFlex('column', 'center', 'center')}
@@ -36,11 +36,11 @@ const HeaderMobileMenuStyle = styled.div`
  * @constructor
  */
 const MobileMenuView = ({children}: MobileMenuPropsInterface): React.JSX.Element => {
-    return (
-        <HeaderMobileMenuStyle>
-            {children}
-        </HeaderMobileMenuStyle>
-    )
+  return (
+    <HeaderMobileMenuStyle>
+      {children}
+    </HeaderMobileMenuStyle>
+  )
 }
 
 export default React.memo(MobileMenuView)

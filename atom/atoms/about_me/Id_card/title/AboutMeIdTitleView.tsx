@@ -5,7 +5,7 @@ import {displayFlex} from "@/style/theme/common";
 
 const AboutMeIdCardTitleStyle = styled.div`
   min-width: 70px;
-  ${displayFlex("column" , "center" , "center")};
+  ${displayFlex("column", "center", "center")};
 `
 
 /**
@@ -13,12 +13,12 @@ const AboutMeIdCardTitleStyle = styled.div`
  * @param children
  * @constructor
  */
-function AboutMeIdTitleView({children} : AboutMeIdTitleViewPropsInterface): React.JSX.Element{
-    return (
-        <AboutMeIdCardTitleStyle>
-            {children}
-        </AboutMeIdCardTitleStyle>
-    )
+function AboutMeIdTitleView({children}: AboutMeIdTitleViewPropsInterface): React.JSX.Element {
+  return (
+    <AboutMeIdCardTitleStyle>
+      {children}
+    </AboutMeIdCardTitleStyle>
+  )
 }
 
 export default React.memo(AboutMeIdTitleView);

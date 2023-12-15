@@ -8,8 +8,7 @@ const HamburgerButtonStyle = styled.label<{}>`
   height: 20px;
   position: relative;
   cursor: pointer;
- 
-
+  
   ${(props) => props.theme.media.tablet} {
     display: block;
     top: -10px;
@@ -20,7 +19,7 @@ const HamburgerButtonStyle = styled.label<{}>`
     right: 10px;
     top: -4px;
   }
-  
+
 `
 
 /**
@@ -32,7 +31,6 @@ const HamburgerButtonStyle = styled.label<{}>`
 
 const HamburgerButtonSpanStyle =
     styled.span<{ $top: string, $checked: boolean, $opacity?: number, $rotate?: string, $trans_top?: string , $isTop: boolean}>`
-      
       position: absolute;
       height: 5px;
       border-radius: 3px;

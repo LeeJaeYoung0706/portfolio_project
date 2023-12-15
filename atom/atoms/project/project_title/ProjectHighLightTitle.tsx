@@ -1,32 +1,44 @@
 import styled from "styled-components";
 import React from "react";
 import {NotoSansFont, RussoFont} from "@/style/font";
-import {displayFlex} from "@/style/theme/common";
+import {
+  ContentFontSizeMobile,
+  ContentFontSizePC, ContentFontSizeTablet,
+  displayFlex, LargeTitleFontSizeMobile, LargeTitleFontSizePC, LargeTitleFontSizeTablet,
+} from "@/style/theme/common";
 
 
 const ProjectHighLightStyle = styled.div`
   width: 100%;
-  padding: 30px;
+  margin-bottom: 40px;
   text-align: center;
   ${displayFlex('column' , 'center' , 'center')}
 `
 
 const TitleStyle = styled.h1`
-  font-size: 52px;
+  ${LargeTitleFontSizePC};
   font-weight: bold;
   color: ${props => props.theme.palette.middle};
   line-height: 1.5;
   ${(props) => props.theme.media.tablet} {
-    font-size: 38px;
+    ${LargeTitleFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 32px;
+    ${LargeTitleFontSizeMobile};
   }
 `
 
 const PeriodStyle = styled.p`
   color: ${props => props.theme.palette.primary};
+  ${ContentFontSizePC};
+  ${(props) => props.theme.media.tablet} {
+    ${ContentFontSizeTablet};
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    ${ContentFontSizeMobile};
+  }
 `
 
 /**

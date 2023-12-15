@@ -14,9 +14,23 @@ export const commonAnimation = (animationCss: RuleSet<Object>) => css`
   animation: ${animationCss};
 `
 
-export const fontMiddleSizePC = css`font-size: 24px;`;
-export const fontMiddleSizeTablet = css`font-size: 22px;`;
-export const fontMiddleSizeMobile = css`font-size: 20px;`;
+/**
+ * Font Size 통일화
+ */
+export const LargeTitleFontSizePC = css`font-size: 40px;`;
+export const LargeTitleFontSizeTablet = css`font-size: 36px;`;
+export const LargeTitleFontSizeMobile = css`font-size: 28px;`;
+export const MiddleTitleFontSizePC = css`font-size: 26px;`;
+export const MiddleTitleFontSizeTablet = css`font-size: 22px;`;
+export const MiddleTitleFontSizeMobile = css`font-size: 20px;`;
+export const ContentFontSizePC = css`font-size: 20px;`;
+export const ContentFontSizeTablet = css`font-size: 17px;`;
+export const ContentFontSizeMobile = css`font-size: 15px;`;
+``
+export const ContentLineHeight = css`line-height: 1.7`;
+export const MiddleTitleLineHeight = css``;
+export const SectionTitleLineHeight = css``;
+
 
 type displayType = 'flex' | 'none';
 type flexDirectionType = 'column' | 'column-reverse' | 'row-reverse' | 'row'

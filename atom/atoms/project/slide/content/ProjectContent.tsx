@@ -10,24 +10,24 @@ import ProjectContentTextPart from "@/atom/atoms/project/slide/content/ProjectCo
  * @param content => 파트 내 콘텐츠
  * @constructor
  */
-export default function ProjectContent({position , content} : ProjectContentPropsInterface
-    ): React.JSX.Element {
-    return (
-        <ProjectContentView>
-            {
-                position ?
-                    <>
-                        <ProjectContentTextPart
-                            content={content}
-                        />
-                    </>
-                :
-                    <>
-                        <ProjectContentTextPart
-                            content={content}
-                        />
-                    </>
-            }
-        </ProjectContentView>
-    )
+export default function ProjectContent({position, content}: ProjectContentPropsInterface
+): React.JSX.Element {
+  return (
+    <ProjectContentView>
+      {
+        position ?
+          <>
+            <ProjectContentTextPart
+              content={content}
+            />
+          </>
+          :
+          <>
+            <ProjectContentTextPart
+              content={content}
+            />
+          </>
+      }
+    </ProjectContentView>
+  )
 }

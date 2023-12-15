@@ -3,7 +3,12 @@ import React, {useRef} from "react";
 import styled, {css, keyframes} from "styled-components";
 import {NGodicFont} from "@/style/font";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
-import {commonAnimation, fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  commonAnimation,
+  MiddleTitleFontSizeMobile,
+  MiddleTitleFontSizePC,
+  MiddleTitleFontSizeTablet
+} from "@/style/theme/common";
 
 /**
  * 전체 에니메이션
@@ -19,7 +24,9 @@ const contentAnimation = keyframes`
     opacity: 100%;
   }
 `
-
+/**
+ * 레이아웃
+ */
 const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
   width: 100%;
   text-align: center;
@@ -37,22 +44,28 @@ const IntroContentStyle = styled.div<{$contentVisible : boolean}>`
     margin-bottom: 40px;
   }
 `
+
+/**
+ * 기본 글씨 스타일
+ */
 const IntroDefaultPStyle = styled.p`
-  ${fontMiddleSizePC};
+  ${MiddleTitleFontSizePC};
   line-height: 1.5;
   color: ${props => props.theme.palette.primary};
   ${(props) => props.theme.media.tablet} {
-    ${fontMiddleSizeTablet};
+    ${MiddleTitleFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${fontMiddleSizeMobile};
+    ${MiddleTitleFontSizeMobile};
   }
 `
-
+/**
+ * 강조글 스타일
+ */
 const StrongPStyle = styled.span`
   display: inline;
-  ${fontMiddleSizePC};
+  ${MiddleTitleFontSizePC};
   height: auto;
   line-height: 1.5;
   color: ${props => props.theme.palette.second};
@@ -60,11 +73,11 @@ const StrongPStyle = styled.span`
   position: relative;
   
   ${(props) => props.theme.media.tablet} {
-    ${fontMiddleSizeTablet};
+    ${MiddleTitleFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${fontMiddleSizeMobile};
+    ${MiddleTitleFontSizeMobile};
     font-weight: bold;
   }
 `
@@ -87,12 +100,8 @@ function AboutMeIntroContent():React.JSX.Element {
 
     return (
         <IntroContentStyle $contentVisible={visible} ref={ref}>
-            <IntroDefaultPStyle
-                className={NGodicFont.className}>
-                <StrongPStyle>개발자로서</StrongPStyle>,
-            </IntroDefaultPStyle>
             <IntroDefaultPStyle className={NGodicFont.className}>
-                사용자에게 편안한 경험을 제공하는 것도 중요하지만,
+              <StrongPStyle>개발자로서 사용자에게 편안한 경험을 제공</StrongPStyle>하는 것도 중요하지만,
             </IntroDefaultPStyle>
             <IntroDefaultPStyle className={NGodicFont.className}>
                 <StrongPStyle>협업하는 개발자에게도 편안한 경험을 제공</StrongPStyle>

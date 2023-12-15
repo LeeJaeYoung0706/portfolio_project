@@ -1,29 +1,67 @@
 import React from "react";
-import {HanSansFont, NGodicFont, NotoSansFont} from "@/style/font";
+import {NGodicFont} from "@/style/font";
 import styled from "styled-components";
-import {fontMiddleSizeMobile, fontMiddleSizePC, fontMiddleSizeTablet} from "@/style/theme/common";
+import {
+  ContentFontSizeMobile,
+  ContentFontSizePC,
+  ContentFontSizeTablet,
+} from "@/style/theme/common";
 
 const AboutMeIdCardContentStyle = styled.p`
-  ${fontMiddleSizePC};
-
+  ${ContentFontSizePC};
   color: ${(props => props.theme.palette.primary)};
+
   ${(props) => props.theme.media.tablet} {
-    ${fontMiddleSizeTablet};
+    ${ContentFontSizeTablet};
   }
 
   ${(props) => props.theme.media.mobile} {
-    ${fontMiddleSizeMobile};
+    ${ContentFontSizeMobile};
   }
+
+  & a {
+    padding: 8px;
+    border-radius: 4px;
+    ${ContentFontSizePC};
+    background-color: ${props => props.theme.palette.reverse70};
+    color: ${(props) => props.theme.palette.primary70};
+    font-weight: bold;
+    border: 1px solid ${props => props.theme.palette.primary70};
+    
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: ${(props) => props.theme.palette.primary};
+        background-color: ${props => props.theme.palette.second};
+        //opacity: 0.9;
+      }
+    }
+
+    ${(props) => props.theme.media.tablet} {
+      max-width: 200px;
+      ${ContentFontSizeTablet};
+    }
+
+    ${(props) => props.theme.media.mobile} {
+      max-width: 200px;
+      ${ContentFontSizeMobile};
+    }
+  }
+
   & a:hover {
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        color: ${(props) => props.theme.palette.middle};
+        color: ${(props) => props.theme.palette.primary};
+        background-color: ${props => props.theme.palette.reverse};
+        border: 1px solid ${props => props.theme.palette.primary};
       }
     }
   }
+
   & a:active {
-    color: ${(props) => props.theme.palette.middle};
-    opacity: 0.9; 
+    color: ${(props) => props.theme.palette.primary};
+    background-color: ${props => props.theme.palette.reverse};
+    border: 1px solid ${props => props.theme.palette.primary};
+    opacity: 0.9;
   }
 `
 
@@ -33,10 +71,13 @@ const AboutMeIdCardContentStyle = styled.p`
  * @param content => 내용 html 요소로 보냅니다.
  * @constructor
  */
-function AboutMeIdCardContent({content} : AboutMeIdCardContentPropsInterface) : React.JSX.Element {
-    return (
-        <AboutMeIdCardContentStyle className={NGodicFont.className} dangerouslySetInnerHTML={{ __html: content}} />
-    )
+function AboutMeIdCardContent({content}: AboutMeIdCardContentPropsInterface): React.JSX.Element {
+  return (
+    <AboutMeIdCardContentStyle
+      className={NGodicFont.className}
+      dangerouslySetInnerHTML={{__html: content}}
+    />
+  )
 }
 
 export default React.memo(AboutMeIdCardContent)

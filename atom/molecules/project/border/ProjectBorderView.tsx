@@ -16,14 +16,15 @@ const OpacityAnimation = keyframes`
   }
 `
 
-const ProjectBorderViewStyle = styled.article<{$visible: boolean}>`
+const ProjectBorderViewStyle = styled.div<{ $visible: boolean }>`
   width: 100%;
   margin: 0 auto;
   max-width: 1500px;
 
   ${props => props.$visible && css`animation: ${OpacityAnimation} 1s linear normal`};
+
   ${(props) => props.theme.media.tablet} {
-    ${displayFlex('column' , 'center' , 'center')}
+    ${displayFlex('column', 'center', 'center')}
     min-width: 600px;
     max-width: 700px;
   }
@@ -39,21 +40,21 @@ const ProjectBorderViewStyle = styled.article<{$visible: boolean}>`
  * @param children
  * @constructor
  */
-function ProjectBorderView ({children} : ComponentPropsInterface) : React.JSX.Element {
+function ProjectBorderView({children}: ComponentPropsInterface): React.JSX.Element {
 
-    const ref = useRef<HTMLDivElement | null>(null)
-    const [entry, targetId, visible] = useIntersectionObserver(ref,  {
-        threshold: 0.01,
-        root: null,
-        rootMargin: '0%',
-        freezeOnceVisible: false,
-    })
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [entry, targetId, visible] = useIntersectionObserver(ref, {
+    threshold: 0.01,
+    root: null,
+    rootMargin: '0%',
+    freezeOnceVisible: false,
+  })
 
-    return (
-        <ProjectBorderViewStyle ref={ref} $visible={visible}>
-           {children}
-        </ProjectBorderViewStyle>
-    )
+  return (
+    <ProjectBorderViewStyle ref={ref} $visible={visible}>
+      {children}
+    </ProjectBorderViewStyle>
+  )
 }
 
 export default React.memo(ProjectBorderView)

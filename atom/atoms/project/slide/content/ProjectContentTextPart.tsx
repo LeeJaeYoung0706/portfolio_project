@@ -7,9 +7,9 @@ import ProjectContentTextPartView from "@/atom/atoms/project/slide/content/Proje
  * @constructor
  */
 export default function ProjectContentTextPart({content}: ProjectContentTextPartPropsInterface) {
-    return (
-        <ProjectContentTextPartView
-            content={content}
-        />
-    )
+  return (
+    <ProjectContentTextPartView
+      content={content}
+    />
+  )
 }

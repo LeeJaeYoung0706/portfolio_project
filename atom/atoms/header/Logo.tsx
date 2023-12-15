@@ -9,6 +9,7 @@ export const LogoStyle = styled.div<{ $logoFontSize: string , $isTop: boolean , 
   ${(props) => ( props.$isTop || props.$checked ) ? css`color: ${props.theme.palette.primary};` : css`color: transparent;` };
   background-color: transparent;
   line-height: 1;
+  
   & > h1 {
     font-weight: bold;
   }
