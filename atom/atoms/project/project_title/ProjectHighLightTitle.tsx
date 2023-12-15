@@ -10,7 +10,7 @@ import {
 
 const ProjectHighLightStyle = styled.div`
   width: 100%;
-  margin-bottom: 40px;
+  padding-bottom: 50px;
   text-align: center;
   ${displayFlex('column' , 'center' , 'center')}
 `

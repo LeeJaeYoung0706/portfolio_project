@@ -15,7 +15,7 @@ const SlideStyle = styled.div<{
     $stackVisible: boolean, $area: RuleSet<Object> , $checked: boolean
 }>`
   ${props => props.$area};
-  gap: 15px;
+  gap: 5px;
   ${displayFlex('column', 'flex-start', 'center')};
   align-content: flex-start;
   height: 100%;
