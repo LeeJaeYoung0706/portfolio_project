@@ -110,7 +110,7 @@ export const dropdownAnimation = keyframes`
 
 export const pcGridAnimation = keyframes`
   0% {
-    transform: translateY(300px);
+    transform: translateY(200px);
   }
   50% {
     transform: translateY(100px);
@@ -121,7 +121,7 @@ export const pcGridAnimation = keyframes`
 `
 export const rightGridAnimation = keyframes`
   0% {
-    transform: translateX(250px);
+    transform: translateX(200px);
   }
   100% {
     transform: translateX(0);
@@ -129,7 +129,7 @@ export const rightGridAnimation = keyframes`
 `
 export const leftGridAnimation = keyframes`
   0% {
-    transform: translateX(-250px);
+    transform: translateX(-200px);
   }
   100% {
     transform: translateX(0);
@@ -138,7 +138,7 @@ export const leftGridAnimation = keyframes`
 
 export const mobileRightGridAnimation = keyframes`
   0% {
-    transform: translateX(180px);
+    transform: translateX(150px);
   }
   100% {
     transform: translateX(0);
@@ -146,7 +146,7 @@ export const mobileRightGridAnimation = keyframes`
 `
 export const mobileLeftGridAnimation = keyframes`
   0% {
-    transform: translateX(-180px);
+    transform: translateX(-150px);
   }
   100% {
     transform: translateX(0);
