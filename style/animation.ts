@@ -59,15 +59,15 @@ export const aboutMeTitleAnimation = keyframes`
   25% {
     width: 0; left: 0;
   }
-  
+
   50% {
-    width: 100%; 
+    width: 100%;
   }
-  
+
   75% {
     width: 0; right: 0;
   }
-  
+
   100% {
     width: 0; right: 0;
   }

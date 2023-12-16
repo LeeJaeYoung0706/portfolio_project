@@ -55,7 +55,6 @@ const headerTypeCss = css`
 const DefaultButtonStyle = css`
   border: none;
   padding: 30px;
-
   ${ContentFontSizePC};
   background-color: ${props => props.theme.palette.reverse70};
   

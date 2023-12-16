@@ -20,12 +20,10 @@ const LinkStyle = styled(Link)`
   border-top: 1px solid  ${props => props.theme.palette.second};
   color: ${(props) => props.theme.palette.second};
 
-  
+
   & > p {
     font-weight: bold;
   }
-
-
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};
