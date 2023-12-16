@@ -14,22 +14,18 @@ const LinkOutSideStyle = styled.div<{$area: RuleSet<Object>}>`
 const LinkStyle = styled(Link)`
   text-align: center;
   padding: 30px;
+  ${ContentFontSizePC};
+  background-color: ${props => props.theme.palette.reverse70};
+  border-bottom: 1px solid  ${props => props.theme.palette.second};
+  border-top: 1px solid  ${props => props.theme.palette.second};
+  color: ${(props) => props.theme.palette.second};
+
   
   & > p {
     font-weight: bold;
   }
 
-  border: none;
-  
-  border-radius: 1px;
-  ${ContentFontSizePC};
-  background-color: ${props => props.theme.palette.reverse70};
 
-  border-bottom: 1px solid  ${props => props.theme.palette.second};
-  border-top: 1px solid  ${props => props.theme.palette.second};
-
-  color: ${(props) => props.theme.palette.second};
-  font-weight: bold;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};

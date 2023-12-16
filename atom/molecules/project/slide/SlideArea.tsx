@@ -21,19 +21,19 @@ const SlideStyle = styled.div<{
   height: 100%;
   width: 100%;
     //background-color: ${props => (props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? props.theme.palette.primary : props.theme.palette.second};
-  ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? rightGridAnimation : leftGridAnimation} 1s normal linear;`};
+  ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? rightGridAnimation : leftGridAnimation} 0.5s normal linear;`};
   ${(props) => !props.$stackVisible ? css`opacity: 0;` : css`opacity: 1;`};
 
   ${(props) => props.theme.media.tablet} {
     width: 100%;
     ${displayFlex('column', 'center', 'center')}
-    ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
+    ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? mobileRightGridAnimation : mobileLeftGridAnimation} 0.5s normal linear;`}
   }
 
   ${(props) => props.theme.media.mobile} {
     width: 100%;
     min-width: 360px;
-    ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? mobileRightGridAnimation : mobileLeftGridAnimation} 1s normal linear;`}
+    ${(props) => (props.$stackVisible && !props.$checked) && css`animation: ${(props.$area === IntroductionGrid || props.$area === FunctionsGrid) ? mobileRightGridAnimation : mobileLeftGridAnimation} 0.5s normal linear;`}
   }
 `
 

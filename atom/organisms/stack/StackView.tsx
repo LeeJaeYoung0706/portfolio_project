@@ -11,8 +11,8 @@ const StackViewStyle = styled.section`
     position: absolute;
     content: '';
     left: 0;
-    width: 90%;
-    height: 70%;
+    width: 67%;
+    height: 100%;
     background-size: cover;
     background-image: url("/stack_background.png");
     background-attachment: fixed;

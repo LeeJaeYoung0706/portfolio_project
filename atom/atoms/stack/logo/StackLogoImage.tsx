@@ -3,15 +3,15 @@ import styled from "styled-components";
 import Image from "next/image";
 
 const StackLogoImageStyle = styled.div`
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
   position: relative;
   margin-right: 30px;
-  border-radius: 20px;
+  border-radius: 7px;
 
   & > img {
-    border-radius: 10px;
+    border-radius: 5px;
   }
 `
 

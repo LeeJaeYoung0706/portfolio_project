@@ -121,21 +121,21 @@ const TextStyle = styled.div<{ $content: string, $visible: boolean }>`
 const TextFlexStyle = styled.div`
   ${displayFlex('row', 'center', 'center')};
   width: 70%;
-  margin-bottom: 50px;
+  padding-bottom: 150px;
 `
 
 const CompanyIntroduceLayout = styled.div`
-  padding-top: 100px;
-  padding-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 
   ${(props) => props.theme.media.tablet} {
-    padding-top: 100px;
-    padding-bottom: 200px;
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    padding-top: 50px;
-    padding-bottom: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
   text-align: center;
 `
@@ -180,6 +180,14 @@ function InitSwiperContent({onCheckHandler}: InitSwiperContentInterface): React.
 
   return (
     <InitSwiperContentStyle className={RussoFont.className}>
+      <CompanyIntroduceLayout>
+        <CompanyIntroduceText className={NGodicFont.className}>
+          Working for a ERSolution
+        </CompanyIntroduceText>
+        <CompanyIntroduceText className={NGodicFont.className}>
+          2022.05 ~ 2023.08
+        </CompanyIntroduceText>
+      </CompanyIntroduceLayout>
       <TextFlexStyle ref={ref}>
         <TextStyle $content={'p'} $visible={visible}>P</TextStyle>
         <TextStyle $content={'r'} $visible={visible}>R</TextStyle>
@@ -189,14 +197,6 @@ function InitSwiperContent({onCheckHandler}: InitSwiperContentInterface): React.
         <TextStyle $content={'c'} $visible={visible}>C</TextStyle>
         <TextStyle $content={'t'} $visible={visible}>T</TextStyle>
       </TextFlexStyle>
-      <CompanyIntroduceLayout>
-        <CompanyIntroduceText className={NGodicFont.className}>
-            Working for a ERSolution
-        </CompanyIntroduceText>
-        <CompanyIntroduceText className={NGodicFont.className}>
-            2022.05 ~ 2023.08
-        </CompanyIntroduceText>
-      </CompanyIntroduceLayout>
       <FiveSecondContentStyle>
         <Button content={`READ MOREㅤ>`} onClick={onCheckHandler} font={NGodicFont.className} $type={''}/>
       </FiveSecondContentStyle>
