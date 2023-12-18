@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Link from "next/link";
-import {ContentFontSizeMobile, ContentFontSizePC} from "@/style/theme/common";
+import {MiddleTitleFontSizeMobile} from "@/style/theme/common";
 
 const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   color: ${(props) => props.theme.palette.second};
@@ -12,7 +12,7 @@ const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   padding: 11px;
   font-weight: bold;
 
-  ${ContentFontSizeMobile};
+  ${MiddleTitleFontSizeMobile};
   &:active {
     color: ${(props) => props.theme.palette.primary};
   }

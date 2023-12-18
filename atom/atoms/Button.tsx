@@ -21,8 +21,7 @@ const headerTypeCss = css`
   min-width: 120px;
   height: 30px;
   border: none;
-
-
+  
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.middle};
@@ -53,16 +52,14 @@ const headerTypeCss = css`
 
 
 const DefaultButtonStyle = css`
-  border: none;
   padding: 30px;
   ${ContentFontSizePC};
   background-color: ${props => props.theme.palette.reverse70};
-  
   border-bottom: 1px solid  ${props => props.theme.palette.second};
   border-top: 1px solid  ${props => props.theme.palette.second};
-  
   color: ${(props) => props.theme.palette.second};
   font-weight: bold;
+  
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: ${(props) => props.theme.palette.reverseSecond};
@@ -94,8 +91,43 @@ const DefaultButtonStyle = css`
   }
 `
 
+const UpButtonStyle = css`
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  padding: 30px;
+  ${ContentFontSizePC};
+  z-index: 400;
+  color: ${(props) => props.theme.palette.second};
+  font-weight: bold;
+  opacity: 0.3;
+  filter: invert(45%);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  ${(props) => props.theme.media.tablet} {
+    max-width: 200px;
+    ${ContentFontSizeTablet};
+    padding: 25px;
+
+    &:active {
+      opacity: 1;
+    }
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    max-width: 200px;
+    right: 25px;
+    opacity: 0.5;
+    ${ContentFontSizeMobile};
+  }
+`
+
 const ButtonStyle = styled.button<{ $type: string }>`
-  ${(props) => props.$type === 'header' ? headerTypeCss : DefaultButtonStyle}
+  ${(props) => props.$type === 'header' ? headerTypeCss : props.$type === 'up' ? UpButtonStyle : DefaultButtonStyle}
 `
 /**
  *

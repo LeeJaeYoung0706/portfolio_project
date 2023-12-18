@@ -6,7 +6,7 @@ const StackViewStyle = styled.section`
   overflow: hidden;
   position: relative;
   margin: 0 auto;
-  
+  min-height: 100vh;
   &:before {
     position: absolute;
     content: '';

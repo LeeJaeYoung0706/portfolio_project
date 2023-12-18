@@ -16,7 +16,7 @@ export const IdCardContentList = [
   },
   {
     title: 'Phone',
-    content: '010-3734-6433',
+    content: '010',
     $imageUrl: '/phone-call.svg',
   },
   {

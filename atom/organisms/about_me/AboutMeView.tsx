@@ -6,7 +6,7 @@ const AboutMeLayoutStyle = styled.section`
   background-color: ${props => props.theme.palette.reverse};
   margin: 0 auto;
   max-width: 1500px;
-
+  min-height: 100vh;
   ${(props) => props.theme.media.tablet} {
     min-width: 600px;
     max-width: 700px;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 
 const EducationLayoutStyle = styled.section`
+  min-height: 100vh;
   background-color: ${props => props.theme.palette.reverse};
 `
 
