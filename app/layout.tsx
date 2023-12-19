@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   description: '프론트개발자 포트폴리오',
   keywords: ['Next.js', '프론트엔드', '프론트개발자' , '포트폴리오'],
   creator: 'Lee Jae Young',
-
 }
 
 export default function RootLayout({

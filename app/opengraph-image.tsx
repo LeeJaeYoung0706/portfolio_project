@@ -13,7 +13,7 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default async function LogoImage() {
+export default async function Image() {
 
   return new ImageResponse(
     (
@@ -21,13 +21,12 @@ export default async function LogoImage() {
       <div
         style={{
           backgroundColor: 'rgb(13, 13, 13)',
+          fontSize: 128,
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: "white",
-          fontSize: '110px'
         }}
       >
           프론트 개발자 이재영
