@@ -1,6 +1,6 @@
 import React from "react";
 import AboutMeIdCardView from "@/atom/atoms/about_me/Id_card/AboutMeIdCardView";
-import {HanSansFont, NGodicFont, RussoFont} from "@/style/font";
+import {RussoFont} from "@/style/font";
 import AboutMeIdTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitle";
 import AboutMeIdCardContent from "@/atom/atoms/about_me/Id_card/content/AboutMeIdCardContent";
 

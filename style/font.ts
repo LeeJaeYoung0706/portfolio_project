@@ -1,7 +1,6 @@
 import {NextFont} from "next/dist/compiled/@next/font";
 import {
     Black_Han_Sans,
-    Cinzel, Gasoek_One,
     Kdam_Thmor_Pro,
     Nanum_Gothic, Noto_Sans, Russo_One,
     Titillium_Web
@@ -14,11 +13,6 @@ export const kdamThmorPro:NextFont = Kdam_Thmor_Pro({
     display: 'swap',
 })
 
-export const CinzelFont: NextFont = Cinzel({
-    weight: '400',
-    subsets: ['latin'],
-    display: 'swap',
-})
 
 export const TitllFont: NextFont = Titillium_Web(
     {

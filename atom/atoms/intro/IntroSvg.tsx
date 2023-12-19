@@ -1,49 +1,38 @@
-import styled, {css, RuleSet} from "styled-components";
+import styled, {css} from "styled-components";
 import {introSvgKeyframes} from "@/style/animation";
 import IntroSvgPC from '@/public/IntroSvgPC.svg';
-
 import React from "react";
 import {commonAnimation, displayFlex} from "@/style/theme/common";
-import {CinzelFont, NotoSansFont, RussoFont} from "@/style/font";
-import {dark} from "@/style/theme/dark";
+import {RussoFont} from "@/style/font";
 import {purple} from "@/style/theme/purple";
+import TestImage from "@/app/opengraph-image";
 
 
 
 const IntroSVG = styled(IntroSvgPC)`
-
 `
 
-
-//${(props) => introSvgKeyframes(props.theme)} 8s infinite alternate
 export const IntroSvgStyle = styled.div`
   position: relative;
   font-size: 30px;
   width: 100%;
-  //opacity: 0.1;
-  //background-image: url('/intro_background.jpg');
-  //background-size: cover;
-  //background-attachment: fixed;
-  //background-position: 0, 10%;
   height: 105vh;
-  
+
   ${displayFlex('row', 'center', 'center')}
   ${props => commonAnimation(css`${introSvgKeyframes(props.theme)} 8s infinite alternate;`)}
-
-  
   &:before {
     position: absolute;
     content: '';
     width: 100%;
     height: 100%;
     opacity: 0.4;
-    //${props => props.theme === purple ? css`opacity: 0.4;` : css`opacity: 0.4;`}
+      //${props => props.theme === purple ? css`opacity: 0.4;` : css`opacity: 0.4;`}
     background-image: url('/intro_background.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: 0, 10%;
   }
-  
+
   &:after {
     content: '';
     display: block;

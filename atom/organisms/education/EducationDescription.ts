@@ -2,8 +2,10 @@ import {
   AcademyGrid,
   AcademyImageGrid,
   EducationImageGrid,
-  OnlineGrid, OnlineImageGrid,
-  UniversityGrid, UniversityImageGrid
+  OnlineGrid,
+  OnlineImageGrid,
+  UniversityGrid,
+  UniversityImageGrid
 } from "@/atom/molecules/education/EducationStyle";
 
 

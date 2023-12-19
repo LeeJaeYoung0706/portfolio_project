@@ -9,7 +9,6 @@ import React from "react";
  * @constructor
  */
 export default function ProjectTitleLi({project, projectCheckHandler}: ProjectTitleLiInterface): React.JSX.Element {
-
   return (
     <ProjectTitleLiView
       title={project.title}

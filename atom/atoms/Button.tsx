@@ -1,5 +1,4 @@
 import styled, {css} from "styled-components";
-import {color} from "@/style/theme/color";
 import {ContentFontSizeMobile, ContentFontSizePC, ContentFontSizeTablet} from "@/style/theme/common";
 
 

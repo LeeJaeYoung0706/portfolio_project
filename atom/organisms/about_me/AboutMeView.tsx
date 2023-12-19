@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import {color} from "@/style/theme/color";
 
 const AboutMeLayoutStyle = styled.section`
   background-color: ${props => props.theme.palette.reverse};

@@ -2,11 +2,15 @@ import SlideLayoutView from "@/atom/molecules/project/slide/SlideLayoutView";
 import React from "react";
 import SlideArea, {MinusMarginDiv} from "@/atom/molecules/project/slide/SlideArea";
 import {
-  FunctionsGrid, FunctionsTitleGrid,
-  IntroductionGrid, IntroductionTitleGrid,
+  FunctionsGrid,
+  FunctionsTitleGrid,
+  IntroductionGrid,
+  IntroductionTitleGrid,
   LinkGrid,
-  ResponsibilitiesGrid, ResponsibilitiesTitleGrid,
-  ReviewGrid, ReviewTitleGrid
+  ResponsibilitiesGrid,
+  ResponsibilitiesTitleGrid,
+  ReviewGrid,
+  ReviewTitleGrid
 } from "@/atom/atoms/project/slide/StyleGridArea";
 import ProjectContent from "@/atom/atoms/project/slide/content/ProjectContent";
 import ProjectLinkTag from "@/atom/atoms/project/project_title/ProjectLinkTag";
@@ -43,28 +47,28 @@ export default function SlideLayout({project}: SlideLayoutPropsInterface): React
       </SlideArea>
 
       <SlideArea $area={IntroductionGrid} $checked={false} key={`${project}-${project?.introductionTitle}`}>
-        <TitleDiv title={'소개'} position={true} src={'/review.jpg'} alt={'review'}/>
+        <TitleDiv title={'소개'} position={true}/>
         <ProjectContent
           position={false}
           content={[project?.introductionTitle || '', project?.introduction || '']}
         />
       </SlideArea>
       <SlideArea $area={ResponsibilitiesGrid} $checked={false} key={`${project}-${project?.responsibilities}`}>
-        <TitleDiv title={'담당'} position={true} src={'/responsibilities.jpg'} alt={'responsibilities'}/>
+        <TitleDiv title={'담당'} position={true}/>
         <ProjectContent
           position={true}
           content={project?.responsibilities || []}
         />
       </SlideArea>
       <SlideArea $area={FunctionsGrid} $checked={false} key={`${project}-${project?.functions}`}>
-        <TitleDiv title={'기능'} position={true} src={'/review.jpg'} alt={'review'}/>
+        <TitleDiv title={'기능'} position={true}/>
         <ProjectContent
           position={false}
           content={project?.functions || []}
         />
       </SlideArea>
       <SlideArea $area={ReviewGrid} $checked={false} key={`${project}-${project?.review}`}>
-        <TitleDiv title={'후기'} position={true} src={'/review.jpg'} alt={'review'}/>
+        <TitleDiv title={'후기'} position={true}/>
         <ProjectContent
           position={true}
           content={[project?.review || '']}

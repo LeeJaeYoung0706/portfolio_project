@@ -7,7 +7,7 @@ import {
   MiddleTitleFontSizePC,
   MiddleTitleFontSizeTablet
 } from "@/style/theme/common";
-import {kdamThmorPro, NGodicFont, NotoSansFont, RussoFont} from "@/style/font";
+import {NGodicFont, RussoFont} from "@/style/font";
 import Button from "@/atom/atoms/Button";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 
@@ -15,7 +15,6 @@ import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 const InitSwiperContentStyle = styled.div`
   width: 100%;
   line-height: 1;
-  //box-shadow: 0 10px 20px ${props => props.theme.palette.second}, 0 0 10px ${props => props.theme.palette.middle};
   position: relative;
   min-width: 1185px;
   padding: 3vw;

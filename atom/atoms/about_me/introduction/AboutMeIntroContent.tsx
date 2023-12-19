@@ -1,6 +1,6 @@
 'use client'
 import React, {useRef} from "react";
-import styled, {css, keyframes} from "styled-components";
+import styled, {css} from "styled-components";
 import {NGodicFont} from "@/style/font";
 import {useIntersectionObserver} from "@/lib/useIntersectionObserver";
 import {
@@ -9,21 +9,9 @@ import {
   MiddleTitleFontSizePC,
   MiddleTitleFontSizeTablet
 } from "@/style/theme/common";
+import {contentAnimation} from "@/style/animation";
 
-/**
- * 전체 에니메이션
- */
-const contentAnimation = keyframes`
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 30%;
-  }
-  100% {
-    opacity: 100%;
-  }
-`
+
 /**
  * 레이아웃
  */
@@ -86,7 +74,7 @@ const StrongPStyle = styled.span`
  * AboutMe 한 마디 섹션
  * @constructor
  */
-function AboutMeIntroContent():React.JSX.Element {
+export default function AboutMeIntroContent():React.JSX.Element {
 
     // Target 요소 관찰
     //visible 체크를 위한 ref
@@ -110,5 +98,3 @@ function AboutMeIntroContent():React.JSX.Element {
         </IntroContentStyle>
     )
 }
-
-export default React.memo(AboutMeIntroContent);

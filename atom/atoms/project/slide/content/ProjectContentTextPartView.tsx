@@ -5,7 +5,7 @@ import {
   ContentFontSizePC,
   ContentFontSizeTablet, ContentLineHeight,
 } from "@/style/theme/common";
-import {NGodicFont, NotoSansFont} from "@/style/font";
+import {NotoSansFont} from "@/style/font";
 import Image from "next/image";
 
 

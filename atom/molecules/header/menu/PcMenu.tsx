@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderPcMenuView from "@/atom/molecules/header/menu/PcMenuView";
 import Button from "@/atom/atoms/Button";
 import {useRouter} from "next/navigation";
-import {NGodicFont, RussoFont} from "@/style/font";
+import {RussoFont} from "@/style/font";
 import {useThemeContext} from "@/lib/ThemeHandlerContext";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 

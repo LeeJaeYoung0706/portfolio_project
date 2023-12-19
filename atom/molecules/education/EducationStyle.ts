@@ -1,5 +1,4 @@
 import styled, {css} from "styled-components";
-import {displayFlex} from "@/style/theme/common";
 
 
 export const EducationArticleLayout = styled.article`

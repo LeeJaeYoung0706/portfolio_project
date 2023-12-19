@@ -2,12 +2,8 @@
 import React from "react";
 import SectionTitle from "@/atom/atoms/title/SectionTitle";
 import EducationView from "@/atom/organisms/education/EducationView";
-import {
-  EducationArticleLayout,
-  EducationGridStyle
-} from "@/atom/molecules/education/EducationStyle";
+import {EducationArticleLayout, EducationGridStyle} from "@/atom/molecules/education/EducationStyle";
 import EducationArea from "@/atom/molecules/education/grid/EducationArea";
-import Image from "next/image";
 import EducationImageDiv from "@/atom/atoms/education/EducationImageDiv";
 import {educationArray, educationImageArray} from "@/atom/organisms/education/EducationDescription";
 import {
@@ -16,7 +12,6 @@ import {
   EducationGridContentTitleStyle
 } from "@/atom/atoms/education/EducationStyle";
 import {NGodicFont} from "@/style/font";
-import {css} from "styled-components";
 
 
 /**

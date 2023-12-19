@@ -1,9 +1,12 @@
 import styled from "styled-components";
 import {
   ContentFontSizeMobile,
-  ContentFontSizePC, ContentFontSizeTablet, ContentLineHeight,
+  ContentFontSizePC,
+  ContentFontSizeTablet,
+  ContentLineHeight,
   MiddleTitleFontSizeMobile,
-  MiddleTitleFontSizePC, MiddleTitleFontSizeTablet
+  MiddleTitleFontSizePC,
+  MiddleTitleFontSizeTablet
 } from "@/style/theme/common";
 
 
@@ -40,6 +43,7 @@ export const EducationGridContentTextStyle = styled.div`
   color: ${props => props.theme.palette.primary};
   ${ContentFontSizePC};
   ${ContentLineHeight};
+
   ${(props) => props.theme.media.tablet} {
     ${ContentFontSizeTablet};
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import AboutMeIdTitleView from "@/atom/atoms/about_me/Id_card/title/AboutMeIdTitleView";
-import AboutMeIdCardTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdCardTitle";
+import AboutMeIdCardTitle from "@/atom/atoms/about_me/Id_card/title/AboutMeIdCardTitleView";
 
 
 /**

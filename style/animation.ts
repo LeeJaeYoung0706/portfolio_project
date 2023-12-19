@@ -107,7 +107,9 @@ export const dropdownAnimation = keyframes`
 //   }
 // `
 
-
+/**
+ * Stack Grid PC 환경 애니메이션
+ */
 export const pcGridAnimation = keyframes`
   0% {
     transform: translateY(200px);
@@ -119,6 +121,10 @@ export const pcGridAnimation = keyframes`
     transform: translateY(0px);
   }
 `
+/**
+ * Stack Grid 태블릿 환경 애니메이션
+ */
+
 export const rightGridAnimation = keyframes`
   0% {
     transform: translateX(200px);
@@ -127,6 +133,10 @@ export const rightGridAnimation = keyframes`
     transform: translateX(0);
   }
 `
+
+/**
+ * Stack Grid 태블릿 환경 애니메이션
+ */
 export const leftGridAnimation = keyframes`
   0% {
     transform: translateX(-200px);
@@ -135,7 +145,9 @@ export const leftGridAnimation = keyframes`
     transform: translateX(0);
   }
 `
-
+/**
+ * Stack Grid 모바일 환경 애니메이션
+ */
 export const mobileRightGridAnimation = keyframes`
   0% {
     transform: translateX(150px);
@@ -144,11 +156,30 @@ export const mobileRightGridAnimation = keyframes`
     transform: translateX(0);
   }
 `
+
+/**
+ * Stack Grid 모바일 환경 애니메이션
+ */
 export const mobileLeftGridAnimation = keyframes`
   0% {
     transform: translateX(-150px);
   }
   100% {
     transform: translateX(0);
+  }
+`
+
+/**
+ * AboutMeIntroContent 부분 애니메이션
+ */
+export const contentAnimation = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 30%;
+  }
+  100% {
+    opacity: 100%;
   }
 `

@@ -39,7 +39,7 @@ const StackAreaStyle = styled.div<{ $stackVisible: boolean, $area: RuleSet<Objec
 `
 
 /**
- * Stack Y축 그리드
+ * Stack 그리드
  * @param children
  * @param $area => area 지정을 위한 Props
  * @constructor

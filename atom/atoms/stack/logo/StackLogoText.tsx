@@ -1,10 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {NGodicFont, TitllFont} from "@/style/font";
-import {
-  MiddleTitleFontSizeMobile,
-  MiddleTitleFontSizePC, MiddleTitleFontSizeTablet
-} from "@/style/theme/common";
+import {NGodicFont} from "@/style/font";
+import {MiddleTitleFontSizeMobile, MiddleTitleFontSizePC, MiddleTitleFontSizeTablet} from "@/style/theme/common";
 
 export const StackLogoTextStyle = styled.h5`
   color: ${props => props.theme.palette.primary70};

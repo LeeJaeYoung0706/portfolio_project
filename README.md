@@ -201,7 +201,7 @@ const AboutMeIdCardTitleFontStyle = styled.h3`
  * @param title
  * @constructor
  */
-function AboutMeIdCardTitle ( {font , title} : {font: string , title: string}) :React.JSX.Element {
+function AboutMeIdCardTitleView ( {font , title} : {font: string , title: string}) :React.JSX.Element {
     return (
         <AboutMeIdCardTitleFontStyle className={font}>
             {title}
@@ -209,7 +209,7 @@ function AboutMeIdCardTitle ( {font , title} : {font: string , title: string}) :
     )
 }
 
-export default React.memo(AboutMeIdCardTitle)
+export default React.memo(AboutMeIdCardTitleView)
 ```
 
 /aboutMe_style/styles.ts

@@ -16,18 +16,19 @@ const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
   right: 0;
 
 
-    &:last-child {
-        border-bottom: 2px solid ${props => props.theme.palette.middle};
-    }
-  
+  &:last-child {
+    border-bottom: 2px solid ${props => props.theme.palette.middle};
+  }
+
   ${(props) => props.$checked && commonAnimation(css`${dropdownAnimation} 0.5s normal linear;`)};
-  
+
   ${(props) => props.theme.media.tablet} {
     top: 60px;
   }
 
   ${(props) => props.theme.media.mobile} {
     top: 60px;
+    min-width: 370px;
   }
 
 
@@ -40,72 +41,73 @@ const HeaderDropdownStyle = styled.nav<{ $checked: boolean }>`
  */
 
 export default function HeaderDropdown({checked, onClick}: HeaderDropdownInterface) {
+  // 테마 핸들러
+  const {themeHandler} = useThemeContext();
+  // 드롭다운 링크 리스트
+  const dropDownLinkArray: DropDownLinkInterface[] = [
+    {
+      route: '#intro',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'Intro'
+    },
+    {
+      route: '#about',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'About'
+    },
+    {
+      route: '#stack',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'Stack'
+    },
+    {
+      route: '#project',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'Project',
+    },
+    {
+      route: '#education',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'Education',
+    },
+    {
+      route: '',
+      checked: checked,
+      font: NotoSansFont.className,
+      text: 'Theme',
+      themeHandler: themeHandler
+    }
+  ]
 
-    const {themeHandler} = useThemeContext();
-    const dropDownLinkArray: DropDownLinkInterface[] = [
-        {
-            route: '#intro',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'Intro'
-        },
-        {
-            route: '#about',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'About'
-        },
-        {
-            route: '#stack',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'Stack'
-        },
-        {
-            route: '#project',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'Project',
-        },
-        {
-            route: '#education',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'Education',
-        },
-        {
-            route: '',
-            checked: checked,
-            font: NotoSansFont.className,
-            text: 'Theme',
-            themeHandler: themeHandler
-        }
-    ]
+  return (
+    <HeaderDropdownStyle $checked={checked} onClick={onClick}>
+      {
+        dropDownLinkArray?.length > 0 &&
+        dropDownLinkArray?.map((value, index) => {
+          return value?.themeHandler !== undefined ?
+            <DropdownLink
+              route={value.route}
+              checked={value.checked}
+              font={value.font}
+              text={value.text}
+              themeHandler={value.themeHandler}
+              key={`${index}${value.route}`}
+            /> :
+            <DropdownLink
+              route={value.route}
+              checked={value.checked}
+              font={value.font}
+              text={value.text}
+              key={`${index}${value.route}`}
+            />
 
-    return (
-        <HeaderDropdownStyle $checked={checked} onClick={onClick}>
-            {
-                dropDownLinkArray?.length > 0 &&
-                dropDownLinkArray?.map((value, index) => {
-                    return value?.themeHandler !== undefined ?
-                            <DropdownLink
-                                route={value.route}
-                                checked={value.checked}
-                                font={value.font}
-                                text={value.text}
-                                themeHandler={value.themeHandler}
-                                key={`${index}${value.route}`}
-                            /> :
-                            <DropdownLink
-                                route={value.route}
-                                checked={value.checked}
-                                font={value.font}
-                                text={value.text}
-                                key={`${index}${value.route}`}
-                            />
-
-                })
-            }
-        </HeaderDropdownStyle>
-    )
+        })
+      }
+    </HeaderDropdownStyle>
+  )
 }

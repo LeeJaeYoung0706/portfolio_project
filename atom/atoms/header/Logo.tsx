@@ -1,4 +1,4 @@
-import {NotoSansFont, RussoFont} from "@/style/font";
+import {RussoFont} from "@/style/font";
 import styled, {css} from "styled-components";
 import {useScrollPosition} from "@/lib/useScrollPosition";
 
@@ -6,13 +6,14 @@ import {useScrollPosition} from "@/lib/useScrollPosition";
 export const LogoStyle = styled.div<{ $logoFontSize: string , $isTop: boolean , $checked: boolean }>`
   font-size: ${props => props.$logoFontSize};
   padding-left: 40px;
-  ${(props) => ( props.$isTop || props.$checked ) ? css`color: ${props.theme.palette.primary};` : css`color: transparent;` };
+  ${(props) => (props.$isTop || props.$checked) ? css`color: ${props.theme.palette.primary};` : css`color: transparent;`};
   background-color: transparent;
   line-height: 1;
-  
+
   & > h1 {
     font-weight: bold;
   }
+
   ${(props) => props.theme.media.tablet} {
     font-size: 40px;
     padding-left: 40px;

@@ -43,12 +43,13 @@ const SlideLayoutStyle = styled.div`
                          'link';
   }
 `
-function SlideLayoutView({children} : ComponentPropsInterface):React.JSX.Element {
-    return (
-        <SlideLayoutStyle>
-            {children}
-        </SlideLayoutStyle>
-    )
+
+function SlideLayoutView({children}: ComponentPropsInterface): React.JSX.Element {
+  return (
+    <SlideLayoutStyle>
+      {children}
+    </SlideLayoutStyle>
+  )
 }
 
 export default React.memo(SlideLayoutView)

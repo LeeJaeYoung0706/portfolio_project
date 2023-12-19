@@ -1,5 +1,8 @@
 import {css} from "styled-components";
 
+/**
+ * grid Area 선언부
+ */
 
 export const IntroductionGrid = css`
   grid-area: introduction;
@@ -7,7 +10,6 @@ export const IntroductionGrid = css`
 export const IntroductionTitleGrid = css`
   grid-area: introductionTtile;
 `
-
 export const FunctionsGrid = css`
   grid-area: functions;
 `

@@ -1,15 +1,8 @@
 'use client'
 import React from "react";
 import styled, {css} from "styled-components";
-import {NotoSansFont, RussoFont} from "@/style/font";
-import {
-  LargeTitleFontSizeMobile, LargeTitleFontSizePC,
-  LargeTitleFontSizeTablet,
-  MiddleTitleFontSizeMobile,
-  MiddleTitleFontSizePC,
-  MiddleTitleFontSizeTablet
-} from "@/style/theme/common";
-
+import {RussoFont} from "@/style/font";
+import {LargeTitleFontSizeMobile, LargeTitleFontSizePC, LargeTitleFontSizeTablet} from "@/style/theme/common";
 
 
 const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
@@ -19,9 +12,10 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
 
             & > p {
               font-weight: bold;
-            };
+            }
+          ;
             border-radius: 2px;
-            border-bottom: 1px solid  ${props => props.theme.palette.second};
+            border-bottom: 1px solid ${props => props.theme.palette.second};
             background-color: ${props => props.theme.palette.reverse};
           `
           : css` flex: 1;
@@ -32,7 +26,7 @@ const ProjectTitleLiStyle = styled.li<{$checked: boolean}>`
   ${LargeTitleFontSizePC};
   cursor: pointer;
   z-index: 350;
-  
+
   ${(props) => props.theme.media.tablet} {
     flex: none;
     width: 30%;

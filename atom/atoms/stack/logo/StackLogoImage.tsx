@@ -22,17 +22,17 @@ const StackLogoImageStyle = styled.div`
  * @param size sizes
  * @constructor
  */
-function StackLogoImage({src , alt , size}: StackLogoImageInterface):React.JSX.Element {
-    return (
-        <StackLogoImageStyle>
-            <Image
-                src={src}
-                alt={alt}
-                fill
-                sizes={'50px'}
-            />
-        </StackLogoImageStyle>
-    )
+function StackLogoImage({src, alt, size}: StackLogoImageInterface): React.JSX.Element {
+  return (
+    <StackLogoImageStyle>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={'50px'}
+      />
+    </StackLogoImageStyle>
+  )
 }
 
 export default React.memo(StackLogoImage)

@@ -13,6 +13,7 @@ const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
   font-weight: bold;
 
   ${MiddleTitleFontSizeMobile};
+
   &:active {
     color: ${(props) => props.theme.palette.primary};
   }
@@ -26,16 +27,22 @@ const HeaderDropdownLinkStyle = styled(Link)<{ $checked: boolean }>`
  * @param themeHandler => 테마 변경 핸들러
  * @constructor
  */
-export default function DropdownLink( {route , checked , font , text , themeHandler} : DropDownLinkInterface): React.JSX.Element {
-    return (
-        <HeaderDropdownLinkStyle
-            href={route}
-            $checked={checked}
-            className={font}
-            onClick={themeHandler}
-        >
-            {text}
-        </HeaderDropdownLinkStyle>
-    )
+export default function DropdownLink({
+                                       route,
+                                       checked,
+                                       font,
+                                       text,
+                                       themeHandler
+                                     }: DropDownLinkInterface): React.JSX.Element {
+  return (
+    <HeaderDropdownLinkStyle
+      href={route}
+      $checked={checked}
+      className={font}
+      onClick={themeHandler}
+    >
+      {text}
+    </HeaderDropdownLinkStyle>
+  )
 }
 
