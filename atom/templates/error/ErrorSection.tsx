@@ -7,7 +7,7 @@ import ErrorTitle from "@/atom/atoms/errors/ErrorTitle";
 export default function ErrorSection() {
 
   const searchParams = useSearchParams();
-  console.log(searchParams)
+
   return (
     <ErrorSectionView>
       <ErrorTitle />

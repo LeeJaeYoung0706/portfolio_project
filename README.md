@@ -137,7 +137,6 @@ export default function ProjectBorderContent(): React.JSX.Element {
             const currentPosition = e.clientX;
             const translate = currentPosition - startPosition;
             const cal = Math.abs(startPosition) - Math.abs(endPosition);
-            console.log(Math.abs(startPosition) - Math.abs(endPosition));
             const width = testRef.current?.offsetWidth || 0;
             if (translate > width) {
                 setCurrentTranslate(width);

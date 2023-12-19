@@ -13,34 +13,29 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default async function Image() {
-  // Font
-  // const interSemiBold = fetch(
-  //   new URL('./Inter-SemiBold.ttf', import.meta.url)
-  // ).then((res) => res.arrayBuffer())
+export default async function LogoImage() {
 
   return new ImageResponse(
     (
       // ImageResponse JSX element
       <div
         style={{
-          fontSize: 128,
-          background: 'white',
+          backgroundColor: 'rgb(13, 13, 13)',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          color: "white",
+          fontSize: '110px'
         }}
       >
-        Lee Jae Young Portfolio
+          프론트 개발자 이재영
       </div>
     ),
     // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
-      ...size,
+      ...size
     }
   )
 }

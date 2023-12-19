@@ -37,7 +37,7 @@ export const useIntersectionObserver = (elementRef: RefObject<Element>,
         const observer = new IntersectionObserver(updateEntry, observerParams)
         observer.observe(node) // 지정 ref 관찰
         return () => observer.disconnect() // 끝난 후 종료
-    }, [elementRef?.current, JSON.stringify(threshold), root, rootMargin, frozen])
+    }, [elementRef, JSON.stringify(threshold), root, rootMargin, frozen])
 
     return [entry, entry?.target?.id, !!entry?.isIntersecting]
 }
