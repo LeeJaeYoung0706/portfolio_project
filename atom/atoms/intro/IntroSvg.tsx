@@ -56,20 +56,19 @@ export const IntroSvgStyle = styled.div`
 `;
 
 
-
 /**
  * Intro Svg View
  * @constructor
  */
 function IntroSvg(): React.JSX.Element {
-    return (
-        <IntroSvgStyle className={RussoFont.className}>
-          <IntroSVG>
-            <text x="35%" y="30%" dy="25px"  textAnchor="middle">FRONT</text>
-            <text x="55%" y="52%" dy="30px"  textAnchor="middle">DEVELOPER</text>
-          </IntroSVG>
-        </IntroSvgStyle>
-    )
+  return (
+    <IntroSvgStyle className={RussoFont.className}>
+      <IntroSVG>
+        <text x="35%" y="30%" dy="25px" textAnchor="middle">FRONT</text>
+        <text x="55%" y="52%" dy="30px" textAnchor="middle">DEVELOPER</text>
+      </IntroSVG>
+    </IntroSvgStyle>
+  )
 }
 
 export default React.memo(IntroSvg)
