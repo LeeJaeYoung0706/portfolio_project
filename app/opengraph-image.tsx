@@ -13,14 +13,14 @@ export const size = {
 export const contentType = 'image/png'
 
 // Image generation
-export default async function Image() {
+export default function Image() {
 
   return new ImageResponse(
     (
       // ImageResponse JSX element
       <div
         style={{
-          backgroundColor: 'rgb(13, 13, 13)',
+          backgroundColor: 'black',
           fontSize: 128,
           width: '100%',
           height: '100%',
@@ -29,7 +29,7 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-          프론트 개발자 이재영
+
       </div>
     ),
     // ImageResponse options
