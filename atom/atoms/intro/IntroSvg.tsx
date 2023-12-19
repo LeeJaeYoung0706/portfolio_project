@@ -5,8 +5,6 @@ import React from "react";
 import {commonAnimation, displayFlex} from "@/style/theme/common";
 import {RussoFont} from "@/style/font";
 import {purple} from "@/style/theme/purple";
-import TestImage from "@/app/opengraph-image";
-
 
 
 const IntroSVG = styled(IntroSvgPC)`
