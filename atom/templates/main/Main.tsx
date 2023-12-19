@@ -12,9 +12,10 @@ import ErrorSection from "@/atom/templates/error/ErrorSection";
 
 export default function Main({children}: MainPropsInterface) {
   const [isTop, visibleTopButton, MoveTop] = useScrollPosition();
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
-  if (searchParams.get('pwd') !== process.env.DEFAULT_PWD) {
+  // 간단하게 비밀번호 처리
+  if (searchParams.get('pwd') !== process.env.NEXT_PUBLIC_DEFAULT_PWD) {
     return <ErrorSection />;
   }
 

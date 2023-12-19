@@ -10,10 +10,19 @@ const ErrorStyle = styled.section`
 
 const BoxStyle = styled.article`
   position: relative;
-  width: 390px;
+  width: 700px;
   height: 390px;
   border-radius: 7px;
-  background-color: ${props => props.theme.palette.second70};
+  background-color: ${props => props.theme.palette.reverseSecond70};
+  
+  ${(props) => props.theme.media.tablet} {
+    min-width: 600px;
+  }
+
+  ${(props) => props.theme.media.mobile} {
+    min-width: 320px;
+  }
+  
 `
 const FormStyle = styled.article`
   position: absolute;

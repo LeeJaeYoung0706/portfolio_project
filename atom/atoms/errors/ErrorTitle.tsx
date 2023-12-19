@@ -27,14 +27,14 @@ const ErrorTitleContentStyle = styled.h3`
 `
 const ErrorTitleSubStyle = styled.h3`
   color: crimson;
-  font-size: 12px;
-
+  font-size: 16px;
+  margin-top: 10px;
   ${(props) => props.theme.media.tablet} {
-    font-size: 11px;
+    font-size: 14px;
   }
 
   ${(props) => props.theme.media.mobile} {
-    font-size: 10px;
+    font-size: 12px;
   }
 `
 
