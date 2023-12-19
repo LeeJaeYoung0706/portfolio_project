@@ -8,7 +8,7 @@ import Stack from "@/atom/organisms/stack/Stack";
 import Project from "@/atom/organisms/project/Project";
 import Footer from "@/atom/organisms/Footer";
 import Education from "@/atom/organisms/education/Education";
-import TestImage from "@/app/opengraph-image";
+
 
 export default function Home(): React.JSX.Element {
 
