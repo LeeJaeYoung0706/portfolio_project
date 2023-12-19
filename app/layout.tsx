@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: 'LeeJaeYoung_portfolio',
     template: '%s | LeeJaeYoung_portfolio',
   },
-  description: '프론트 엔드 개발자 포트폴리오',
+  description: '프론트개발자 포트폴리오',
 }
 
 export default function RootLayout({
