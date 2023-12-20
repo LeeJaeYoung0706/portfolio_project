@@ -6,7 +6,7 @@ const EducationImageDivStyle = styled.div`
   position: relative;
   height: 100%;
   width: 100%;
-  filter: grayscale(100%);
+  filter: grayscale(70%);
   opacity: 0.7;
   overflow: hidden;
 

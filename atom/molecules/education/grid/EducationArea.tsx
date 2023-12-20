@@ -14,8 +14,8 @@ const EducationAreaLayoutStyle = styled.div<{
   align-content: flex-start;
   height: 100%;
   width: 100%;
-  background-color: ${props => props.$area === UniversityGrid ? props?.theme.palette.reverseSecond 
-          : props.$area === OnlineGrid ?  props?.theme.palette.middle :  props.$area === AcademyGrid ? props?.theme.palette.second : props?.theme.palette.reverse
+  background-color: ${props => props.$area === UniversityGrid ? props?.theme.palette.reverseSecond70 
+          : props.$area === OnlineGrid ?  props?.theme.palette.middle70 :  props.$area === AcademyGrid ? props?.theme.palette.second70 : props?.theme.palette.reverse70
   };
 
   ${(props) => props.theme.media.tablet} {

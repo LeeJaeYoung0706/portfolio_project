@@ -10,12 +10,13 @@ const ErrorStyle = styled.section`
 
 const BoxStyle = styled.article`
   position: relative;
-  width: 700px;
+  width: 60%;
   height: 390px;
   border-radius: 7px;
   background-color: ${props => props.theme.palette.reverseSecond70};
   
   ${(props) => props.theme.media.tablet} {
+    width: 70%;
     min-width: 600px;
   }
 

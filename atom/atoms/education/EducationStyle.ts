@@ -3,7 +3,7 @@ import {
   ContentFontSizeMobile,
   ContentFontSizePC,
   ContentFontSizeTablet,
-  ContentLineHeight,
+  ContentLineHeight, displayFlex,
   MiddleTitleFontSizeMobile,
   MiddleTitleFontSizePC,
   MiddleTitleFontSizeTablet
@@ -51,4 +51,9 @@ export const EducationGridContentTextStyle = styled.div`
   ${(props) => props.theme.media.mobile} {
     ${ContentFontSizeMobile};
   }
+`
+
+export const EducationInnerDivStyle = styled.div`
+  ${displayFlex('column' , 'center' , 'flex-start')};
+  padding-bottom: 15px;
 `

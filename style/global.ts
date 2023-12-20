@@ -96,4 +96,27 @@ export const GlobalStyle = createGlobalStyle`
     appearance: none;
     cursor: pointer;
   }
+  .education_a {
+     padding-bottom: 20px;
+  }
+  .education_notion_span {
+      font-size: 20px;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      background-color: transparent;
+      color: var(--dark-primary-70);
+      font-weight: bold;
+      border-bottom: 1px solid var(--dark-primary-70);
+  }
+
+  .education_notion_read_more {
+      font-size: 20px;
+      background-color: transparent;
+      color: var(--dark-second-70);
+      font-weight: bold;
+  }
+  .education_notion_read_more:hover {
+      color: var(--dark-second);
+  }
 `;

@@ -9,7 +9,7 @@ import {educationArray, educationImageArray} from "@/atom/organisms/education/Ed
 import {
   EducationGridContentLayoutStyle,
   EducationGridContentTextStyle,
-  EducationGridContentTitleStyle
+  EducationGridContentTitleStyle, EducationInnerDivStyle
 } from "@/atom/atoms/education/EducationStyle";
 import {NGodicFont} from "@/style/font";
 
@@ -63,7 +63,7 @@ export default function Education(): React.JSX.Element {
                         return (
                           <EducationGridContentTextStyle className={NGodicFont.className}
                                                          key={`${value}-${index}`}>
-                            <p dangerouslySetInnerHTML={{__html: value}}/>
+                            <EducationInnerDivStyle dangerouslySetInnerHTML={{__html: value}}/>
                           </EducationGridContentTextStyle>
                         )
                       })

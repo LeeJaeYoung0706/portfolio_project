@@ -5,7 +5,7 @@ import ProjectTitleUlView from "@/atom/molecules/project/project_title/ProjectTi
 import ProjectTitleLi from "@/atom/atoms/project/project_title/ProjectTitleLi";
 import ProjectHighLightTitle from "@/atom/atoms/project/project_title/ProjectHighLightTitle";
 import InitSwiperContent from "@/atom/molecules/project/border/InitSwiperContent";
-import {initProjectList} from "@/atom/organisms/project/ProjectTitleDescription";
+import {initProjectList} from "@/atom/organisms/project/ProjectDescription";
 import SlideLayout from "@/atom/molecules/project/slide/SlideLayout";
 
 
