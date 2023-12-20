@@ -126,7 +126,8 @@ export const initProjectList: ProjectInterface[] = [
     introduction: "Styled-Components, CSS3의 역량 향상 목적 및 개인 이력서에 대한 정보를 제공.",
     responsibilities: ["NEXT.js 기반 개인 개발"],
     functions: [
-      "개인 이력서 정보 제공."
+      "개인 이력서 정보 제공.",
+      "반응형 웹"
     ],
     link: "https://github.com/LeeJaeYoung0706/portfolio_project",
     review: "Styled-Components와 css3을 사용하고 라이브러리를 최대한 지양하면서 레이아웃작업부터 끝까지 해보고 싶었습니다. 회사에서는 어느정도 틀이 나온 상태로 작업을 했었기 때문에 경험해보고 싶었고 기초를 다시 한번 되돌아보고 많은 것들을 알수 있는 프로젝트였습니다."
